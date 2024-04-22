@@ -15,6 +15,14 @@
 
 <img alt="scope" src="asset/what&#39;sawada.png" width="960"/>
 
+## 发布平台
+
+目前我们在repo中提供了一个简单的web对话界面示例，参考 DialogWeb目录
+
+对于有需求接入微信公众号的项目，推荐参考 [微信SDK](https://weixin-python.readthedocs.io/zh/latest/ '微信SDK docs')
+
+对于有需求接入微信（个微或企微），推荐参考 [wechaty](https://github.com/wechaty/wechaty 'wechaty github')
+
 ## 欢迎贡献
 
 Awada项目目前处于起步阶段，WiseFlow（首席情报官） Team 会在社交网络行业情报获取、角色扮演对话机器人等类型项目的开发工作中不断提炼相关技术，整理贡献至Awada项目，也希望大家可以一起参与贡献。（项目开源许可证为Apache2.0，所有贡献者需要签署CLA）。
