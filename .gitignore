@@ -4,3 +4,6 @@
 .DS_Store
 .idea/
 __pycache__
+.env
+.venv/
+pb/pb_data/

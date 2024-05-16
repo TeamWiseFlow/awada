@@ -1,4 +1,4 @@
-这个repo整体上copy from https://github.com/xszyou/Fay/tree/fay-assistant-edition 
+这部分整体上copy from https://github.com/xszyou/Fay/tree/fay-assistant-edition 
 
 ##  语音服务介绍
 
