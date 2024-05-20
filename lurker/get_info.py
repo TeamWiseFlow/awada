@@ -25,7 +25,9 @@ pb = PbTalker(logger)
 # model = 'qwen-72b-chat'
 model = "deepseek-chat"
 # focus_list = ["社区活动", "服务品牌", "社区共建共享经验", "癌症以及肿瘤", "招聘信息"]
-focus_list = [tag['name'] for tag in pb.read(collection_name='tags', filter=f'activated=True') if tag['name']]
+focus_data = pb.read(collection_name='tags', filter=f'activated=True')
+focus_list = [item["name"] for item in focus_data if item["name"]]
+focus_dict = {item["name"]: item["id"] for item in focus_data if item["name"]}
 
 system_prompt = f'''请仔细阅读用户输入的新闻内容，并根据所提供的类型列表进行分析。类型列表如下：
 {focus_list}
@@ -103,6 +105,6 @@ def get_info(article_content: str) -> list[dict]:
             logger.debug(f'no relevant info: {text}')
             continue
 
-        cache.append({'content': info, 'tag': tag})
+        cache.append({'content': info, 'tag': focus_dict[tag]})
 
     return cache
