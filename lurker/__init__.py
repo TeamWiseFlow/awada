@@ -6,10 +6,15 @@ import json
 from datetime import datetime, timedelta
 from lurker.get_info import get_info, pb, project_dir
 from urllib.parse import urlparse
+from llms.embeddings import embed_model, reranker
+from langchain_community.vectorstores import FAISS
+from langchain_core.documents import Document
+from langchain_community.vectorstores.utils import DistanceStrategy
+from langchain.retrievers import ContextualCompressionRetriever
 
 
 expiration_days = 7
-existing_urls = [url['url'] for url in pb.read(collection_name='articles', fields=['url']) if url]
+existing_urls = [url['url'] for url in pb.read(collection_name='articles', fields=['url']) if url['url']]
 
 
 def pipeline(_input: dict):
@@ -69,17 +74,17 @@ def pipeline(_input: dict):
 
         # 2、判断是否早于 当日- expiration_days ，如果是的话，舍弃
         expiration_date = datetime.now() - timedelta(days=expiration_days)
-        expiration_date = expiration_date.strftime('%Y%m%d')
+        expiration_date = expiration_date.strftime('%Y-%m-%d')
         article_date = int(article['publish_time'])
-        if article_date < int(expiration_date):
+        if article_date < int(expiration_date.replace('-', '')):
             logger.info(f"publish date is {article_date}, too old, skip")
             continue
 
         # 3、使用content从中提炼信息
         insights = get_info(f"标题：{article['title']}\n\n内容：{article['content']}")
-
         # 提炼info失败的article不入库，不然在existing里面后面就再也不会处理了，但提炼成功没有insight的article需要入库，后面不再分析。
-        # 4、入库
+
+        # 4、article入库
         try:
             article_id = pb.add(collection_name='articles', body=article)
         except Exception as e:
@@ -92,11 +97,36 @@ def pipeline(_input: dict):
 
         if not insights:
             continue
-
+        # insight 比对去重与合并, article打标签，insight入库
         article_tags = set()
+        # 从数据库中读取过去expiration_days的insight记录，避免重复
+        old_insights = pb.read(collection_name='insights', filter=f"updated>'{expiration_date}'")
         for insight in insights:
-            insight['articles'] = [article_id]
             article_tags.add(insight['tag'])
+            # 从old_insights 中挑出相同tag的insight，组成 content: id的反查字典
+            old_insight_dict = {i['content']: i for i in old_insights if i['tag'] == insight['tag']}
+            insight_list = [Document(page_content=key, metadata={}) for key, value in old_insight_dict.items()]
+            retriever = FAISS.from_documents(insight_list, embed_model,
+                                             distance_strategy=DistanceStrategy.MAX_INNER_PRODUCT).as_retriever(
+                search_type="similarity",
+                search_kwargs={"score_threshold": 0.92, "k": 1})
+            compression = ContextualCompressionRetriever(base_compressor=reranker, base_retriever=retriever)
+            rerank_results = compression.get_relevant_documents(insight['content'])
+            if rerank_results and rerank_results[0].metadata['relevance_score'] > 0.92:
+                old_content = rerank_results[0].page_content
+                logger.debug(f"{insight['content']} is too similar to {old_content}, merging")
+                insight['articles'] = old_insight_dict[old_content]['articles'] + [article_id]
+                # 旧的insight需要从old_insights删除
+                old_insights.remove(old_insight_dict[old_content])
+                # 对于日期与采集日一样的old_insight，还需要从pb中删除
+                old_updated_date = old_insight_dict[old_content]['updated'].date()
+                today_utc = datetime.utcnow().date()
+                if old_updated_date == today_utc:
+                    pb.delete(collection_name='insights', id=old_insight_dict[old_content]['id'])
+            else:
+                insight['articles'] = [article_id]
+
+            old_insights.append(insight)
             try:
                 _insight_id = pb.add(collection_name='insights', body=insight)
             except Exception as e:
@@ -108,5 +138,6 @@ def pipeline(_input: dict):
             pb.update(collection_name='articles', id=article_id, body={'tag': list(article_tags)})
         except Exception as e:
             logger.error(f'update article failed - article_id: {article_id}\n{e}')
-
-    # todo insight 比对去重与合并
+            article['tag'] = list(article_tags)
+            with open(os.path.join(project_dir, 'cache_articles.json'), 'a', encoding='utf-8') as f:
+                json.dump(article, f, ensure_ascii=False, indent=4)
