@@ -19,7 +19,7 @@ def receive_messages(executor):
     """
     ws = None
     try:
-        ws = create_connection("ws://0.0.0.0:8080/ws/publicMsg")
+        ws = create_connection("ws://127.0.0.1:8080/ws/publicMsg")
         while True:
             message = ws.recv()
             # 提交任务到线程池处理
@@ -48,5 +48,5 @@ if __name__ == "__main__":
     start_receiving()
     # 根据实际需求，可能需要添加逻辑来控制程序的退出，比如通过特定信号或条件判断。
     while True:
-        if input("Press q to exit:") == "q":
+        if input("Press q to exit:\n") == "q":
             break
