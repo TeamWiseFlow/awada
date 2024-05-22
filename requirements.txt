@@ -17,4 +17,4 @@ gne
 chardet
 schedule
 loguru
-websocket-client
+websockets
