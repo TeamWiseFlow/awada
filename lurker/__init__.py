@@ -1,41 +1,57 @@
 from scrapers import *
 from utils.general_utils import extract_urls
-from loguru import logger
+from lurker.get_info import get_info, pb, project_dir, logger
 import os
 import json
 from datetime import datetime, timedelta
-from lurker.get_info import get_info, pb, project_dir
 from urllib.parse import urlparse
-from llms.embeddings import embed_model, reranker
-from langchain_community.vectorstores import FAISS
-from langchain_core.documents import Document
-from langchain_community.vectorstores.utils import DistanceStrategy
-from langchain.retrievers import ContextualCompressionRetriever
+# from llms.embeddings import embed_model, reranker
+# from langchain_community.vectorstores import FAISS
+# from langchain_core.documents import Document
+# from langchain_community.vectorstores.utils import DistanceStrategy
+# from langchain.retrievers import ContextualCompressionRetriever
+import re
 
+
+# 用正则不用xml解析方案是因为公众号消息提取出来的xml代码存在异常字符
+item_pattern = re.compile(r'<item>(.*?)</item>', re.DOTALL)
+url_pattern = re.compile(r'<url><!\[CDATA\[(.*?)]]></url>')
+summary_pattern = re.compile(r'<summary><!\[CDATA\[(.*?)]]></summary>')
 
 expiration_days = 7
 existing_urls = [url['url'] for url in pb.read(collection_name='articles', fields=['url']) if url['url']]
 
 
 def pipeline(_input: dict):
-    logger.debug(_input)
     cache = {}
     source = _input['user_id'].split('@')[-1]
+    logger.debug(f"received new task, user: {source}, MsgSvrID: {_input['addition']}")
 
-    if _input['type'] == 'url':
-        try:
-            cache = json.loads(_input['content'])
-        except Exception as e:
-            logger.warning(f'json.loads failed, writing to cache_file - {e}')
-            return
-        urls = [cache['url']]
-        if _input['addition'] and cache['abstract']:
-            cache['abstract'] = f"（{_input['addition']} 报道）{cache['abstract']}"
+    if _input['type'] == 'publicMsg':
+        items = item_pattern.findall(_input["Content"])
+        # 遍历所有<item>内容，提取<url>和<summary>
+        for item in items:
+            url_match = url_pattern.search(item)
+            summary_match = summary_pattern.search(item)
+            url = url_match.group(1) if url_match else None
+            if not url:
+                logger.warning(f"can not find url in \n{item}")
+                continue
+            if url in cache:
+                logger.debug(f"duplict url in \n{item}")
+            summary = summary_match.group(1) if summary_match else None
+            if not summary:
+                logger.warning(f"can not find summary in \n{item}")
+            cache[url] = summary
+        urls = list(cache.keys())
     elif _input['type'] == 'text':
         urls = extract_urls(_input['content'])
         if not urls:
             logger.debug("can not find any url, pass...")
             return
+    elif _input['type'] == 'url':
+        urls = []
+        pass
     else:
         return
 
@@ -66,12 +82,6 @@ def pipeline(_input: dict):
                 logger.info(f"{url} failed with llm_crawler")
                 continue
 
-        article['source'] = source
-        if cache and cache['title']:
-            article['title'] = cache['title']
-            if not article['abstract']:
-                article['abstract'] = cache['abstract']
-
         # 2、判断是否早于 当日- expiration_days ，如果是的话，舍弃
         expiration_date = datetime.now() - timedelta(days=expiration_days)
         expiration_date = expiration_date.strftime('%Y-%m-%d')
@@ -79,6 +89,10 @@ def pipeline(_input: dict):
         if article_date < int(expiration_date.replace('-', '')):
             logger.info(f"publish date is {article_date}, too old, skip")
             continue
+
+        article['source'] = source
+        if url in cache and cache[url]:
+            article['abstract'] = cache[url]
 
         # 3、使用content从中提炼信息
         insights = get_info(f"标题：{article['title']}\n\n内容：{article['content']}")
@@ -105,6 +119,7 @@ def pipeline(_input: dict):
             article_tags.add(insight['tag'])
             # 从old_insights 中挑出相同tag的insight，组成 content: id的反查字典
             old_insight_dict = {i['content']: i for i in old_insights if i['tag'] == insight['tag']}
+            """
             insight_list = [Document(page_content=key, metadata={}) for key, value in old_insight_dict.items()]
             retriever = FAISS.from_documents(insight_list, embed_model,
                                              distance_strategy=DistanceStrategy.MAX_INNER_PRODUCT).as_retriever(
@@ -123,6 +138,14 @@ def pipeline(_input: dict):
                 today_utc = datetime.utcnow().date()
                 if old_updated_date == today_utc:
                     pb.delete(collection_name='insights', id=old_insight_dict[old_content]['id'])
+            else:
+                insight['articles'] = [article_id]
+            """
+            if insight in old_insight_dict:
+                insight['articles'] = old_insight_dict[insight]['articles'] + [article_id]
+                # 旧的insight需要从old_insights删除
+                old_insights.remove(old_insight_dict[insight])
+                pb.delete(collection_name='insights', id=old_insight_dict[insight]['id'])
             else:
                 insight['articles'] = [article_id]
 

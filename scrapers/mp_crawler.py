@@ -1,7 +1,7 @@
 import httpx
 from bs4 import BeautifulSoup
-from utils.general_utils import extract_and_convert_dates
 from datetime import datetime
+import re
 
 
 header = {
@@ -22,6 +22,17 @@ def mp_crawler(url: str, logger) -> (int, dict):
 
     soup = BeautifulSoup(response.text, 'html.parser')
 
+    # 先获取原始发布日期
+    pattern = r"var createTime = '(\d{4}-\d{2}-\d{2}) \d{2}:\d{2}'"
+    match = re.search(pattern, response.text)
+
+    if match:
+        # group(1) 用于获取第一个括号内匹配的内容，即日期部分
+        date_only = match.group(1)
+        publish_time = date_only.replace('-', '')
+    else:
+        publish_time = datetime.strftime(datetime.today(), "%Y%m%d")
+
     # 从<meta>标签中获取description内容
     meta_description = soup.find('meta', attrs={'name': 'description'})
     summary = meta_description['content'].strip() if meta_description else ''
@@ -31,7 +42,7 @@ def mp_crawler(url: str, logger) -> (int, dict):
     # 从<div>标签中解析出所需内容
     rich_media_title = soup.find('h1', id='activity-name').text.strip() if soup.find('h1', id='activity-name') else ''
     profile_nickname = card_info.find('strong', class_='profile_nickname').text.strip() if card_info else ''
-    publish_time = card_info.find('em', id='publish_time').text if card_info else ''
+    # publish_time = card_info.find('em', id='publish_time').text if card_info else ''
 
     if not rich_media_title and not summary:
         logger.warning(f"failed to analysis {url}, no title and summary")
@@ -40,12 +51,6 @@ def mp_crawler(url: str, logger) -> (int, dict):
     if not profile_nickname:
         logger.warning(f"failed to analysis profile_nickname {url}")
         profile_nickname = '微信公众号'
-
-    date_str = extract_and_convert_dates(publish_time)
-    if date_str:
-        publish_time = date_str
-    else:
-        publish_time = datetime.strftime(datetime.today(), "%Y%m%d")
 
     # 解析内容区间内的文字和图片链接
     texts = []
