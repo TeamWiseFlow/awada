@@ -18,3 +18,4 @@ chardet
 schedule
 loguru
 websockets
+jieba

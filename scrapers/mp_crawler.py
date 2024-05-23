@@ -9,9 +9,12 @@ header = {
 
 
 def mp_crawler(url: str, logger) -> (int, dict):
-    if not url.startswith('https://mp.weixin.qq.com'):
+    if not url.startswith('https://mp.weixin.qq.com') and not url.startswith('http://mp.weixin.qq.com'):
         logger.warning(f'{url} is not a mp url, you should not use this function')
         return -5, {}
+
+    if url.startswith('http://mp.weixin.qq.com'):
+        url = url.replace("http://", "https://", 1)
 
     try:
         with httpx.Client() as client:
@@ -44,9 +47,9 @@ def mp_crawler(url: str, logger) -> (int, dict):
     profile_nickname = card_info.find('strong', class_='profile_nickname').text.strip() if card_info else ''
     # publish_time = card_info.find('em', id='publish_time').text if card_info else ''
 
-    if not rich_media_title and not summary:
-        logger.warning(f"failed to analysis {url}, no title and summary")
-        return 0, {}
+    if not rich_media_title:
+        logger.warning(f"failed to analysis {url}, no title")
+        return -7, {}
 
     if not profile_nickname:
         logger.warning(f"failed to analysis profile_nickname {url}")

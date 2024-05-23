@@ -6,6 +6,7 @@ from urllib.parse import urlparse
 import time
 import os
 import re
+import jieba
 
 
 def isURL(string):
@@ -170,6 +171,29 @@ def get_logger_level() -> str:
         )
     return level_map.get(level, 'info')
 
+
+def compare_phrase_with_list(target_phrase, phrase_list, threshold):
+    """
+    比较一个目标短语与短语列表中每个短语的相似度。
+
+    :param target_phrase: 目标短语 (str)
+    :param phrase_list: 短语列表 (list of str)
+    :param threshold: 相似度阈值 (float)
+    :return: 满足相似度条件的短语列表 (list of str)
+    """
+    # 检查目标短语是否为空
+    if not target_phrase:
+        return []  # 目标短语为空，直接返回空列表
+
+    # 预处理：对目标短语和短语列表中的每个短语进行分词
+    target_tokens = set(jieba.lcut(target_phrase))
+    tokenized_phrases = {phrase: set(jieba.lcut(phrase)) for phrase in phrase_list}
+
+    # 比较并筛选
+    similar_phrases = [phrase for phrase, tokens in tokenized_phrases.items()
+                       if len(target_tokens & tokens) / min(len(target_tokens), len(tokens)) > threshold]
+
+    return similar_phrases
 
 """
 # from InternLM/huixiangdou 

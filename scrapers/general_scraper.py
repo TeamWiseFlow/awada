@@ -5,16 +5,16 @@ from .simple_crawler import simple_crawler
 import httpx
 from bs4 import BeautifulSoup
 from bs4.element import Comment
-# from llms.dashscope_wrapper import dashscope_llm
-from llms.openai_wrapper import openai_llm
+from llms.dashscope_wrapper import dashscope_llm
+# from llms.openai_wrapper import openai_llm
 from datetime import datetime, date
 from requests.compat import urljoin
 import chardet
 from utils.general_utils import extract_and_convert_dates
 
 
-# model = "qwen-72b-chat"
-model = "deepseek-chat"
+model = 'qwen1.5-32b-chat'
+# model = "deepseek-chat"
 header = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/604.1 Edg/112.0.100.0'}
 
@@ -108,8 +108,8 @@ def llm_crawler(url: str | Path, logger) -> (int, dict):
         {"role": "system", "content": sys_info},
         {"role": "user", "content": html_text}
     ]
-    # llm_output = dashscope_llm(messages, model=model, logger=logger)
-    llm_output = openai_llm(messages, model=model, logger=logger)
+    llm_output = dashscope_llm(messages, model=model, logger=logger)
+    # llm_output = openai_llm(messages, model=model, logger=logger)
     try:
         info = parse_html_content(llm_output)
     except Exception:
