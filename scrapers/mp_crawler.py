@@ -37,19 +37,21 @@ def mp_crawler(url: str, logger) -> (int, dict):
         publish_time = datetime.strftime(datetime.today(), "%Y%m%d")
 
     # 从<meta>标签中获取description内容
-    meta_description = soup.find('meta', attrs={'name': 'description'})
-    summary = meta_description['content'].strip() if meta_description else ''
-
-    card_info = soup.find('div', id='img-content')
-
-    # 从<div>标签中解析出所需内容
-    rich_media_title = soup.find('h1', id='activity-name').text.strip() if soup.find('h1', id='activity-name') else ''
-    profile_nickname = card_info.find('strong', class_='profile_nickname').text.strip() if card_info else ''
-    # publish_time = card_info.find('em', id='publish_time').text if card_info else ''
+    try:
+        meta_description = soup.find('meta', attrs={'name': 'description'})
+        summary = meta_description['content'].strip() if meta_description else ''
+        card_info = soup.find('div', id='img-content')
+        # 从<div>标签中解析出所需内容
+        rich_media_title = soup.find('h1', id='activity-name').text.strip() if soup.find('h1', id='activity-name') else ''
+        profile_nickname = card_info.find('strong', class_='profile_nickname').text.strip() if card_info else ''
+        # publish_time = card_info.find('em', id='publish_time').text if card_info else ''
+    except Exception as e:
+        logger.warning(f"not mp format: {url}\n{e}")
+        return 0, {}
 
     if not rich_media_title:
         logger.warning(f"failed to analysis {url}, no title")
-        return -7, {}
+        return 0, {}
 
     if not profile_nickname:
         logger.warning(f"failed to analysis profile_nickname {url}")

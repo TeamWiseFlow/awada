@@ -36,8 +36,7 @@ system_prompt = f'''请仔细阅读用户输入的新闻内容，并根据所提
 """<tag>类型名称</tag>信息摘要"""
 
 如果新闻中包含多个主题内容，请逐一分析并按一条一行的格式输出。如果新闻不涉及任何类型的信息，则直接输出“无”。
-
-最终结果请整体用三引号包裹输出，如下所示：
+如下是输出结果格式示例：
 """<tag>居民社区活动</tag>信息内容
 <tag>招聘消息</tag>信息内容"""
 
@@ -46,37 +45,25 @@ system_prompt = f'''请仔细阅读用户输入的新闻内容，并根据所提
 不得加入自己的分析和猜想。
 确保输出的信息摘要简洁明了，不包含无关内容。'''
 
-pattern = re.compile(r'\"\"\"(.*?)\"\"\"', re.DOTALL)
+# pattern = re.compile(r'\"\"\"(.*?)\"\"\"', re.DOTALL)
 
 
 def get_info(article_content: str) -> list[dict]:
     # logger.debug(f'receive new article_content:\n{article_content}')
     result = dashscope_llm([{'role': 'system', 'content': system_prompt}, {'role': 'user', 'content': article_content}], model=model, logger=logger)
     # result = openai_llm([{'role': 'system', 'content': system_prompt}, {'role': 'user', 'content': article_content}], model=model, logger=logger)
-    results = pattern.findall(result)
-    if not results:
+    # results = pattern.findall(result)
+
+    texts = result.split('<tag>')
+    texts = [_.strip() for _ in texts if '</tag>' in _.strip()]
+    if not texts:
         logger.info(f'can not find info, llm result:\n{result}')
         return []
 
-    texts = results[0].split('<tag>')
-    texts = [_.strip() for _ in texts if _.strip()]
-    '''
-    to_del = []
-    to_add = []
-    for element in results:
-        if "；" in element:
-            to_del.append(element)
-            to_add.extend(element.split('；'))
-    for element in to_del:
-        results.remove(element)
-    results.extend(to_add)
-    results = list(set(results))
-    '''
     cache = []
     for text in texts:
         logger.debug(f'prepare parse: {text}')
-        if '</tag>' not in text:
-            continue
+
         # qwen-72b-chat 特例
         # potential_insight = re.sub(r'编号[^：]*：', '', text)
         try:
@@ -101,9 +88,22 @@ def get_info(article_content: str) -> list[dict]:
         if not info or not tag:
             logger.warning(f'parse failed-{text}')
             continue
+
+        if len(info) < 10:
+            logger.warning(f'info too short, possible invalid: {info}')
+            continue
+
         if info.startswith('无相关信息') or info.startswith('该新闻未提及') or info.startswith('未提及'):
             logger.debug(f'no relevant info: {text}')
             continue
+
+        while info.endswith('"'):
+            info = info[:-1]
+
+        # 拼接下来源信息
+        sources = re.findall(r'内容：\((.*?) 文章\)', article_content)
+        if sources and sources[0]:
+            info = f"【公众号 {sources[0]}】 {info}"
 
         cache.append({'content': info, 'tag': focus_dict[tag]})
 
