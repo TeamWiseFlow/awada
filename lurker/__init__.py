@@ -6,6 +6,7 @@ import json
 from datetime import datetime, timedelta
 from urllib.parse import urlparse
 import re
+import time
 
 
 # 用正则不用xml解析方案是因为公众号消息提取出来的xml代码存在异常字符
@@ -35,14 +36,14 @@ def pipeline(_input: dict):
             if url in cache:
                 logger.debug(f"duplict url in \n{item}")
             summary = summary_match.group(1) if summary_match else None
-            if not summary:
-                logger.warning(f"can not find summary in \n{item}")
-            cache[url] = summary
+            if summary:
+                cache[url] = summary
         urls = list(cache.keys())
+
     elif _input['type'] == 'text':
         urls = extract_urls(_input['content'])
         if not urls:
-            logger.debug("can not find any url, pass...")
+            logger.debug(f"can not find any url in\n{_input['content']}\npass...")
             return
     elif _input['type'] == 'url':
         urls = []
@@ -55,13 +56,18 @@ def pipeline(_input: dict):
     for url in urls:
         # 0、先检查是否已经爬取过
         if url in existing_urls:
-            logger.info(f"{url} has been crawled, skip")
+            logger.debug(f"{url} has been crawled, skip")
             continue
 
         logger.debug(f"fetching {url}")
         # 1、选择合适的爬虫fetch article信息
         if url.startswith('https://mp.weixin.qq.com') or url.startswith('http://mp.weixin.qq.com'):
             flag, article = mp_crawler(url, logger)
+            if flag == -7:
+                # 对于mp爬虫，-7 的大概率是被微信限制了，等待1min即可
+                logger.info(f"fetch {url} failed, try to wait 1min and try again")
+                time.sleep(60)
+                flag, article = mp_crawler(url, logger)
         else:
             parsed_url = urlparse(url)
             domain = parsed_url.netloc
@@ -71,7 +77,8 @@ def pipeline(_input: dict):
                 flag, article = simple_crawler(url, logger)
 
         if flag == -7:
-            logger.info(f"can not fetch {url}")
+            # -7 代表网络不同，用其他爬虫也没有效果
+            logger.info(f"cannot fetch {url}")
             continue
 
         if flag != 11:

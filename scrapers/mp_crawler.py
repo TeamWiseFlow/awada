@@ -47,15 +47,12 @@ def mp_crawler(url: str, logger) -> (int, dict):
         # publish_time = card_info.find('em', id='publish_time').text if card_info else ''
     except Exception as e:
         logger.warning(f"not mp format: {url}\n{e}")
-        return 0, {}
+        return -7, {}
 
-    if not rich_media_title:
-        logger.warning(f"failed to analysis {url}, no title")
-        return 0, {}
-
-    if not profile_nickname:
-        logger.warning(f"failed to analysis profile_nickname {url}")
-        profile_nickname = '微信公众号'
+    if not rich_media_title or not profile_nickname:
+        logger.warning(f"failed to analysis {url}, no title or profile_nickname")
+        # 对于mp.weixin.qq.com类型，mp_crawler不行，大概率另外两个也不行
+        return -7, {}
 
     # 解析内容区间内的文字和图片链接
     texts = []

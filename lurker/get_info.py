@@ -98,12 +98,14 @@ def get_info(article_content: str) -> list[dict]:
             continue
 
         while info.endswith('"'):
+            print(info)
             info = info[:-1]
+        print(info)
 
         # 拼接下来源信息
         sources = re.findall(r'内容：\((.*?) 文章\)', article_content)
         if sources and sources[0]:
-            info = f"【公众号 {sources[0]}】 {info}"
+            info = f"【{sources[0]} 公众号】 {info}"
 
         cache.append({'content': info, 'tag': focus_dict[tag]})
 
