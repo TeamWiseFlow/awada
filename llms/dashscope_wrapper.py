@@ -8,16 +8,17 @@ import random
 import os
 
 
+"""
 DASHSCOPE_KEY = os.getenv("LLM_API_KEY")
 if not DASHSCOPE_KEY:
     raise ValueError("请指定LLM_API_KEY的环境变量")
 dashscope.api_key = DASHSCOPE_KEY
-
+"""
 
 def dashscope_llm(messages: list, model: str, logger=None, **kwargs) -> str:
 
     if logger:
-        logger.debug(f'messages:\n {messages}')
+        # logger.debug(f'messages:\n {messages}')
         logger.debug(f'model: {model}')
         logger.debug(f'kwargs:\n {kwargs}')
 

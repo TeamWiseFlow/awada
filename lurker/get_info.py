@@ -1,5 +1,5 @@
 from llms.dashscope_wrapper import dashscope_llm
-# from llms.openai_wrapper import openai_llm
+from llms.openai_wrapper import openai_llm
 import re
 from utils.general_utils import get_logger_level
 from loguru import logger
@@ -22,9 +22,8 @@ logger.add(
 
 pb = PbTalker(logger)
 
-model = 'qwen1.5-32b-chat'
-# model = "deepseek-chat"
-# focus_list = ["社区活动", "服务品牌", "社区共建共享经验", "癌症以及肿瘤", "招聘信息"]
+# model = 'qwen1.5-32b-chat'
+model = "deepseek-chat"
 focus_data = pb.read(collection_name='tags', filter=f'activated=True')
 focus_list = [item["name"] for item in focus_data if item["name"]]
 focus_dict = {item["name"]: item["id"] for item in focus_data if item["name"]}
@@ -32,26 +31,26 @@ focus_dict = {item["name"]: item["id"] for item in focus_data if item["name"]}
 system_prompt = f'''请仔细阅读用户输入的新闻内容，并根据所提供的类型列表进行分析。类型列表如下：
 {focus_list}
 
-如果新闻中包含上述任何类型的信息，请使用以下格式标记信息的类型，并提供简洁的信息摘要：
+如果新闻中包含上述任何类型的信息，请使用以下格式标记信息的类型，并提供信息摘要：
 """<tag>类型名称</tag>信息摘要"""
 
 如果新闻中包含多个主题内容，请逐一分析并按一条一行的格式输出。如果新闻不涉及任何类型的信息，则直接输出“无”。
 如下是输出结果格式示例：
-"""<tag>居民社区活动</tag>信息内容
-<tag>招聘消息</tag>信息内容"""
+"""<tag>居民社区活动</tag>信息摘要
+<tag>招聘消息</tag>信息摘要"""
 
-请严格遵守以下规则：
-忠于新闻原文，不得提供原文中不包含的信息。
-不得加入自己的分析和猜想。
-确保输出的信息摘要简洁明了，不包含无关内容。'''
+请严格忠于新闻原文，不得提供原文中不包含的信息。'''
 
 # pattern = re.compile(r'\"\"\"(.*?)\"\"\"', re.DOTALL)
 
 
 def get_info(article_content: str) -> list[dict]:
     # logger.debug(f'receive new article_content:\n{article_content}')
-    result = dashscope_llm([{'role': 'system', 'content': system_prompt}, {'role': 'user', 'content': article_content}], model=model, logger=logger)
-    # result = openai_llm([{'role': 'system', 'content': system_prompt}, {'role': 'user', 'content': article_content}], model=model, logger=logger)
+    result = openai_llm([{'role': 'system', 'content': system_prompt}, {'role': 'user', 'content': article_content}], model=model, logger=logger)
+    # for test only
+    compared = dashscope_llm(
+        [{'role': 'system', 'content': system_prompt}, {'role': 'user', 'content': article_content}], model='qwen1.5-32b-chat',
+        logger=logger)
     # results = pattern.findall(result)
 
     texts = result.split('<tag>')
@@ -62,8 +61,6 @@ def get_info(article_content: str) -> list[dict]:
 
     cache = []
     for text in texts:
-        logger.debug(f'prepare parse: {text}')
-
         # qwen-72b-chat 特例
         # potential_insight = re.sub(r'编号[^：]*：', '', text)
         try:
@@ -98,8 +95,10 @@ def get_info(article_content: str) -> list[dict]:
             continue
 
         while info.endswith('"'):
+            # for test only
             print(info)
             info = info[:-1]
+        # for test only
         print(info)
 
         # 拼接下来源信息

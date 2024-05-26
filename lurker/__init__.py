@@ -129,7 +129,7 @@ def pipeline(_input: dict):
             old_insight_dict = {i['content']: i for i in old_insights if i['tag'] == insight['tag']}
             # 因为要比较的是抽取出来的信息短语是否讲的是一个事情，用向量模型计算相似度未必适合且过重
             # 因此这里使用一个简化的方案，直接使用jieba分词器，计算两个短语之间重叠的词语是否超过90%
-            similar_insights = compare_phrase_with_list(insight['content'], list(old_insight_dict.keys()), 0.9)
+            similar_insights = compare_phrase_with_list(insight['content'], list(old_insight_dict.keys()), 0.66)
             if similar_insights:
                 for old_insight in similar_insights:
                     insight['articles'].extend(old_insight_dict[old_insight]['articles'])
