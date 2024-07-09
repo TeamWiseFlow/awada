@@ -14,6 +14,28 @@ awada是wiseflow团队计划中 **“可在线自主学习的AI助理”** 开�
 
 <img alt="scope" src="asset/2024H1Plan.png" width="960"/>
 
+# getting start
+
+## 1、启动 wiseflow （目前整个分析后端和数据库都依赖wiseflow，awada不会另外维护这部分代码）
+
+具体见 [wiseflow](https://github.com/TeamWiseFlow/wiseflow)
+
+## 2、 启动 wxbot （微信机器人部分依赖wxbot，awada 永远不会维护这部分代码）
+
+具体见 https://github.com/jwping/wxbot
+
+感谢作者 jwping！
+
+## 3、启动 dm.py
+
+*建议使用conda等创建虚拟环境
+
+```commandline
+pip install -r requirements.txt
+python dm.py
+```
+
+
 # Join Us
 
 awada的开发预计会在数月内启动，如果您也对此灵感迫不及待，下面是我们拟采用的一些技术栈。
