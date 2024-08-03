@@ -76,8 +76,9 @@ async def get_general_msg(websocket_uri):
                                 "addition": data["MsgSvrID"]
                             }
                         elif data['Type'] == '49':
-                            # todo 这里要确认下是不是url卡片消息SubType都是5
+                            print(data)
                             if data['SubType'] != '5':
+                                print('warning, url message with subtype not 5')
                                 continue
                             input_data = {
                                 "user_id": data["StrTalker"],
@@ -87,7 +88,6 @@ async def get_general_msg(websocket_uri):
                             }
                         else:
                             continue
-
                         await pipeline(input_data)
         except websockets.exceptions.ConnectionClosedError as e:
             print(f"Connection closed with exception: {e}")
