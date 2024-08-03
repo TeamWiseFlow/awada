@@ -76,14 +76,13 @@ async def get_general_msg(websocket_uri):
                                 "addition": data["MsgSvrID"]
                             }
                         elif data['Type'] == '49':
-                            print(data)
                             if data['SubType'] != '5':
-                                print('warning, url message with subtype not 5')
+                                # 非文章形式的公众号消息，比如公众号发来的视频卡
                                 continue
                             input_data = {
                                 "user_id": data["StrTalker"],
                                 "type": "url",
-                                "content": data["StrContent"],
+                                "content": data["Content"],
                                 "addition": data["MsgSvrID"]
                             }
                         else:
