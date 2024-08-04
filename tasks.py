@@ -45,9 +45,8 @@ def task():
     utc_last = datetime.now(pytz.utc).strftime("%Y-%m-%d %H:%M:%S")
     logger.debug(f'now_utc_time: {utc_last}')
 
-    # tags = pb.read(collection_name='tags', filter=f'activated=True')
-    # tags_dict = {item["id"]: item["name"] for item in tags if item["name"]}
-    tags_dict = {"4wfojy637kr1c5q": "#基层党建", 'qpcgotbqyz3a617': "#优秀活动案例", 's3kqj9ek8nvtthr': "#数字社区"}
+    tags = pb.read(collection_name='tags', filter=f'activated=True')
+    tags_dict = {item["id"]: item["name"] for item in tags if item["name"]}
     top_news = {}
     for _id, name in tags_dict.items():
         logger.debug(f'tag: {name}')
@@ -119,9 +118,8 @@ def task():
         time.sleep(1)
 
 
+task()
 schedule.every().day.at("07:38").do(task)
-
-
 while True:
     schedule.run_pending()
     time.sleep(60)

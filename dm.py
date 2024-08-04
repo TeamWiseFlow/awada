@@ -59,6 +59,8 @@ async def get_general_msg(websocket_uri):
                 while True:
                     response = await websocket.recv()
                     datas = json.loads(response)
+                    print(datas)
+                    print('\n')
                     for data in datas["data"]:
                         if data["IsSender"] == "1":
                             # 跳过自己发送的消息
