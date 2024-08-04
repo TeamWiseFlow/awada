@@ -94,12 +94,10 @@ def task():
     for name, v in top_news.items():
         if not v:
             continue
-        # top_news[id] = {content: '\n\n'.join(urls) for content, urls in v.items()}
-        top_news[name] = {content: urls[0] for content, urls in v.items()}
+        top_news[name] = {content: '\n\n'.join(urls) for content, urls in v.items()}
         top_news[name] = "\n".join(f"{content}\n{urls}" for content, urls in top_news[name].items())
 
-    # top_news_text = {k: "\n".join(v) for k, v in top_news.items()}
-    top_news_text = "\n\n".join(f"{k}\n{v}" for k, v in top_news.items())
+    top_news_text = {k: "\n".join(v) for k, v in top_news.items()}
     logger.info(top_news_text)
 
     for wxid in talking_list:
