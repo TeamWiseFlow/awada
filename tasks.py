@@ -106,7 +106,8 @@ def task():
             "content": top_news_text
         }
         try:
-            response = requests.post("http://localhost:8066/api/sendtxtmsg", json=data)
+            response = requests.post("http://localhost:8066/api/sendtxtmsg",
+                                     headers={"Content-Type": "application/json"}, data=data)
             if response.status_code == 200:
                 logger.info("send message to wechat success")
             else:

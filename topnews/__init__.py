@@ -9,7 +9,8 @@ system_prompt = '''你是一名家长，你很关注自己孩子的升学问题�
 
 # 实测yi:9b-chat-v1.5-fp16 可以很好的支持40条（关注点分布均匀）
 batch_size = 39
-model = 'yi:9b-chat-v1.5-fp16'
+mini_batch_size = 7
+model = '01-ai/Yi-1.5-9B-Chat-16K'
 # pattern = re.compile(r'\"\"\"(.*?)\"\"\"', re.DOTALL)
 
 
@@ -18,9 +19,9 @@ def pipeline(data: list, logger=None) -> dict:
         logger.info('empty data')
         return {}
 
-    if len(data) == 1:
-        logger.info('only one data')
-        return {data[0]['content']: data[0]['articles']}
+    if len(data) <= mini_batch_size:
+        logger.info(f'datas less than mini_batch_size: {mini_batch_size}, will return all')
+        return {d['content']: d['articles'] for d in data}
 
     results = {}
     articles = {}
@@ -30,7 +31,8 @@ def pipeline(data: list, logger=None) -> dict:
         maps[d['id']] = d['articles']
         if len(articles) > batch_size:
             result = openai_llm(
-                [{'role': 'system', 'content': system_prompt}, {'role': 'user', 'content': str(articles)}], model, logger)
+                [{'role': 'system', 'content': system_prompt}, {'role': 'user', 'content': str(articles)}],
+                model, logger)
             try:
                 # parsed = pattern.findall(result)[0]
                 parsed = result.strip()
