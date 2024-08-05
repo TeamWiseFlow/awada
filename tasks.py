@@ -97,7 +97,7 @@ def task():
         top_news[name] = {content: '\n\n'.join(urls) for content, urls in v.items()}
         top_news[name] = "\n".join(f"{content}\n{urls}" for content, urls in top_news[name].items())
 
-    top_news_text = {k: "\n".join(v) for k, v in top_news.items()}
+    top_news_text = "\n\n".join(f"{k}\n{v}" for k, v in top_news.items())
     logger.info(top_news_text)
 
     for wxid in talking_list:
@@ -106,8 +106,7 @@ def task():
             "content": top_news_text
         }
         try:
-            response = requests.post("http://localhost:8066/api/sendtxtmsg",
-                                     headers={"Content-Type": "application/json"}, data=data)
+            response = requests.post("http://127.0.0.1:8066/api/sendtxtmsg", json=data)
             if response.status_code == 200:
                 logger.info("send message to wechat success")
             else:
