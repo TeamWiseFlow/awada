@@ -1,0 +1,7 @@
+openai
+loguru
+pocketbase
+websockets
+pytz
+fastapi
+requests
