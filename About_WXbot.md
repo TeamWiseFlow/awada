@@ -1,7 +1,3 @@
-wxbot 虽然可以通过wine+docker方案运行于macOS或者linux上，但稳定性效果不如直接在windows系统上运行
-
-_（在win上运行也更简单，直接下载exe文件，一键启动了）_
-
 ### 运行命令 
 
 `docker run -itd --name wxbot -e WXBOT_ARGS="-q http://127.0.0.1:8080/qr_callback" -p 8066:8080 registry.cn-shanghai.aliyuncs.com/jwping/wxbot:v1.10.1-9-3.9.8.25`
