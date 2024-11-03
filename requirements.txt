@@ -1,7 +1,11 @@
 openai
+python-docx
 loguru
-pocketbase
+pydantic
+httpx
+aiofiles
 websockets
-pytz
 fastapi
-requests
+schedule
+beautifulsoup4
+json_repair==0.*

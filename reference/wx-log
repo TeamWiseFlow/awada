@@ -1,0 +1,1886 @@
+# 个人账号发送 wxbot 公众号名片
+{'BytesExtra': 'CgQIEBAAGuoBCAcS5QE8bXNnc291cmNlPgogICAgPHNpZ25hdHVyZT5WMV9XQ2t6TEFMbXx2MV82RTl3a2VQRjwvc2lnbmF0dXJlPgogICAgPHRtcF9ub2RlPgogICAgICAgIDxwdWJsaXNoZXItaWQgLz4KICAgIDwvdG1wX25vZGU+CiAgICA8c2VjX21zZ19ub2RlPgogICAgICAgIDxhbG5vZGU+CiAgICAgICAgICAgIDxmcj4xPC9mcj4KICAgICAgICA8L2Fsbm9kZT4KICAgIDwvc2VjX21zZ19ub2RlPgo8L21zZ3NvdXJjZT4KGiQIAhIgNjBkOWZkYWE0ZDEwZjcyOWQ0OTRiZmE4ZThkOTU1NTc=',
+ 'BytesTrans': '',
+ 'CompressContent': '',
+ 'CreateTime': '1729042935',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '0',
+ 'MsgSequence': '894409225',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '2424237706403314206',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sequence': '1729042935000',
+ 'Status': '2',
+ 'StatusEx': '0',
+ 'StrContent': '<?xml version="1.0"?>\n'
+               '<msg '
+               'bigheadimgurl="http://wx.qlogo.cn/mmhead/Mjzdia7evAzzF9Vs4x5YMn5YH6FsicDTIXJFIfvzibPkKrG0UqUKNp92icauWW2IFia4l9YIxib4BHSUk/0" '
+               'smallheadimgurl="http://wx.qlogo.cn/mmhead/Mjzdia7evAzzF9Vs4x5YMn5YH6FsicDTIXJFIfvzibPkKrG0UqUKNp92icauWW2IFia4l9YIxib4BHSUk/132" '
+               'username="v3_020b3826fd0301000000000040b1155016b4b6000000501ea9a3dba12f95f6b60a0536a1adb6d51840214776704ae1237448ff40813cbccf09000091e62fb30de27f8eac728b8583657cb4285ff0ec72fbe4@stranger" '
+               'nickname="静邻党建" fullpy="静邻党建" shortpy="JLDJ" alias="" '
+               'imagestatus="3" scene="17" province="上海" city="静安" sign="" '
+               'sex="0" certflag="24" '
+               'certinfo="上海市静安区党建服务中心(中共上海市静安区委组织部党员电化教育中心)" '
+               'brandIconUrl="http://mmbiz.qpic.cn/sz_mmbiz_png/qjHwiaINDToj3P5DoZ1yibHjbqDrnp35Z733QVh9quaGPfFlXgB12HC7rX7JX8Tx5wJqQC7alg8ZjxyLwvAsRpbg/0?wx_fmt=png" '
+               'brandHomeUrl="" brandSubscriptConfigUrl="" brandFlags="0" '
+               'regionCode="CN_Shanghai_Jing" '
+               'biznamecardinfo="ClBDZ3pwblpucGdydmxoWnJsdTdvUUdCb0FJZ0V4S0lPanZMZ0dNZzluYUY4d1pHWmxZekl3WVdNd1pqVTZERmRQY1dodllVRjNRVkJ3ZGc9PRJ4QUFmbVBjd0VBQUFCQUFBQUFBQzloa2ZjN2MxSVA1c3dneEVQWnlBQUFBQnRFTnNOT1ErQzI0NWQycHFLTlBCUWZRalV3T2R0TlJCaFhzTTl4T3RhMXM4d29hS0dOc3lyeHQrRG5Mejd0VExseDl5cjJBSVRFZkRB" '
+               'antispamticket="v4_000b708f0b040000010000000000afec030992eb387b16b6f7190f671000000050ded0b020927e3c97896a09d47e6e9ea3f076fabca943c6096bab6f25fca76cbf318801970fc0adb19219bddd5cd55082098181c44a6678da2a4366fea65b4b72b590af8ed7e6c753eefa8a60d17e996d9e3fee5b6ac4b229121fb0c83a9d22a6020767af7d1d6c821629202258a73f47d69fb223668cc261e8d5115d9cdcb5c933aaec6efd3a30fb09a0e9a1d9cd858019e83d537a8c3c4224fe8b9b44fa5f1f59b8cd465861ce879f8a023e3d125d2e58b12183b3b31bd674631ef37165a4d9930c106a1aacbe9387c7794e3e62e0b0ccca5abbc6f381823b39ae9745cd4fc0a591946aa1af4e3012240af06c81ff09385a4c0658092d@stranger" '
+               '/>\n',
+ 'StrTalker': 'wxid_tnv0hd5hj3rs11',
+ 'SubType': '0',
+ 'TalkerId': '2',
+ 'Type': '42',
+ 'localId': '6'}
+
+ # wxbot给好友发送私聊 text 信息 data
+{'BytesExtra': 'CgQIEBAAGpwCCAcSlwI8bXNnc291cmNlPgogICAgPHB1YT4xPC9wdWE+CiAgICA8ZWdnSW5jbHVkZWQ+MTwvZWdnSW5jbHVkZWQ+CiAgICA8c2lnbmF0dXJlPlYxX3hIRGtkNVRGfHYxX3hIRGtkNVRGPC9zaWduYXR1cmU+CiAgICA8dG1wX25vZGU+CiAgICAgICAgPHB1Ymxpc2hlci1pZCAvPgogICAgPC90bXBfbm9kZT4KICAgIDxzZWNfbXNnX25vZGU+CiAgICAgICAgPGFsbm9kZT4KICAgICAgICAgICAgPGZyPjE8L2ZyPgogICAgICAgIDwvYWxub2RlPgogICAgPC9zZWNfbXNnX25vZGU+CjwvbXNnc291cmNlPgoaJAgCEiAwMTkzYzc4ZTZiNTI4NTUxNjA1ZmZiMzA5NjY0ZmFmZQ==',
+ 'BytesTrans': '',
+ 'CompressContent': '',
+ 'CreateTime': '1729004604',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '1',
+ 'MsgSequence': '894409201',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '6989486894884873839',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sequence': '1729004604000',
+ 'Status': '2',
+ 'StatusEx': '0',
+ 'StrContent': '868175',
+ 'StrTalker': 'wxid_bhm8b76alxrr22', //注意 这里是发送对象的 id 了
+ 'SubType': '0',
+ 'TalkerId': '3',
+ 'Type': '1',
+ 'localId': '5'}
+
+# bot在 room 中发普通文本消息
+{'BytesExtra': 'CgQIEBAAGpwCCAcSlwI8bXNnc291cmNlPgogICAgPHB1YT4xPC9wdWE+CiAgICA8ZWdnSW5jbHVkZWQ+MTwvZWdnSW5jbHVkZWQ+CiAgICA8c2lnbmF0dXJlPlYxX2M0UE1LbjhRfHYxX2M0UE1LbjhRPC9zaWduYXR1cmU+CiAgICA8dG1wX25vZGU+CiAgICAgICAgPHB1Ymxpc2hlci1pZCAvPgogICAgPC90bXBfbm9kZT4KICAgIDxzZWNfbXNnX25vZGU+CiAgICAgICAgPGFsbm9kZT4KICAgICAgICAgICAgPGZyPjE8L2ZyPgogICAgICAgIDwvYWxub2RlPgogICAgPC9zZWNfbXNnX25vZGU+CjwvbXNnc291cmNlPgoaJAgCEiBlNTVlNDI3ZDAwNzRlNjk1ODI5NWY0OTQ0MTM1NTBmNQ==',
+ 'BytesTrans': '',
+ 'CompressContent': '',
+ 'CreateTime': '1729738083',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '1',
+ 'MsgSequence': '894411426',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '6997453160548357830',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sender': '<msgsource>\\n    <pua>1</pua>\\n    '
+           '<eggIncluded>1</eggIncluded>\\n    '
+           '<signature>V1_c4PMKn8Q|v1_c4PMKn8Q</signature>\\n    '
+           '<tmp_node>\\n        <publisher-id />\\n    </tmp_node>\\n    '
+           '<sec_msg_node>\\n        <alnode>\\n            '
+           '<fr>1</fr>\\n        </alnode>\\n    '
+           '</sec_msg_node>\\n</msgsource>\\n',
+ 'Sequence': '1729738083000',
+ 'Status': '2',
+ 'StatusEx': '0',
+ 'StrContent': 'hi',
+ 'StrTalker': '51797628120@chatroom', //注意 这里是发送房间的 id 了
+ 'SubType': '0',
+ 'TalkerId': '4',
+ 'Type': '1',
+ 'localId': '20'}
+
+# bot在群聊中@其他人发送文本消息
+{'BytesExtra': 'CgQIEBAAGucCCAcS4gI8bXNnc291cmNlPgogICAgPGF0dXNlcmxpc3Q+CiAgICAgICAgPCFbQ0RBVEFbd3hpZF9hNnh4YTduMTF1NWoyMl1dPgogICAgPC9hdHVzZXJsaXN0PgogICAgPHB1YT4xPC9wdWE+CiAgICA8ZWdnSW5jbHVkZWQ+MTwvZWdnSW5jbHVkZWQ+CiAgICA8c2lnbmF0dXJlPlYxX283RHpUb2hzfHYxX283RHpUb2hzPC9zaWduYXR1cmU+CiAgICA8dG1wX25vZGU+CiAgICAgICAgPHB1Ymxpc2hlci1pZCAvPgogICAgPC90bXBfbm9kZT4KICAgIDxzZWNfbXNnX25vZGU+CiAgICAgICAgPGFsbm9kZT4KICAgICAgICAgICAgPGZyPjE8L2ZyPgogICAgICAgIDwvYWxub2RlPgogICAgPC9zZWNfbXNnX25vZGU+CjwvbXNnc291cmNlPgoaJAgCEiBlYjQzMTgxNDNjMTkyMzcwNmEzNzEwMjEyYjNkYzNiYg==',
+ 'BytesTrans': '',
+ 'CompressContent': '',
+ 'CreateTime': '1729738089',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '1',
+ 'MsgSequence': '894411427',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '3379963742784348538',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sender': '<msgsource>\\n    <atuserlist>\\n        '
+           '<![CDATA[wxid_a6xxa7n11u5j22]]>\\n    </atuserlist>\\n    '   //注意，这里就是atuserlist
+           '<pua>1</pua>\\n    <eggIncluded>1</eggIncluded>\\n    '
+           '<signature>V1_o7DzTohs|v1_o7DzTohs</signature>\\n    '
+           '<tmp_node>\\n        <publisher-id />\\n    </tmp_node>\\n    '
+           '<sec_msg_node>\\n        <alnode>\\n            '
+           '<fr>1</fr>\\n        </alnode>\\n    '
+           '</sec_msg_node>\\n</msgsource>\\n',
+ 'Sequence': '1729738089000',
+ 'Status': '2',
+ 'StatusEx': '0',
+ 'StrContent': '@大兄弟666\u2005Hi',  #通过此判断是否@信息
+ 'StrTalker': '51797628120@chatroom',
+ 'SubType': '0',
+ 'TalkerId': '4',
+ 'Type': '1',
+ 'localId': '21'}
+
+# 其他用户在群里发引用消息
+{'BytesExtra': 'CgQIEBAAGhcIARITd3hpZF90bnYwaGQ1aGozcnMxMRrkAwgHEt8DPG1zZ3NvdXJjZT4KICAgIDxhbG5vZGU+CiAgICAgICAgPGZyPjQ8L2ZyPgogICAgPC9hbG5vZGU+CiAgICA8ZWdnSW5jbHVkZWQ+MTwvZWdnSW5jbHVkZWQ+CiAgICA8c2VjX21zZ19ub2RlPgogICAgICAgIDx1dWlkPjE2Yzk3MmQzZGVjYjcyZjFkYzIwM2U4ZjI1MGVjZTcwXzwvdXVpZD4KICAgICAgICA8cmlzay1maWxlLWZsYWcgLz4KICAgICAgICA8cmlzay1maWxlLW1kNS1saXN0IC8+CiAgICAgICAgPGFsbm9kZT4KICAgICAgICAgICAgPGZyPjE8L2ZyPgogICAgICAgIDwvYWxub2RlPgogICAgPC9zZWNfbXNnX25vZGU+CiAgICA8c2lsZW5jZT4wPC9zaWxlbmNlPgogICAgPG1lbWJlcmNvdW50PjQ8L21lbWJlcmNvdW50PgogICAgPHNpZ25hdHVyZT5WMV9vWTFGbG1FQXx2MV9EQ05YU0NNWjwvc2lnbmF0dXJlPgogICAgPHRtcF9ub2RlPgogICAgICAgIDxwdWJsaXNoZXItaWQgLz4KICAgIDwvdG1wX25vZGU+CjwvbXNnc291cmNlPgoaJAgCEiAzMjc3ZjgxM2E4Yjk4YTgzYTM0MGRhNjNhYzg3NTg0MBpJCAQSRWxvbmVseTIwMTJcRmlsZVN0b3JhZ2VcQ2FjaGVcMjAyNC0xMFxmZDIxM2YyZTBlZDg5MGI3MjlmYjVjZGI1MmYyOGE2Zg==',
+ 'BytesTrans': '',
+ 'Content': '<?xml version="1.0"?>\n'     //注意，这种消息下才有Content 字段
+            '<msg>\n'
+            '\t<appmsg appid="" sdkver="0">\n'
+            '\t\t<title>hi</title>\n'
+            '\t\t<des />\n'
+            '\t\t<username />\n'
+            '\t\t<action>view</action>\n'
+            '\t\t<type>57</type>\n'
+            '\t\t<showtype>0</showtype>\n'
+            '\t\t<content />\n'
+            '\t\t<url />\n'
+            '\t\t<lowurl />\n'
+            '\t\t<forwardflag>0</forwardflag>\n'
+            '\t\t<dataurl />\n'
+            '\t\t<lowdataurl />\n'
+            '\t\t<contentattr>0</contentattr>\n'
+            '\t\t<streamvideo>\n'
+            '\t\t\t<streamvideourl />\n'
+            '\t\t\t<streamvideototaltime>0</streamvideototaltime>\n'
+            '\t\t\t<streamvideotitle />\n'
+            '\t\t\t<streamvideowording />\n'
+            '\t\t\t<streamvideoweburl />\n'
+            '\t\t\t<streamvideothumburl />\n'
+            '\t\t\t<streamvideoaduxinfo />\n'
+            '\t\t\t<streamvideopublishid />\n'
+            '\t\t</streamvideo>\n'
+            '\t\t<canvasPageItem>\n'
+            '\t\t\t<canvasPageXml><![CDATA[]]></canvasPageXml>\n'
+            '\t\t</canvasPageItem>\n'
+            '\t\t<refermsg>\n'
+            '\t\t\t<type>1</type>\n'
+            '\t\t\t<svrid>3379963742784348538</svrid>\n'
+            '\t\t\t<fromusr>51797628120@chatroom</fromusr>\n'
+            '\t\t\t<chatusr>lonely2012</chatusr>\n'
+            '\t\t\t<displayname>阿瓦达啃大瓜🍉</displayname>\n'
+            '\t\t\t<msgsource>&lt;msgsource&gt;\n'
+            '\t'
+            '&lt;atuserlist&gt;&lt;![CDATA[wxid_a6xxa7n11u5j22]]&gt;&lt;/atuserlist&gt;\n'
+            '\t&lt;pua&gt;1&lt;/pua&gt;\n'
+            '\t&lt;eggIncluded&gt;1&lt;/eggIncluded&gt;\n'
+            '\t&lt;silence&gt;0&lt;/silence&gt;\n'
+            '\t&lt;membercount&gt;4&lt;/membercount&gt;\n'
+            '\t&lt;signature&gt;V1_Ac5bKFOb|v1_Ac5bKFOb&lt;/signature&gt;\n'
+            '\t&lt;tmp_node&gt;\n'
+            '\t\t&lt;publisher-id&gt;&lt;/publisher-id&gt;\n'
+            '\t&lt;/tmp_node&gt;\n'
+            '&lt;/msgsource&gt;\n'
+            '</msgsource>\n'
+            '\t\t\t<content>\n'
+            '@大兄弟666\u2005Hi</content>\n'
+            '\t\t\t<strid />\n'
+            '\t\t\t<createtime>1729738089</createtime>\n'
+            '\t\t</refermsg>\n'
+            '\t\t<appattach>\n'
+            '\t\t\t<totallen>0</totallen>\n'
+            '\t\t\t<attachid />\n'
+            '\t\t\t<cdnattachurl />\n'
+            '\t\t\t<emoticonmd5 />\n'
+            '\t\t\t<aeskey />\n'
+            '\t\t\t<fileext />\n'
+            '\t\t\t<islargefilemsg>0</islargefilemsg>\n'
+            '\t\t</appattach>\n'
+            '\t\t<extinfo />\n'
+            '\t\t<androidsource>0</androidsource>\n'
+            '\t\t<thumburl />\n'
+            '\t\t<mediatagname />\n'
+            '\t\t<messageaction><![CDATA[]]></messageaction>\n'
+            '\t\t<messageext><![CDATA[]]></messageext>\n'
+            '\t\t<emoticongift>\n'
+            '\t\t\t<packageflag>0</packageflag>\n'
+            '\t\t\t<packageid />\n'
+            '\t\t</emoticongift>\n'
+            '\t\t<emoticonshared>\n'
+            '\t\t\t<packageflag>0</packageflag>\n'
+            '\t\t\t<packageid />\n'
+            '\t\t</emoticonshared>\n'
+            '\t\t<designershared>\n'
+            '\t\t\t<designeruin>0</designeruin>\n'
+            '\t\t\t<designername>null</designername>\n'
+            '\t\t\t'
+            '<designerrediretcturl><![CDATA[null]]></designerrediretcturl>\n'
+            '\t\t</designershared>\n'
+            '\t\t<emotionpageshared>\n'
+            '\t\t\t<tid>0</tid>\n'
+            '\t\t\t<title>null</title>\n'
+            '\t\t\t<desc>null</desc>\n'
+            '\t\t\t<iconUrl><![CDATA[null]]></iconUrl>\n'
+            '\t\t\t<secondUrl>null</secondUrl>\n'
+            '\t\t\t<pageType>0</pageType>\n'
+            '\t\t\t<setKey>null</setKey>\n'
+            '\t\t</emotionpageshared>\n'
+            '\t\t<webviewshared>\n'
+            '\t\t\t<shareUrlOriginal />\n'
+            '\t\t\t<shareUrlOpen />\n'
+            '\t\t\t<jsAppId />\n'
+            '\t\t\t<publisherId />\n'
+            '\t\t\t<publisherReqId />\n'
+            '\t\t</webviewshared>\n'
+            '\t\t<template_id />\n'
+            '\t\t<md5 />\n'
+            '\t\t<websearch>\n'
+            '\t\t\t<rec_category>0</rec_category>\n'
+            '\t\t\t<channelId>0</channelId>\n'
+            '\t\t</websearch>\n'
+            '\t\t<weappinfo>\n'
+            '\t\t\t<username />\n'
+            '\t\t\t<appid />\n'
+            '\t\t\t<appservicetype>0</appservicetype>\n'
+            '\t\t\t<secflagforsinglepagemode>0</secflagforsinglepagemode>\n'
+            '\t\t\t<videopageinfo>\n'
+            '\t\t\t\t<thumbwidth>0</thumbwidth>\n'
+            '\t\t\t\t<thumbheight>0</thumbheight>\n'
+            '\t\t\t\t<fromopensdk>0</fromopensdk>\n'
+            '\t\t\t</videopageinfo>\n'
+            '\t\t</weappinfo>\n'
+            '\t\t<statextstr />\n'
+            '\t\t<musicShareItem>\n'
+            '\t\t\t<musicDuration>0</musicDuration>\n'
+            '\t\t</musicShareItem>\n'
+            '\t\t<finderLiveProductShare>\n'
+            '\t\t\t<finderLiveID><![CDATA[]]></finderLiveID>\n'
+            '\t\t\t<finderUsername><![CDATA[]]></finderUsername>\n'
+            '\t\t\t<finderObjectID><![CDATA[]]></finderObjectID>\n'
+            '\t\t\t<finderNonceID><![CDATA[]]></finderNonceID>\n'
+            '\t\t\t<liveStatus><![CDATA[]]></liveStatus>\n'
+            '\t\t\t<appId><![CDATA[]]></appId>\n'
+            '\t\t\t<pagePath><![CDATA[]]></pagePath>\n'
+            '\t\t\t<productId><![CDATA[]]></productId>\n'
+            '\t\t\t<coverUrl><![CDATA[]]></coverUrl>\n'
+            '\t\t\t<productTitle><![CDATA[]]></productTitle>\n'
+            '\t\t\t<marketPrice><![CDATA[0]]></marketPrice>\n'
+            '\t\t\t<sellingPrice><![CDATA[0]]></sellingPrice>\n'
+            '\t\t\t<platformHeadImg><![CDATA[]]></platformHeadImg>\n'
+            '\t\t\t<platformName><![CDATA[]]></platformName>\n'
+            '\t\t\t<shopWindowId><![CDATA[]]></shopWindowId>\n'
+            '\t\t\t<flashSalePrice><![CDATA[0]]></flashSalePrice>\n'
+            '\t\t\t<flashSaleEndTime><![CDATA[0]]></flashSaleEndTime>\n'
+            '\t\t\t<ecSource><![CDATA[]]></ecSource>\n'
+            '\t\t\t<sellingPriceWording><![CDATA[]]></sellingPriceWording>\n'
+            '\t\t\t<platformIconURL><![CDATA[]]></platformIconURL>\n'
+            '\t\t\t<firstProductTagURL><![CDATA[]]></firstProductTagURL>\n'
+            '\t\t\t'
+            '<firstProductTagAspectRatioString><![CDATA[0.0]]></firstProductTagAspectRatioString>\n'
+            '\t\t\t<secondProductTagURL><![CDATA[]]></secondProductTagURL>\n'
+            '\t\t\t'
+            '<secondProductTagAspectRatioString><![CDATA[0.0]]></secondProductTagAspectRatioString>\n'
+            '\t\t\t'
+            '<firstGuaranteeWording><![CDATA[]]></firstGuaranteeWording>\n'
+            '\t\t\t'
+            '<secondGuaranteeWording><![CDATA[]]></secondGuaranteeWording>\n'
+            '\t\t\t'
+            '<thirdGuaranteeWording><![CDATA[]]></thirdGuaranteeWording>\n'
+            '\t\t\t<isPriceBeginShow>false</isPriceBeginShow>\n'
+            '\t\t\t<lastGMsgID><![CDATA[]]></lastGMsgID>\n'
+            '\t\t\t<promoterKey><![CDATA[]]></promoterKey>\n'
+            '\t\t\t<discountWording><![CDATA[]]></discountWording>\n'
+            '\t\t\t'
+            '<priceSuffixDescription><![CDATA[]]></priceSuffixDescription>\n'
+            '\t\t\t<productCardKey><![CDATA[]]></productCardKey>\n'
+            '\t\t\t<isWxShop><![CDATA[]]></isWxShop>\n'
+            '\t\t\t<brandIconUrl><![CDATA[]]></brandIconUrl>\n'
+            '\t\t\t<showBoxItemStringList />\n'
+            '\t\t</finderLiveProductShare>\n'
+            '\t\t<finderOrder>\n'
+            '\t\t\t<appID><![CDATA[]]></appID>\n'
+            '\t\t\t<orderID><![CDATA[]]></orderID>\n'
+            '\t\t\t<path><![CDATA[]]></path>\n'
+            '\t\t\t<priceWording><![CDATA[]]></priceWording>\n'
+            '\t\t\t<stateWording><![CDATA[]]></stateWording>\n'
+            '\t\t\t<productImageURL><![CDATA[]]></productImageURL>\n'
+            '\t\t\t<products><![CDATA[]]></products>\n'
+            '\t\t\t<productsCount><![CDATA[0]]></productsCount>\n'
+            '\t\t</finderOrder>\n'
+            '\t\t<finderShopWindowShare>\n'
+            '\t\t\t<finderUsername><![CDATA[]]></finderUsername>\n'
+            '\t\t\t<avatar><![CDATA[]]></avatar>\n'
+            '\t\t\t<nickname><![CDATA[]]></nickname>\n'
+            '\t\t\t'
+            '<commodityInStockCount><![CDATA[]]></commodityInStockCount>\n'
+            '\t\t\t<appId><![CDATA[]]></appId>\n'
+            '\t\t\t<path><![CDATA[]]></path>\n'
+            '\t\t\t<appUsername><![CDATA[]]></appUsername>\n'
+            '\t\t\t<query><![CDATA[]]></query>\n'
+            '\t\t\t<liteAppId><![CDATA[]]></liteAppId>\n'
+            '\t\t\t<liteAppPath><![CDATA[]]></liteAppPath>\n'
+            '\t\t\t<liteAppQuery><![CDATA[]]></liteAppQuery>\n'
+            '\t\t\t<platformTagURL><![CDATA[]]></platformTagURL>\n'
+            '\t\t\t<saleWording><![CDATA[]]></saleWording>\n'
+            '\t\t\t<lastGMsgID><![CDATA[]]></lastGMsgID>\n'
+            '\t\t\t<profileTypeWording><![CDATA[]]></profileTypeWording>\n'
+            '\t\t\t<saleWordingExtra><![CDATA[]]></saleWordingExtra>\n'
+            '\t\t\t<isWxShop><![CDATA[]]></isWxShop>\n'
+            '\t\t\t<platformIconUrl><![CDATA[]]></platformIconUrl>\n'
+            '\t\t\t<brandIconUrl><![CDATA[]]></brandIconUrl>\n'
+            '\t\t\t<description><![CDATA[]]></description>\n'
+            '\t\t\t<backgroundUrl><![CDATA[]]></backgroundUrl>\n'
+            '\t\t\t'
+            '<darkModePlatformIconUrl><![CDATA[]]></darkModePlatformIconUrl>\n'
+            '\t\t\t<reputationInfo>\n'
+            '\t\t\t\t<hasReputationInfo>0</hasReputationInfo>\n'
+            '\t\t\t\t<reputationScore>0</reputationScore>\n'
+            '\t\t\t\t<reputationWording />\n'
+            '\t\t\t\t<reputationTextColor />\n'
+            '\t\t\t\t<reputationLevelWording />\n'
+            '\t\t\t\t<reputationBackgroundColor />\n'
+            '\t\t\t</reputationInfo>\n'
+            '\t\t\t<productImageURLList />\n'
+            '\t\t</finderShopWindowShare>\n'
+            '\t\t<findernamecard>\n'
+            '\t\t\t<username />\n'
+            '\t\t\t<avatar><![CDATA[]]></avatar>\n'
+            '\t\t\t<nickname />\n'
+            '\t\t\t<auth_job />\n'
+            '\t\t\t<auth_icon>0</auth_icon>\n'
+            '\t\t\t<auth_icon_url />\n'
+            '\t\t\t<ecSource><![CDATA[]]></ecSource>\n'
+            '\t\t\t<lastGMsgID><![CDATA[]]></lastGMsgID>\n'
+            '\t\t</findernamecard>\n'
+            '\t\t<finderGuarantee>\n'
+            '\t\t\t<scene><![CDATA[0]]></scene>\n'
+            '\t\t</finderGuarantee>\n'
+            '\t\t<directshare>0</directshare>\n'
+            '\t\t<gamecenter>\n'
+            '\t\t\t<namecard>\n'
+            '\t\t\t\t<iconUrl />\n'
+            '\t\t\t\t<name />\n'
+            '\t\t\t\t<desc />\n'
+            '\t\t\t\t<tail />\n'
+            '\t\t\t\t<jumpUrl />\n'
+            '\t\t\t</namecard>\n'
+            '\t\t</gamecenter>\n'
+            '\t\t<patMsg>\n'
+            '\t\t\t<chatUser />\n'
+            '\t\t\t<records>\n'
+            '\t\t\t\t<recordNum>0</recordNum>\n'
+            '\t\t\t</records>\n'
+            '\t\t</patMsg>\n'
+            '\t\t<secretmsg>\n'
+            '\t\t\t<issecretmsg>0</issecretmsg>\n'
+            '\t\t</secretmsg>\n'
+            '\t\t<referfromscene>0</referfromscene>\n'
+            '\t\t<gameshare>\n'
+            '\t\t\t<liteappext>\n'
+            '\t\t\t\t<liteappbizdata />\n'
+            '\t\t\t\t<priority>0</priority>\n'
+            '\t\t\t</liteappext>\n'
+            '\t\t\t<appbrandext>\n'
+            '\t\t\t\t<litegameinfo />\n'
+            '\t\t\t\t<priority>-1</priority>\n'
+            '\t\t\t</appbrandext>\n'
+            '\t\t\t<gameshareid />\n'
+            '\t\t\t<sharedata />\n'
+            '\t\t\t<isvideo>0</isvideo>\n'
+            '\t\t\t<duration>-1</duration>\n'
+            '\t\t\t<isexposed>0</isexposed>\n'
+            '\t\t\t<readtext />\n'
+            '\t\t</gameshare>\n'
+            '\t\t<mpsharetrace>\n'
+            '\t\t\t<hasfinderelement>0</hasfinderelement>\n'
+            '\t\t\t<lastgmsgid />\n'
+            '\t\t</mpsharetrace>\n'
+            '\t\t<wxgamecard>\n'
+            '\t\t\t<framesetname />\n'
+            '\t\t\t<mbcarddata />\n'
+            '\t\t\t<minpkgversion />\n'
+            '\t\t\t<clientextinfo />\n'
+            '\t\t\t<mbcardheight>0</mbcardheight>\n'
+            '\t\t\t<isoldversion>0</isoldversion>\n'
+            '\t\t</wxgamecard>\n'
+            '\t\t<liteapp>\n'
+            '\t\t\t<id>null</id>\n'
+            '\t\t\t<path />\n'
+            '\t\t\t<query />\n'
+            '\t\t</liteapp>\n'
+            '\t</appmsg>\n'
+            '\t<fromusername>wxid_tnv0hd5hj3rs11</fromusername>\n'
+            '\t<scene>0</scene>\n'
+            '\t<appinfo>\n'
+            '\t\t<version>1</version>\n'
+            '\t\t<appname></appname>\n'
+            '\t</appinfo>\n'
+            '\t<commenturl></commenturl>\n'
+            '</msg>\n'
+            '\x00',
+ 'CreateTime': '1729738097',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '0',
+ 'MsgSequence': '894411428',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '3305542718029459131',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sender': 'wxid_tnv0hd5hj3rs11',  //发送人 wxid
+ 'Sequence': '1729738097000',
+ 'Status': '2',
+ 'StatusEx': '0',
+ 'StrContent': '',
+ 'StrTalker': '51797628120@chatroom',
+ 'SubType': '57',
+ 'TalkerId': '4',
+ 'Type': '49',  //type居然与公众号文章卡片一样，但 subtype 不同
+ 'localId': '22'}
+
+# 其他用户群聊内@bot 信息
+{'BytesExtra': 'CgQIEBAAGhcIARITd3hpZF90bnYwaGQ1aGozcnMxMRqsAwgHEqcDPG1zZ3NvdXJjZT4KICAgIDxhdHVzZXJsaXN0PgogICAgICAgIDwhW0NEQVRBW2xvbmVseTIwMTIsd3hpZF9hNnh4YTduMTF1NWoyMl1dPgogICAgPC9hdHVzZXJsaXN0PgogICAgPHB1YT4xPC9wdWE+CiAgICA8ZWdnSW5jbHVkZWQ+MTwvZWdnSW5jbHVkZWQ+CiAgICA8c2lsZW5jZT4wPC9zaWxlbmNlPgogICAgPG1lbWJlcmNvdW50PjQ8L21lbWJlcmNvdW50PgogICAgPHNpZ25hdHVyZT5WMV9EdVZsVzl5d3x2MV9EdVZsVzl5dzwvc2lnbmF0dXJlPgogICAgPHRtcF9ub2RlPgogICAgICAgIDxwdWJsaXNoZXItaWQgLz4KICAgIDwvdG1wX25vZGU+CiAgICA8c2VjX21zZ19ub2RlPgogICAgICAgIDxhbG5vZGU+CiAgICAgICAgICAgIDxmcj4xPC9mcj4KICAgICAgICA8L2Fsbm9kZT4KICAgIDwvc2VjX21zZ19ub2RlPgo8L21zZ3NvdXJjZT4KGiQIAhIgM2Q4OGZkZDE2Mjg4OWRkZGE2Mjc5YmRkOWQyMDE1Y2M=',
+ 'BytesTrans': '',
+ 'CompressContent': '',
+ 'CreateTime': '1729738119',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '0',
+ 'MsgSequence': '894411430',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '1434395760113971896',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sender': 'wxid_tnv0hd5hj3rs11',
+ 'Sequence': '1729738119000',
+ 'Status': '2',
+ 'StatusEx': '0',
+ 'StrContent': '@阿瓦达啃大瓜🍉\u2005@大兄弟666\u2005',
+ 'StrTalker': '51797628120@chatroom',
+ 'SubType': '0',
+ 'TalkerId': '4',
+ 'Type': '1',
+ 'localId': '24'}
+
+
+{'BytesExtra': 'CgQIEBAAGhcIARITd3hpZF90bnYwaGQ1aGozcnMxMRqYAwgHEpMDPG1zZ3NvdXJjZT4KICAgIDxhdHVzZXJsaXN0PgogICAgICAgIDwhW0NEQVRBW2xvbmVseTIwMTJdXT4KICAgIDwvYXR1c2VybGlzdD4KICAgIDxwdWE+MTwvcHVhPgogICAgPGVnZ0luY2x1ZGVkPjE8L2VnZ0luY2x1ZGVkPgogICAgPHNpbGVuY2U+MDwvc2lsZW5jZT4KICAgIDxtZW1iZXJjb3VudD40PC9tZW1iZXJjb3VudD4KICAgIDxzaWduYXR1cmU+VjFfQnVmMkcvUHh8djFfQnVmMkcvUHg8L3NpZ25hdHVyZT4KICAgIDx0bXBfbm9kZT4KICAgICAgICA8cHVibGlzaGVyLWlkIC8+CiAgICA8L3RtcF9ub2RlPgogICAgPHNlY19tc2dfbm9kZT4KICAgICAgICA8YWxub2RlPgogICAgICAgICAgICA8ZnI+MTwvZnI+CiAgICAgICAgPC9hbG5vZGU+CiAgICA8L3NlY19tc2dfbm9kZT4KPC9tc2dzb3VyY2U+ChokCAISIDliZjU0MWE5YTRmZDdmNDY1OGRkZGUzN2RkMjk5ZDJk',
+ 'BytesTrans': '',
+ 'CompressContent': '',
+ 'CreateTime': '1729738127',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '0',
+ 'MsgSequence': '894411431',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '4570123452170116015',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sender': 'wxid_tnv0hd5hj3rs11',
+ 'Sequence': '1729738127000',
+ 'Status': '2',
+ 'StatusEx': '0',
+ 'StrContent': '@阿瓦达啃大瓜🍉\u2005#start',
+ 'StrTalker': '51797628120@chatroom',
+ 'SubType': '0',
+ 'TalkerId': '4',
+ 'Type': '1',
+ 'localId': '25'}
+
+# bot 在群里@所有人信息
+{'BytesExtra': 'CgQIEBAAGt4CCAcS2QI8bXNnc291cmNlPgogICAgPGF0dXNlcmxpc3Q+CiAgICAgICAgPCFbQ0RBVEFbbG9uZWx5MjAxMl1dPgogICAgPC9hdHVzZXJsaXN0PgogICAgPHB1YT4xPC9wdWE+CiAgICA8ZWdnSW5jbHVkZWQ+MTwvZWdnSW5jbHVkZWQ+CiAgICA8c2lnbmF0dXJlPlYxX3RET0oyRjg3fHYxX3RET0oyRjg3PC9zaWduYXR1cmU+CiAgICA8dG1wX25vZGU+CiAgICAgICAgPHB1Ymxpc2hlci1pZCAvPgogICAgPC90bXBfbm9kZT4KICAgIDxzZWNfbXNnX25vZGU+CiAgICAgICAgPGFsbm9kZT4KICAgICAgICAgICAgPGZyPjE8L2ZyPgogICAgICAgIDwvYWxub2RlPgogICAgPC9zZWNfbXNnX25vZGU+CjwvbXNnc291cmNlPgoaJAgCEiA0Mjc1ZDNjY2YzMDA5YTBjNDY1OWMxMjc2MjA0ZTIzMQ==',
+ 'BytesTrans': '',
+ 'CompressContent': '',
+ 'CreateTime': '1729738140',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '1',
+ 'MsgSequence': '894411432',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '5137344751371586149',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sender': '<msgsource>\\n    <atuserlist>\\n        '
+           '<![CDATA[lonely2012]]>\\n    </atuserlist>\\n    '           //atuserlist 是自己的时候就是@all？
+           '<pua>1</pua>\\n    <eggIncluded>1</eggIncluded>\\n    '
+           '<signature>V1_tDOJ2F87|v1_tDOJ2F87</signature>\\n    '
+           '<tmp_node>\\n        <publisher-id />\\n    </tmp_node>\\n    '
+           '<sec_msg_node>\\n        <alnode>\\n            '
+           '<fr>1</fr>\\n        </alnode>\\n    '
+           '</sec_msg_node>\\n</msgsource>\\n',
+ 'Sequence': '1729738140000',
+ 'Status': '2',
+ 'StatusEx': '0',
+ 'StrContent': '@所有人\u2005hi',   #只能用 re 判断了
+ 'StrTalker': '51797628120@chatroom',
+ 'SubType': '0',
+ 'TalkerId': '4',
+ 'Type': '1',
+ 'localId': '26'}
+
+# 成员离群（成员主动离群的消息拿不到）
+{'data': [{'BytesExtra': 'CgQIEBAACgQIBRABGrcBCAcSsgE8bXNnc291cmNlPgogICAgPHRtcF9ub2RlPgogICAgICAgIDxwdWJsaXNoZXItaWQgLz4KICAgIDwvdG1wX25vZGU+CiAgICA8c2VjX21zZ19ub2RlPgogICAgICAgIDxhbG5vZGU+CiAgICAgICAgICAgIDxmcj4xPC9mcj4KICAgICAgICA8L2Fsbm9kZT4KICAgIDwvc2VjX21zZ19ub2RlPgo8L21zZ3NvdXJjZT4KGiQIAhIgZTMxNDY3MWEyM2FjMmZmZDFjYTgyNGQzZGEwZDFhMTY=',
+           'BytesTrans': '',
+           'CompressContent': '',
+           'CreateTime': '1729913107',
+           'DisplayContent': '',
+           'FlagEx': '0',
+           'IsSender': '0',
+           'MsgSequence': '894412115',
+           'MsgServerSeq': '1',
+           'MsgSvrID': '5263636034289785074',
+           'Reserved0': '0',
+           'Reserved1': '2',
+           'Reserved2': '',
+           'Reserved3': '',
+           'Reserved4': '',
+           'Reserved5': '',
+           'Reserved6': '',
+           'Sender': '<msgsource>\\n    <tmp_node>\\n        <publisher-id '
+                     '/>\\n    </tmp_node>\\n    <sec_msg_node>\\n        '
+                     '<alnode>\\n            <fr>1</fr>\\n        '
+                     '</alnode>\\n    </sec_msg_node>\\n</msgsource>\\n',
+           'Sequence': '1729913107000',
+           'Status': '2',
+           'StatusEx': '0',
+           'StrContent': '你将"-跟着感觉走"移出了群聊',
+           'StrTalker': '51797628120@chatroom',
+           'SubType': '0',
+           'TalkerId': '4',
+           'Type': '10000',
+           'localId': '41'}],
+ 'total': 1,
+ 'wxid': 'lonely2012'}
+
+{'data': [{'BytesExtra': 'CgQIEBAACgQIBRABGhgIARIUNTE3OTc2MjgxMjBAY2hhdHJvb20aJggHEiLkvaDpgoDor7ci5peg56m6IuWKoOWFpeS6hue+pOiBiiAgGiQIAhIgYTE1YjIzMWUwZWMzMjI4ZWJkNGQ4YmM1NDAxYjQ1NDE=',
+           'BytesTrans': '',
+           'CompressContent': '',
+           'CreateTime': '1729913197',
+           'DisplayContent': '',
+           'FlagEx': '0',
+           'IsSender': '0',
+           'MsgSequence': '894412117',
+           'MsgServerSeq': '1',
+           'MsgSvrID': '922397154546323706',
+           'Reserved0': '0',
+           'Reserved1': '2',
+           'Reserved2': '',
+           'Reserved3': '',
+           'Reserved4': '',
+           'Reserved5': '',
+           'Reserved6': '',
+           'Sender': '51797628120@chatroom',
+           'Sequence': '1729913197000',
+           'Status': '2',
+           'StatusEx': '0',
+           'StrContent': '你邀请"无空"加入了群聊  ',
+           'StrTalker': '51797628120@chatroom',
+           'SubType': '8000',
+           'TalkerId': '4',
+           'Type': '10000',
+           'localId': '42'}],
+ 'total': 1,
+ 'wxid': 'lonely2012'}
+
+#被移出群聊
+{'BytesExtra': 'CgQIEBAACgQIBRABGt4BCAcS2QE8bXNnc291cmNlPgogICAgPHNpZ25hdHVyZT52MV83WmsweVJqNjwvc2lnbmF0dXJlPgogICAgPHRtcF9ub2RlPgogICAgICAgIDxwdWJsaXNoZXItaWQgLz4KICAgIDwvdG1wX25vZGU+CiAgICA8c2VjX21zZ19ub2RlPgogICAgICAgIDxhbG5vZGU+CiAgICAgICAgICAgIDxmcj4xPC9mcj4KICAgICAgICA8L2Fsbm9kZT4KICAgIDwvc2VjX21zZ19ub2RlPgo8L21zZ3NvdXJjZT4KGiQIAhIgNjE3NmNjMTc0NDk5MzAyMmZjMjhlM2I4ZGNmZThlMDc=',
+ 'BytesTrans': '',
+ 'CompressContent': '',
+ 'CreateTime': '1730128073',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '0',
+ 'MsgSequence': '894413067',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '5679811810688463323',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sender': '<msgsource>\\n    <signature>v1_7Zk0yRj6</signature>\\n    '
+           '<tmp_node>\\n        <publisher-id />\\n    </tmp_node>\\n    '
+           '<sec_msg_node>\\n        <alnode>\\n            '
+           '<fr>1</fr>\\n        </alnode>\\n    '
+           '</sec_msg_node>\\n</msgsource>\\n',
+ 'Sequence': '1730128073000',
+ 'Status': '2',
+ 'StatusEx': '0',
+ 'StrContent': '你被"无空"移出群聊',
+ 'StrTalker': '56963085826@chatroom',
+ 'SubType': '0',
+ 'TalkerId': '1',
+ 'Type': '10000',
+ 'localId': '3'}
+
+
+{'data': [{'BytesExtra': 'CgQIEBAACgQIBRABGrcBCAcSsgE8bXNnc291cmNlPgogICAgPHRtcF9ub2RlPgogICAgICAgIDxwdWJsaXNoZXItaWQgLz4KICAgIDwvdG1wX25vZGU+CiAgICA8c2VjX21zZ19ub2RlPgogICAgICAgIDxhbG5vZGU+CiAgICAgICAgICAgIDxmcj4xPC9mcj4KICAgICAgICA8L2Fsbm9kZT4KICAgIDwvc2VjX21zZ19ub2RlPgo8L21zZ3NvdXJjZT4KGiQIAhIgNzY1ZGY1OTM4NDA4NDY2Y2Q5NmQzZGIzNjMzY2FmZTY=',
+           'BytesTrans': '',
+           'CompressContent': '',
+           'CreateTime': '1729913291',
+           'DisplayContent': '',
+           'FlagEx': '0',
+           'IsSender': '0',
+           'MsgSequence': '894412118',
+           'MsgServerSeq': '1',
+           'MsgSvrID': '2079211550514763387',
+           'Reserved0': '0',
+           'Reserved1': '2',
+           'Reserved2': '',
+           'Reserved3': '',
+           'Reserved4': '',
+           'Reserved5': '',
+           'Reserved6': '',
+           'Sender': '<msgsource>\\n    <tmp_node>\\n        <publisher-id '
+                     '/>\\n    </tmp_node>\\n    <sec_msg_node>\\n        '
+                     '<alnode>\\n            <fr>1</fr>\\n        '
+                     '</alnode>\\n    </sec_msg_node>\\n</msgsource>\\n',
+           'Sequence': '1729913291000',
+           'Status': '2',
+           'StatusEx': '0',
+           'StrContent': '"无空"邀请"-跟着感觉走"加入了群聊',
+           'StrTalker': '51797628120@chatroom',
+           'SubType': '0',
+           'TalkerId': '4',
+           'Type': '10000',
+           'localId': '43'}],
+ 'total': 1,
+ 'wxid': 'lonely2012'}
+
+# 获取群聊详情 **注意离群加群后要等一会儿，才能刷出包含新成员的列表
+{'code': 200,
+ 'data': {'Announcement': '',
+          'AnnouncementEditor': '',
+          'AnnouncementPublishTime': '0',
+          'ChatRoomFlag': '1',
+          'ChatRoomStatus': '524288',
+          'DisplayNameList': '^G^G',
+          'InfoVersion': '3',
+          'IsShowName': '1',
+          'Members': {'lonely2012': {'Alias': '',
+                                     'BigHeadImgUrl': '',
+                                     'ChatRoomNotify': '0',
+                                     'ChatRoomType': '0',
+                                     'DelFlag': '0',
+                                     'DomainList': '',
+                                     'EncryptUserName': '',
+                                     'ExtraBuf': '3fMmgwQAAAAAdHUsBgQCAAAAiOKPzgQAAAAAdhodLRgCAAAAAAACY6DLBAAAAAAEUf8SGAIAAAAAACKMZqgEAQAAAEbPEMQYAgAAAAAApNkCShgCAAAAAADi6qjRGAIAAAAAAB0CW78YAgAAAAAATWxFcAQAAAAA+Re8wBgCAAAAAAB1k3itGAIAAAAAAEM1390YAgAAAAAA3kza6xgCAAAAAACnK8IKBAAAAAAGn+1SBAAAAACbD0KZBAAAAAA9ZB4iBAEAAAASSYIsBAAAAABOuW2FGAIAAAAAALT3OssEAAAAAAlZ65IEAAAAADz0oxUYQAAAADgAOQA3ADYANwAzADkAMwA0ADYANgA3ADcANwA3AF8AOAA5ADcANgA3ADMAOQAzADQANgA2ADcANwA3ADcAAADJR3rGAgHkTNDoBAAAAAC3rPD1BAAAAABXp7WoBQAAAAAAAAAAga4ZtBgCAAAAAABpXzFwGAIAAAAAAPsIPdkYAgAAAAAAAkDjfxgCAAAAAAAxXQKjGAIAAAAAAH3sC8MYAgAAAAAADnGfExgCAAAAAAAWeRyQFwIAAAAKAJRfMZAXAAAAAA==',
+                                     'HeadImgMd5': '',
+                                     'LabelIDList': '',
+                                     'NickName': '阿瓦达啃大瓜🍉',
+                                     'PYInitial': '',
+                                     'QuanPin': '',
+                                     'Remark': '',
+                                     'RemarkPYInitial': '',
+                                     'RemarkQuanPin': '',
+                                     'Reserved1': '1',
+                                     'Reserved10': '',
+                                     'Reserved11': '',
+                                     'Reserved2': '2',
+                                     'Reserved3': '',
+                                     'Reserved4': '',
+                                     'Reserved5': '0',
+                                     'Reserved6': '',
+                                     'Reserved7': '',
+                                     'Reserved8': '',
+                                     'Reserved9': '',
+                                     'SmallHeadImgUrl': '',
+                                     'Type': '0',
+                                     'UserName': 'lonely2012',
+                                     'VerifyFlag': '0',
+                                     'profilePicture': 'https://wx.qlogo.cn/mmhead/ver_1/RE1eK8zm3pYWqicd14GoatDyQx1D7MneTia7nKKcomnSJMOZibOibsQagqm0Zicq3mPA25ZVIFLYk58cWnalBOmX8kg/0',
+                                     'profilePictureSmall': 'https://wx.qlogo.cn/mmhead/ver_1/RE1eK8zm3pYWqicd14GoatDyQx1D7MneTia7nKKcomnSJMOZibOibsQagqm0Zicq3mPA25ZVIFLYk58cWnalBOmX8kg/132'},
+                      'wxid_a6xxa7n11u5j22': {'Alias': 'baohukeji',
+                                              'BigHeadImgUrl': '',
+                                              'ChatRoomNotify': '0',
+                                              'ChatRoomType': '0',
+                                              'DelFlag': '0',
+                                              'DomainList': '',
+                                              'EncryptUserName': '',
+                                              'ExtraBuf': '3fMmgwQCAAAAdHUsBgQBAAAAiOKPzgQAAAAAdhodLRgCAAAAAAACY6DLBAAAAAAEUf8SGAIAAAAAACKMZqgEAAAAAEbPEMQYAgAAAAAApNkCShgGAAAAQwBOAAAA4uqo0RgCAAAAAAAdAlu/GAIAAAAAAE1sRXAEAAAAAPkXvMAYAgAAAAAAdZN4rRgCAAAAAABDNd/dGAIAAAAAAN5M2usYAgAAAAAApyvCCgT/////Bp/tUgQDAAAAmw9CmQQAAAAAPWQeIgQBAAAAEkmCLAQAAAAATrlthRgCAAAAAAC09zrLBAAAAAAJWeuSBAAAAAA89KMVGAIAAAAAAMlHesYCAeRM0OgEAQAAALes8PUEAAAAAFentagFAAAAAAAAAACBrhm0GAIAAAAAAGlfMXAYAgAAAAAA+wg92RgCAAAAAAACQON/GAIAAAAAADFdAqMYAgAAAAAAfewLwxgCAAAAAAAOcZ8TGAIAAAAAABZ5HJAXAAAAAJRfMZAXAAAAAA==',
+                                              'HeadImgMd5': '',
+                                              'LabelIDList': '',
+                                              'NickName': '大兄弟666',
+                                              'PYInitial': 'DXD666',
+                                              'QuanPin': 'daxiongdi666',
+                                              'Remark': '',
+                                              'RemarkPYInitial': '',
+                                              'RemarkQuanPin': '',
+                                              'Reserved1': '1',
+                                              'Reserved10': '',
+                                              'Reserved11': '',
+                                              'Reserved2': '1',
+                                              'Reserved3': '',
+                                              'Reserved4': '',
+                                              'Reserved5': '0',
+                                              'Reserved6': '',
+                                              'Reserved7': '',
+                                              'Reserved8': '',
+                                              'Reserved9': '',
+                                              'SmallHeadImgUrl': '',
+                                              'Type': '3',
+                                              'UserName': 'wxid_a6xxa7n11u5j22',
+                                              'VerifyFlag': '0',
+                                              'profilePicture': 'https://wx.qlogo.cn/mmhead/ver_1/SpuicD4ZXU7xaWS5GqjULxJpMZk1CBAUzfLlw1w4SqtRkiatq6yDrZlLY2I78c0ibdpbEmo7AD3P0ia6VJJPiaWrVACXrSwXdibSyKqgpyFjUuIibU/0',
+                                              'profilePictureSmall': 'https://wx.qlogo.cn/mmhead/ver_1/SpuicD4ZXU7xaWS5GqjULxJpMZk1CBAUzfLlw1w4SqtRkiatq6yDrZlLY2I78c0ibdpbEmo7AD3P0ia6VJJPiaWrVACXrSwXdibSyKqgpyFjUuIibU/132'},
+                      'wxid_bhm8b76alxrr22': {'Alias': 'wenyan199304',
+                                              'BigHeadImgUrl': '',
+                                              'ChatRoomNotify': '0',
+                                              'ChatRoomType': '0',
+                                              'DelFlag': '0',
+                                              'DomainList': '',
+                                              'EncryptUserName': 'v3_020b3826fd030100000000006a9708479f5b75000000501ea9a3dba12f95f6b60a0536a1adb6d51840214776704ae1237448b45cd973ee091c0bd3119f85b68a019b87bb3e6b22a6db34c4d5c672d911d93173697eaf677e3a4a7ec37581f17632bb@stranger',
+                                              'ExtraBuf': '3fMmgwQBAAAAdHUsBgQCAAAAiOKPzgQAAAAAdhodLRgCAAAAAAACY6DLBAAAAAAEUf8SGAIAAAAAACKMZqgEAQAAAEbPEMQYAgAAAAAApNkCShgGAAAAQwBOAAAA4uqo0RgSAAAAUwBoAGEAbgBnAGgAYQBpAAAAHQJbvxgoAAAAUAB1AGQAbwBuAGcAIABOAGUAdwAgAEQAaQBzAHQAcgBpAGMAdAAAAE1sRXAEAwAAAPkXvMAYAgAAAAAAdZN4rRgCAAAAAABDNd/dGAIAAAAAAN5M2usYAgAAAAAApyvCCgT/////Bp/tUgQDAAAAmw9CmQQAAAAAPWQeIgQBAAAAEkmCLAQDAAAATrlthRgCAAAAAAC09zrLBAAAAAAJWeuSBAAAAAA89KMVGAIAAAAAAMlHesYCAeRM0OgEAQAAALes8PUEgBoAAFentagFEhEOdQ6juruBrhm0GBwBAABoAHQAdABwADoALwAvAG0AbQBzAG4AcwAuAHEAcABpAGMALgBjAG4ALwBtAG0AcwBuAHMALwA0ADMANwA2AGEAZQAxAGUAMABjAGYAMABjAGMAYwBlAGQAMgAzADMAZABlAGYAOQBhAGQAMQA1ADYAMABkADAAZABlAGMAMgA5AGQANgA0ADkANAAxAGEAYgA4ADUAYQA2ADIAOAA5ADgAYwAxAGIAYwBlAGIAYwA2AGIAZQBiADkAYwBmADMAMgBkADQAOQAyADAAMgAzADgANgAxADQAMwA4AGUAOQAxADUAOABjAGYAZgA1AGEAYQA4ADUANABmAGIAOAA4AGYAMwA3ADkAOAAwADcAYQBhADYAZABjAC8AMAAAAGlfMXAYAgAAAAAA+wg92RgCAAAAAAACQON/GAIAAAAAADFdAqMYAgAAAAAAfewLwxgCAAAAAAAOcZ8TGAIAAAAAABZ5HJAXAgAAAAoAlF8xkBcAAAAA',
+                                              'HeadImgMd5': '',
+                                              'LabelIDList': '',
+                                              'NickName': 'wenyan93',
+                                              'PYInitial': 'WENYAN93',
+                                              'QuanPin': 'wenyan93',
+                                              'Remark': '',
+                                              'RemarkPYInitial': '',
+                                              'RemarkQuanPin': '',
+                                              'Reserved1': '1',
+                                              'Reserved10': '',
+                                              'Reserved11': '',
+                                              'Reserved2': '1',
+                                              'Reserved3': '',
+                                              'Reserved4': '',
+                                              'Reserved5': '0',
+                                              'Reserved6': '',
+                                              'Reserved7': '',
+                                              'Reserved8': '',
+                                              'Reserved9': '',
+                                              'SmallHeadImgUrl': '',
+                                              'Type': '3',
+                                              'UserName': 'wxid_bhm8b76alxrr22',
+                                              'VerifyFlag': '0',
+                                              'profilePicture': 'https://wx.qlogo.cn/mmhead/ver_1/MdX6BWtCvG4K5nnpG9TBBHtbS6iba7ic2icHq3Y8ib7x00nYvoGiaboOVEeOJWN1cK9cU2BIJuapKo4Q7iaKico9NtebgIWMKOJCciam6XIAreSaeCk/0',
+                                              'profilePictureSmall': 'https://wx.qlogo.cn/mmhead/ver_1/MdX6BWtCvG4K5nnpG9TBBHtbS6iba7ic2icHq3Y8ib7x00nYvoGiaboOVEeOJWN1cK9cU2BIJuapKo4Q7iaKico9NtebgIWMKOJCciam6XIAreSaeCk/132'},
+                      'wxid_tnv0hd5hj3rs11': {'Alias': 'wukongchanshi',
+                                              'BigHeadImgUrl': '',
+                                              'ChatRoomNotify': '0',
+                                              'ChatRoomType': '0',
+                                              'DelFlag': '0',
+                                              'DomainList': '',
+                                              'EncryptUserName': 'v3_020b3826fd03010000000000efd9339a474e09000000501ea9a3dba12f95f6b60a0536a1adb6d51840214776704ae123744853b1b8d1d6e0b471184ee2c170fe74dbadf64603a3120ecba787d39a9b34ab96e55209e5b45f450be8d0fe2ea1754094@stranger',
+                                              'ExtraBuf': '3fMmgwQBAAAAdHUsBgQBAAAAiOKPzgQAAAAAdhodLRgCAAAAAAACY6DLBAAAAAAEUf8SGAIAAAAAACKMZqgEAQAAAEbPEMQYGgAAAP2ANGJAd2OV0JTzjR6ChHZNYi9m2JpLYgAApNkCShgGAAAAQwBOAAAA4uqo0RgSAAAAUwBoAGEAbgBnAGgAYQBpAAAAHQJbvxgoAAAAUAB1AGQAbwBuAGcAIABOAGUAdwAgAEQAaQBzAHQAcgBpAGMAdAAAAE1sRXAEBgAAAPkXvMAYAgAAAAAAdZN4rRgCAAAAAABDNd/dGAIAAAAAAN5M2usYAgAAAAAApyvCCgT/////Bp/tUgQBAAAAmw9CmQQAAAAAPWQeIgQBAAAAEkmCLAQIAAAATrlthRgCAAAAAAC09zrLBAAAAAAJWeuSBAAAAAA89KMVGEAAAAA4ADkAOAA5ADAANgA1ADkAMAAyADgAMQA3ADIAOQBfADgAOQA4ADkAMAA2ADUAOQAwADIAOAAxADcAMgA5AAAAyUd6xgIB5EzQ6AQBAAAAt6zw9QSBHAAAV6e1qAWEEBP0MUFAtoGuGbQY4AAAAGgAdAB0AHAAOgAvAC8AcwBoAG0AbQBzAG4AcwAuAHEAcABpAGMALgBjAG4ALwBtAG0AcwBuAHMALwByAEsAMQBuAHMAVABsAEMARAA4AEcAcABXAHUARAB5AHUAUABWAEcAbgBLAEEAQgBpAGMAMwBWAGkAYwBVAGkAYQBZAFgAMgBzAFEANQAyAHEAZgBKAGMAWgBQAEkAawBpAGMAOABWAEIAUgBZAG4AOQBwAGIAcgBpAGIARABSAGgARQBUAHQATgBPAHoAUABnADUAWgBwAHMAYwBSADAALwAwAAAAaV8xcBgCAAAAAAD7CD3ZGAIAAAAAAAJA438YAgAAAAAAMV0CoxgCAAAAAAB97AvDGAIAAAAAAA5xnxMYAgAAAAAAFnkckBcCAAAACgCUXzGQFwAAAAA=',
+                                              'HeadImgMd5': '',
+                                              'LabelIDList': '1',
+                                              'NickName': '无空',
+                                              'PYInitial': 'WK',
+                                              'QuanPin': 'wukong',
+                                              'Remark': '',
+                                              'RemarkPYInitial': '',
+                                              'RemarkQuanPin': '',
+                                              'Reserved1': '1',
+                                              'Reserved10': '',
+                                              'Reserved11': '',
+                                              'Reserved2': '1',
+                                              'Reserved3': '',
+                                              'Reserved4': '',
+                                              'Reserved5': '0',
+                                              'Reserved6': '',
+                                              'Reserved7': '',
+                                              'Reserved8': '',
+                                              'Reserved9': '',
+                                              'SmallHeadImgUrl': '',
+                                              'Type': '1',
+                                              'UserName': 'wxid_tnv0hd5hj3rs11',
+                                              'VerifyFlag': '0',
+                                              'profilePicture': 'https://wx.qlogo.cn/mmhead/ver_1/MKHrAGqYf8MItiawRfwohCKnHl9zAT02q69dIWQfGibGfksUVL6QtaIegFjYEywRApGzcPWHzzJ3Whr3raIAuZkA/0',
+                                              'profilePictureSmall': 'https://wx.qlogo.cn/mmhead/ver_1/MKHrAGqYf8MItiawRfwohCKnHl9zAT02q69dIWQfGibGfksUVL6QtaIegFjYEywRApGzcPWHzzJ3Whr3raIAuZkA/132'}},
+          'SelfDisplayName': '',
+          'UserNameList': 'lonely2012^Gwxid_tnv0hd5hj3rs11^Gwxid_a6xxa7n11u5j22^Gwxid_bhm8b76alxrr22'},
+ 'msg': 'success'}
+
+# 群聊解散
+{'BytesExtra': 'CgQIEBAACgQIBRABGrcBCAcSsgE8bXNnc291cmNlPgogICAgPHRtcF9ub2RlPgogICAgICAgIDxwdWJsaXNoZXItaWQgLz4KICAgIDwvdG1wX25vZGU+CiAgICA8c2VjX21zZ19ub2RlPgogICAgICAgIDxhbG5vZGU+CiAgICAgICAgICAgIDxmcj4xPC9mcj4KICAgICAgICA8L2Fsbm9kZT4KICAgIDwvc2VjX21zZ19ub2RlPgo8L21zZ3NvdXJjZT4KGiQIAhIgYzY3MDIwMTE4ODhlMmJhYzU4ODhkNDQ0ZTY2ZjMyMTg=',
+ 'BytesTrans': '',
+ 'CompressContent': '',
+ 'CreateTime': '1730124474',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '0',
+ 'MsgSequence': '894413017',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '2139545102403034746',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sender': '<msgsource>\\n    <tmp_node>\\n        <publisher-id />\\n    '
+           '</tmp_node>\\n    <sec_msg_node>\\n        <alnode>\\n            '
+           '<fr>1</fr>\\n        </alnode>\\n    '
+           '</sec_msg_node>\\n</msgsource>\\n',
+ 'Sequence': '1730124474000',
+ 'Status': '2',
+ 'StatusEx': '0',
+ 'StrContent': '群主"大兄弟666"已解散该群聊',
+ 'StrTalker': '39103519044@chatroom',
+ 'SubType': '0',
+ 'TalkerId': '8',
+ 'Type': '10000',
+ 'localId': '294'}
+
+# 添加好友成功消息
+{'BytesExtra': 'CgQIEBAACgQIBRABGt4BCAcS2QE8bXNnc291cmNlPgogICAgPHNpZ25hdHVyZT52MV8rS3RmdkNHazwvc2lnbmF0dXJlPgogICAgPHRtcF9ub2RlPgogICAgICAgIDxwdWJsaXNoZXItaWQgLz4KICAgIDwvdG1wX25vZGU+CiAgICA8c2VjX21zZ19ub2RlPgogICAgICAgIDxhbG5vZGU+CiAgICAgICAgICAgIDxmcj4xPC9mcj4KICAgICAgICA8L2Fsbm9kZT4KICAgIDwvc2VjX21zZ19ub2RlPgo8L21zZ3NvdXJjZT4KGiQIAhIgNjA5YTA3OTFiZTU3NjFkMjFjMjg3YzQxYjQwYzNiZTE=',
+ 'BytesTrans': '',
+ 'CompressContent': '',
+ 'CreateTime': '1730125047',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '0',
+ 'MsgSequence': '894413021',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '2540065164984258061',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sequence': '1730125047001',
+ 'Status': '2',
+ 'StatusEx': '0',
+ 'StrContent': '以上是打招呼的内容',
+ 'StrTalker': 'wxid_a6xxa7n11u5j22',
+ 'SubType': '0',
+ 'TalkerId': '9',
+ 'Type': '10000',
+ 'localId': '296'}
+
+# 添加好友请求信息
+'BytesExtra': 'CgQIEBAAGt4BCAcS2QE8bXNnc291cmNlPgogICAgPHNpZ25hdHVyZT52MV9vMVFzUENGNDwvc2lnbmF0dXJlPgogICAgPHRtcF9ub2RlPgogICAgICAgIDxwdWJsaXNoZXItaWQgLz4KICAgIDwvdG1wX25vZGU+CiAgICA8c2VjX21zZ19ub2RlPgogICAgICAgIDxhbG5vZGU+CiAgICAgICAgICAgIDxmcj4xPC9mcj4KICAgICAgICA8L2Fsbm9kZT4KICAgIDwvc2VjX21zZ19ub2RlPgo8L21zZ3NvdXJjZT4KGiQIAhIgNGVhMDU4Nzc2N2JiMDIxZTc3MTE3NzlmNGViMDJjNTk=',
+ 'BytesTrans': '',
+ 'CompressContent': '',
+ 'CreateTime': '1730126875',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '0',
+ 'MsgSequence': '894413052',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '8281626564145629429',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sequence': '1730126875000',
+ 'Status': '2',
+ 'StatusEx': '0',
+ 'StrContent': '<msg fromusername="wxid_a6xxa7n11u5j22" '
+               'encryptusername="v3_020b3826fd03010000000000094e293c4663fe000000501ea9a3dba12f95f6b60a0536a1adb6d51840214776704ae1237448a9fc159c1f38c82231ed0a1035124a14833e6d046b643798fd59014cb36c3be89710b1d0fa046e4b8c8612748865fd1e@stranger" '
+               'fromnickname="大兄弟666" content="我是大兄弟666" fullpy="daxiongdi666" '
+               'shortpy="DXD666" imagestatus="3" scene="6" country="CN" '
+               'province="" city="" sign="" percard="1" sex="1" '
+               'alias="baohukeji" weibo="" albumflag="0" albumstyle="0" '
+               'albumbgimgid="" snsflag="257" '
+               'snsbgimgid="http://shmmsns.qpic.cn/mmsns/j8JSzC6ialBY7hYjpiacJuEm0HCAHlOb7bNxBTvCU3kkPcGRh9ZzUdyPJB5ZKAib1eQ8iawnNoXXiabU/0" '
+               'snsbgobjectid="13280811079683027100" '
+               'mhash="ff256caa94bedec4b86d6feb75a0b813" '
+               'mfullhash="ff256caa94bedec4b86d6feb75a0b813" '
+               'bigheadimgurl="http://wx.qlogo.cn/mmhead/ver_1/Uv65kXDeFN4dbTBRYXhiaDfZOqHHjIWKmOOApBiaS9cgeopf6xt9XGyMgbONlCw6qw0EpoemOwh6lpPpvbKHQCbRJPO1D5aJyeib30bRlwBmnk/0" '
+               'smallheadimgurl="http://wx.qlogo.cn/mmhead/ver_1/Uv65kXDeFN4dbTBRYXhiaDfZOqHHjIWKmOOApBiaS9cgeopf6xt9XGyMgbONlCw6qw0EpoemOwh6lpPpvbKHQCbRJPO1D5aJyeib30bRlwBmnk/96" '
+               'ticket="v4_000b708f0b0400000100000000005b1fd568b8fe045812d11aa41f671000000050ded0b020927e3c97896a09d47e6e9ec74f5e68567c0099f08718bff3a0f9fa0faf176fbff82f73c744609ace8b56c3742fae3b894b291b82fa9b543de199cc24abf6f5e40d69d071b2d463662fcf49c8293dcb0a6bf844a0e8780ba7941434bab3f21fe0bc6676c9e42d22728d128bec35a7fb2f4d3ffd@stranger" '
+               'opcode="2" googlecontact="" qrticket="" chatroomusername="" '
+               'sourceusername="" sourcenickname="" sharecardusername="" '
+               'sharecardnickname="" cardversion="" extflag="0"><brandlist '
+               'count="0" ver="915659894"></brandlist></msg>',
+ 'StrTalker': 'fmessage',
+ 'SubType': '0',
+ 'TalkerId': '7',
+ 'Type': '37',
+ 'localId': '89'}
+
+# 批准好友申请消息
+{'BytesExtra': 'CgQIEBAACgQIBRABGt4BCAcS2QE8bXNnc291cmNlPgogICAgPHNpZ25hdHVyZT52MV9TbS9xb0RiMjwvc2lnbmF0dXJlPgogICAgPHRtcF9ub2RlPgogICAgICAgIDxwdWJsaXNoZXItaWQgLz4KICAgIDwvdG1wX25vZGU+CiAgICA8c2VjX21zZ19ub2RlPgogICAgICAgIDxhbG5vZGU+CiAgICAgICAgICAgIDxmcj4xPC9mcj4KICAgICAgICA8L2Fsbm9kZT4KICAgIDwvc2VjX21zZ19ub2RlPgo8L21zZ3NvdXJjZT4KGiQIAhIgNmZlMDdhZWQyNmQxNzRhZDBlMjI1ZjRjMjYzNGIzYWY=',
+ 'BytesTrans': '',
+ 'CompressContent': '',
+ 'CreateTime': '1730127068',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '0',
+ 'MsgSequence': '894413054',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '1387603917958200620',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sequence': '1730127068000',
+ 'Status': '2',
+ 'StatusEx': '0',
+ 'StrContent': '你已添加了大兄弟666，现在可以开始聊天了。',
+ 'StrTalker': 'wxid_a6xxa7n11u5j22',
+ 'SubType': '0',
+ 'TalkerId': '8',
+ 'Type': '10000',
+ 'localId': '90'}
+
+#陌生人发消息被拒
+{'BytesExtra': 'CgQIEBAACgQIBRABGt4BCAcS2QE8bXNnc291cmNlPgogICAgPHNpZ25hdHVyZT52MV9mdC9CTlJLbTwvc2lnbmF0dXJlPgogICAgPHRtcF9ub2RlPgogICAgICAgIDxwdWJsaXNoZXItaWQgLz4KICAgIDwvdG1wX25vZGU+CiAgICA8c2VjX21zZ19ub2RlPgogICAgICAgIDxhbG5vZGU+CiAgICAgICAgICAgIDxmcj4xPC9mcj4KICAgICAgICA8L2Fsbm9kZT4KICAgIDwvc2VjX21zZ19ub2RlPgo8L21zZ3NvdXJjZT4KGiQIAhIgN2MxYjhhODU3OGE5ZTViN2ZmMWNhMDQwMmU4Zjc3YjA=',
+ 'BytesTrans': '',
+ 'CompressContent': '',
+ 'CreateTime': '1730128172',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '0',
+ 'MsgSequence': '894413071',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '3597103885415057450',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sequence': '1730128172000',
+ 'Status': '2',
+ 'StatusEx': '0',
+ 'StrContent': '大兄弟666开启了朋友验证，你还不是他（她）朋友。请先发送朋友验证请求，对方验证通过后，才能聊天。<a '
+               'href="weixin://findfriend/verifycontact">发送朋友验证</a>',
+ 'StrTalker': 'wxid_a6xxa7n11u5j22',
+ 'SubType': '0',
+ 'TalkerId': '2',
+ 'Type': '10000',
+ 'localId': '5'}
+
+# 图片消息
+BytesTrans': '',
+ 'CompressContent': '',
+ 'CreateTime': '1730248593',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '0',
+ 'MsgSequence': '894413423',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '416053681287949500',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sequence': '1730248593000',
+ 'Status': '11',
+ 'StatusEx': '0',
+ 'StrContent': '<?xml version="1.0"?>\n'
+               '<msg>\n'
+               '\t<img aeskey="687d8b06a098d53cebca9933c1bed8c6" encryver="1" '
+               'cdnthumbaeskey="687d8b06a098d53cebca9933c1bed8c6" '
+               'cdnthumburl="3057020100044b3049020100020424e2783802032f4fb902043d0c1d7902046720ccc5042439343535646264302d643965662d343238662d626465302d3030646366313537653964380204051418020201000405004c54a100" '
+               'cdnthumblength="16463" cdnthumbheight="157" '
+               'cdnthumbwidth="240" cdnmidheight="0" cdnmidwidth="0" '
+               'cdnhdheight="0" cdnhdwidth="0" '
+               'cdnmidimgurl="3057020100044b3049020100020424e2783802032f4fb902043d0c1d7902046720ccc5042439343535646264302d643965662d343238662d626465302d3030646366313537653964380204051418020201000405004c54a100" '
+               'length="150839" md5="a7b6f134660e32c23418e0eb57caa55e" '
+               'hevc_mid_size="150839" '
+               'originsourcemd5="f6d16c59910677fbc49248fa09ca7e86" />\n'
+               '\t<platform_signature />\n'
+               '\t<imgdatahash />\n'
+               '\t<ImgSourceInfo>\n'
+               '\t\t<ImgSourceUrl />\n'
+               '\t\t<BizType>0</BizType>\n'
+               '\t</ImgSourceInfo>\n'
+               '</msg>\n',
+ 'StrTalker': 'wxid_tnv0hd5hj3rs11',
+ 'SubType': '0',
+ 'TalkerId': '3',
+ 'Type': '3',
+ 'localId': '24'}
+
+# 视频
+ 'StrContent': '<?xml version="1.0"?>\n'
+               '<msg>\n'
+               '\t<videomsg aeskey="365c3b1c680dd98328cdff49c21acae0" '
+               'cdnvideourl="3057020100044b30490201000204e68e2f0402032f7e370204a4e7b9750204672181f5042432386435376663302d633063392d343037392d383865382d3931356665313731613438390204051408040201000405004c53db00" '
+               'cdnthumbaeskey="365c3b1c680dd98328cdff49c21acae0" '
+               'cdnthumburl="3057020100044b30490201000204e68e2f0402032f7e370204a4e7b9750204672181f5042432386435376663302d633063392d343037392d383865382d3931356665313731613438390204051408040201000405004c53db00" '
+               'length="440670" playlength="2" cdnthumblength="7521" '
+               'cdnthumbwidth="632" cdnthumbheight="356" '
+               'fromusername="wxid_tnv0hd5hj3rs11" '
+               'md5="6845b92e29731c742493c2dae21c3dbf" '
+               'newmd5="22a3dff0dc8d1f06c4f25a87b94b95bb" isplaceholder="0" '
+               'rawmd5="" rawlength="0" cdnrawvideourl="" cdnrawvideoaeskey="" '
+               'overwritenewmsgid="0" '
+               'originsourcemd5="43e90165d24f2717b0537aa500692da9" isad="0" '
+               '/>\n'
+               '</msg>\n',
+type:43 subtype:0
+
+# 文件消息
+{'BytesExtra': 'CgQIEBAAGv0DCAcS+AM8bXNnc291cmNlPgogICAgPGFsbm9kZT4KICAgICAgICA8ZnI+NDwvZnI+CiAgICA8L2Fsbm9kZT4KICAgIDx0bXBfbm9kZT4KICAgICAgICA8cHVibGlzaGVyLWlkIC8+CiAgICA8L3RtcF9ub2RlPgogICAgPHNlY19tc2dfbm9kZT4KICAgICAgICA8dXVpZD4xZGU2NDcxOTEzNzNjMTg1NzA5ODdhMmI2MjE5MDZlNV88L3V1aWQ+CiAgICAgICAgPHJpc2stZmlsZS1mbGFnIC8+CiAgICAgICAgPHJpc2stZmlsZS1tZDUtbGlzdCAvPgogICAgICAgIDxhbG5vZGU+CiAgICAgICAgICAgIDxmcj4xPC9mcj4KICAgICAgICA8L2Fsbm9kZT4KICAgIDwvc2VjX21zZ19ub2RlPgogICAgPGFwcG1zZ19wZCBjZG5hdHRhY2h1cmxfc2l6ZT0iNjgyOTI3IiBjZG5hdHRhY2h1cmxfc2NvcmVfYWxsPSIiIGNkbmF0dGFjaHVybF9wZF9wcmk9IjUwIiBjZG5hdHRhY2h1cmxfcGQ9IjEiIC8+CiAgICA8c2lnbmF0dXJlPlYxX3FKQ29sa04zfHYxX0EzTmxDbVBxPC9zaWduYXR1cmU+CjwvbXNnc291cmNlPgoaJAgCEiA4MDNmMTM5MzIyODhmMjkzNDMwODZhYWFmMmQzNDMxZRplCAQSYWxvbmVseTIwMTJcRmlsZVN0b3JhZ2VcRmlsZVwyMDI0LTEwXFBMQU7Dl1JBRy0gUExBTk5JTkctR1VJREVEIFJFVFJJRVZBTCBBVUdNRU5URUQgR0VORVJBVElPTi5wZGY=',
+ 'BytesTrans': '',
+ 'Content': '<?xml version="1.0"?>\n'
+            '<msg>\n'
+            '\t<appmsg appid="" sdkver="0">\n'
+            '\t\t<title>PLAN×RAG- PLANNING-GUIDED RETRIEVAL AUGMENTED '
+            'GENERATION.pdf</title>\n'
+            '\t\t<des />\n'
+            '\t\t<username />\n'
+            '\t\t<action>view</action>\n'
+            '\t\t<type>6</type>\n'
+            '\t\t<showtype>0</showtype>\n'
+            '\t\t<content />\n'
+            '\t\t<url />\n'
+            '\t\t<lowurl />\n'
+            '\t\t<forwardflag>0</forwardflag>\n'
+            '\t\t<dataurl />\n'
+            '\t\t<lowdataurl />\n'
+            '\t\t<contentattr>0</contentattr>\n'
+            '\t\t<streamvideo>\n'
+            '\t\t\t<streamvideourl />\n'
+            '\t\t\t<streamvideototaltime>0</streamvideototaltime>\n'
+            '\t\t\t<streamvideotitle />\n'
+            '\t\t\t<streamvideowording />\n'
+            '\t\t\t<streamvideoweburl />\n'
+            '\t\t\t<streamvideothumburl />\n'
+            '\t\t\t<streamvideoaduxinfo />\n'
+            '\t\t\t<streamvideopublishid />\n'
+            '\t\t</streamvideo>\n'
+            '\t\t<canvasPageItem>\n'
+            '\t\t\t<canvasPageXml><![CDATA[]]></canvasPageXml>\n'
+            '\t\t</canvasPageItem>\n'
+            '\t\t<appattach>\n'
+            '\t\t\t<totallen>682927</totallen>\n'
+            '\t\t\t'
+            '<attachid>@cdn_3057020100044b3049020100020424e2783802032f4f560204697ac2dc0204672103d4042465336230336433372d643436302d343738302d393762642d6231613766643937626563360204051800050201000405004c56fa00_7edc2041a04fd978b9d4aeb27656b9fb_1</attachid>\n'
+            '\t\t\t'
+            '<cdnattachurl>3057020100044b3049020100020424e2783802032f4f560204697ac2dc0204672103d4042465336230336433372d643436302d343738302d393762642d6231613766643937626563360204051800050201000405004c56fa00</cdnattachurl>\n'
+            '\t\t\t<emoticonmd5 />\n'
+            '\t\t\t<aeskey>7edc2041a04fd978b9d4aeb27656b9fb</aeskey>\n'
+            '\t\t\t<fileext>pdf</fileext>\n'
+            '\t\t\t<islargefilemsg>0</islargefilemsg>\n'
+            '\t\t</appattach>\n'
+            '\t\t<extinfo />\n'
+            '\t\t<androidsource>3</androidsource>\n'
+            '\t\t<thumburl />\n'
+            '\t\t<mediatagname />\n'
+            '\t\t<messageaction><![CDATA[]]></messageaction>\n'
+            '\t\t<messageext><![CDATA[]]></messageext>\n'
+            '\t\t<emoticongift>\n'
+            '\t\t\t<packageflag>0</packageflag>\n'
+            '\t\t\t<packageid />\n'
+            '\t\t</emoticongift>\n'
+            '\t\t<emoticonshared>\n'
+            '\t\t\t<packageflag>0</packageflag>\n'
+            '\t\t\t<packageid />\n'
+            '\t\t</emoticonshared>\n'
+            '\t\t<designershared>\n'
+            '\t\t\t<designeruin>0</designeruin>\n'
+            '\t\t\t<designername>null</designername>\n'
+            '\t\t\t'
+            '<designerrediretcturl><![CDATA[null]]></designerrediretcturl>\n'
+            '\t\t</designershared>\n'
+            '\t\t<emotionpageshared>\n'
+            '\t\t\t<tid>0</tid>\n'
+            '\t\t\t<title>null</title>\n'
+            '\t\t\t<desc>null</desc>\n'
+            '\t\t\t<iconUrl><![CDATA[null]]></iconUrl>\n'
+            '\t\t\t<secondUrl />\n'
+            '\t\t\t<pageType>0</pageType>\n'
+            '\t\t\t<setKey>null</setKey>\n'
+            '\t\t</emotionpageshared>\n'
+            '\t\t<webviewshared>\n'
+            '\t\t\t<shareUrlOriginal />\n'
+            '\t\t\t<shareUrlOpen />\n'
+            '\t\t\t<jsAppId />\n'
+            '\t\t\t<publisherId />\n'
+            '\t\t\t<publisherReqId />\n'
+            '\t\t</webviewshared>\n'
+            '\t\t<template_id />\n'
+            '\t\t<md5>b59873de10f75a4dc7ce933ca7462166</md5>\n'
+            '\t\t<websearch />\n'
+            '\t\t<weappinfo>\n'
+            '\t\t\t<username />\n'
+            '\t\t\t<appid />\n'
+            '\t\t\t<appservicetype>0</appservicetype>\n'
+            '\t\t\t<secflagforsinglepagemode>0</secflagforsinglepagemode>\n'
+            '\t\t\t<videopageinfo>\n'
+            '\t\t\t\t<thumbwidth>0</thumbwidth>\n'
+            '\t\t\t\t<thumbheight>0</thumbheight>\n'
+            '\t\t\t\t<fromopensdk>0</fromopensdk>\n'
+            '\t\t\t</videopageinfo>\n'
+            '\t\t</weappinfo>\n'
+            '\t\t<statextstr />\n'
+            '\t\t<musicShareItem>\n'
+            '\t\t\t<musicDuration>0</musicDuration>\n'
+            '\t\t</musicShareItem>\n'
+            '\t\t<finderLiveProductShare>\n'
+            '\t\t\t<finderLiveID><![CDATA[]]></finderLiveID>\n'
+            '\t\t\t<finderUsername><![CDATA[]]></finderUsername>\n'
+            '\t\t\t<finderObjectID><![CDATA[]]></finderObjectID>\n'
+            '\t\t\t<finderNonceID><![CDATA[]]></finderNonceID>\n'
+            '\t\t\t<liveStatus><![CDATA[]]></liveStatus>\n'
+            '\t\t\t<appId><![CDATA[]]></appId>\n'
+            '\t\t\t<pagePath><![CDATA[]]></pagePath>\n'
+            '\t\t\t<productId><![CDATA[]]></productId>\n'
+            '\t\t\t<coverUrl><![CDATA[]]></coverUrl>\n'
+            '\t\t\t<productTitle><![CDATA[]]></productTitle>\n'
+            '\t\t\t<marketPrice><![CDATA[0]]></marketPrice>\n'
+            '\t\t\t<sellingPrice><![CDATA[0]]></sellingPrice>\n'
+            '\t\t\t<platformHeadImg><![CDATA[]]></platformHeadImg>\n'
+            '\t\t\t<platformName><![CDATA[]]></platformName>\n'
+            '\t\t\t<shopWindowId><![CDATA[]]></shopWindowId>\n'
+            '\t\t\t<flashSalePrice><![CDATA[0]]></flashSalePrice>\n'
+            '\t\t\t<flashSaleEndTime><![CDATA[0]]></flashSaleEndTime>\n'
+            '\t\t\t<ecSource><![CDATA[]]></ecSource>\n'
+            '\t\t\t<sellingPriceWording><![CDATA[]]></sellingPriceWording>\n'
+            '\t\t\t<platformIconURL><![CDATA[]]></platformIconURL>\n'
+            '\t\t\t<firstProductTagURL><![CDATA[]]></firstProductTagURL>\n'
+            '\t\t\t'
+            '<firstProductTagAspectRatioString><![CDATA[0.0]]></firstProductTagAspectRatioString>\n'
+            '\t\t\t<secondProductTagURL><![CDATA[]]></secondProductTagURL>\n'
+            '\t\t\t'
+            '<secondProductTagAspectRatioString><![CDATA[0.0]]></secondProductTagAspectRatioString>\n'
+            '\t\t\t'
+            '<firstGuaranteeWording><![CDATA[]]></firstGuaranteeWording>\n'
+            '\t\t\t'
+            '<secondGuaranteeWording><![CDATA[]]></secondGuaranteeWording>\n'
+            '\t\t\t'
+            '<thirdGuaranteeWording><![CDATA[]]></thirdGuaranteeWording>\n'
+            '\t\t\t<isPriceBeginShow>false</isPriceBeginShow>\n'
+            '\t\t\t<lastGMsgID><![CDATA[]]></lastGMsgID>\n'
+            '\t\t\t<promoterKey><![CDATA[]]></promoterKey>\n'
+            '\t\t\t<discountWording><![CDATA[]]></discountWording>\n'
+            '\t\t\t'
+            '<priceSuffixDescription><![CDATA[]]></priceSuffixDescription>\n'
+            '\t\t\t<productCardKey><![CDATA[]]></productCardKey>\n'
+            '\t\t\t<isWxShop><![CDATA[]]></isWxShop>\n'
+            '\t\t\t<brandIconUrl><![CDATA[]]></brandIconUrl>\n'
+            '\t\t\t<showBoxItemStringList />\n'
+            '\t\t</finderLiveProductShare>\n'
+            '\t\t<finderOrder>\n'
+            '\t\t\t<appID><![CDATA[]]></appID>\n'
+            '\t\t\t<orderID><![CDATA[]]></orderID>\n'
+            '\t\t\t<path><![CDATA[]]></path>\n'
+            '\t\t\t<priceWording><![CDATA[]]></priceWording>\n'
+            '\t\t\t<stateWording><![CDATA[]]></stateWording>\n'
+            '\t\t\t<productImageURL><![CDATA[]]></productImageURL>\n'
+            '\t\t\t<products><![CDATA[]]></products>\n'
+            '\t\t\t<productsCount><![CDATA[0]]></productsCount>\n'
+            '\t\t</finderOrder>\n'
+            '\t\t<finderShopWindowShare>\n'
+            '\t\t\t<finderUsername><![CDATA[]]></finderUsername>\n'
+            '\t\t\t<avatar><![CDATA[]]></avatar>\n'
+            '\t\t\t<nickname><![CDATA[]]></nickname>\n'
+            '\t\t\t'
+            '<commodityInStockCount><![CDATA[]]></commodityInStockCount>\n'
+            '\t\t\t<appId><![CDATA[]]></appId>\n'
+            '\t\t\t<path><![CDATA[]]></path>\n'
+            '\t\t\t<appUsername><![CDATA[]]></appUsername>\n'
+            '\t\t\t<query><![CDATA[]]></query>\n'
+            '\t\t\t<liteAppId><![CDATA[]]></liteAppId>\n'
+            '\t\t\t<liteAppPath><![CDATA[]]></liteAppPath>\n'
+            '\t\t\t<liteAppQuery><![CDATA[]]></liteAppQuery>\n'
+            '\t\t\t<platformTagURL><![CDATA[]]></platformTagURL>\n'
+            '\t\t\t<saleWording><![CDATA[]]></saleWording>\n'
+            '\t\t\t<lastGMsgID><![CDATA[]]></lastGMsgID>\n'
+            '\t\t\t<profileTypeWording><![CDATA[]]></profileTypeWording>\n'
+            '\t\t\t<saleWordingExtra><![CDATA[]]></saleWordingExtra>\n'
+            '\t\t\t<isWxShop><![CDATA[]]></isWxShop>\n'
+            '\t\t\t<platformIconUrl><![CDATA[]]></platformIconUrl>\n'
+            '\t\t\t<brandIconUrl><![CDATA[]]></brandIconUrl>\n'
+            '\t\t\t<description><![CDATA[]]></description>\n'
+            '\t\t\t<backgroundUrl><![CDATA[]]></backgroundUrl>\n'
+            '\t\t\t'
+            '<darkModePlatformIconUrl><![CDATA[]]></darkModePlatformIconUrl>\n'
+            '\t\t\t<reputationInfo>\n'
+            '\t\t\t\t<hasReputationInfo>0</hasReputationInfo>\n'
+            '\t\t\t\t<reputationScore>0</reputationScore>\n'
+            '\t\t\t\t<reputationWording />\n'
+            '\t\t\t\t<reputationTextColor />\n'
+            '\t\t\t\t<reputationLevelWording />\n'
+            '\t\t\t\t<reputationBackgroundColor />\n'
+            '\t\t\t</reputationInfo>\n'
+            '\t\t\t<productImageURLList />\n'
+            '\t\t</finderShopWindowShare>\n'
+            '\t\t<findernamecard>\n'
+            '\t\t\t<username />\n'
+            '\t\t\t<avatar><![CDATA[]]></avatar>\n'
+            '\t\t\t<nickname />\n'
+            '\t\t\t<auth_job />\n'
+            '\t\t\t<auth_icon>0</auth_icon>\n'
+            '\t\t\t<auth_icon_url />\n'
+            '\t\t\t<ecSource><![CDATA[]]></ecSource>\n'
+            '\t\t\t<lastGMsgID><![CDATA[]]></lastGMsgID>\n'
+            '\t\t</findernamecard>\n'
+            '\t\t<finderGuarantee>\n'
+            '\t\t\t<scene><![CDATA[0]]></scene>\n'
+            '\t\t</finderGuarantee>\n'
+            '\t\t<directshare>0</directshare>\n'
+            '\t\t<gamecenter>\n'
+            '\t\t\t<namecard>\n'
+            '\t\t\t\t<iconUrl />\n'
+            '\t\t\t\t<name />\n'
+            '\t\t\t\t<desc />\n'
+            '\t\t\t\t<tail />\n'
+            '\t\t\t\t<jumpUrl />\n'
+            '\t\t\t</namecard>\n'
+            '\t\t</gamecenter>\n'
+            '\t\t<patMsg>\n'
+            '\t\t\t<chatUser />\n'
+            '\t\t\t<records>\n'
+            '\t\t\t\t<recordNum>0</recordNum>\n'
+            '\t\t\t</records>\n'
+            '\t\t</patMsg>\n'
+            '\t\t<secretmsg>\n'
+            '\t\t\t<issecretmsg>0</issecretmsg>\n'
+            '\t\t</secretmsg>\n'
+            '\t\t<referfromscene>0</referfromscene>\n'
+            '\t\t<gameshare>\n'
+            '\t\t\t<liteappext>\n'
+            '\t\t\t\t<liteappbizdata />\n'
+            '\t\t\t\t<priority>0</priority>\n'
+            '\t\t\t</liteappext>\n'
+            '\t\t\t<appbrandext>\n'
+            '\t\t\t\t<litegameinfo />\n'
+            '\t\t\t\t<priority>-1</priority>\n'
+            '\t\t\t</appbrandext>\n'
+            '\t\t\t<gameshareid />\n'
+            '\t\t\t<sharedata />\n'
+            '\t\t\t<isvideo>0</isvideo>\n'
+            '\t\t\t<duration>0</duration>\n'
+            '\t\t\t<isexposed>0</isexposed>\n'
+            '\t\t\t<readtext />\n'
+            '\t\t</gameshare>\n'
+            '\t\t<mpsharetrace>\n'
+            '\t\t\t<hasfinderelement>0</hasfinderelement>\n'
+            '\t\t\t<lastgmsgid />\n'
+            '\t\t</mpsharetrace>\n'
+            '\t\t<wxgamecard>\n'
+            '\t\t\t<framesetname />\n'
+            '\t\t\t<mbcarddata />\n'
+            '\t\t\t<minpkgversion />\n'
+            '\t\t\t<clientextinfo />\n'
+            '\t\t\t<mbcardheight>0</mbcardheight>\n'
+            '\t\t\t<isoldversion>0</isoldversion>\n'
+            '\t\t</wxgamecard>\n'
+            '\t\t<liteapp>\n'
+            '\t\t\t<id>null</id>\n'
+            '\t\t\t<path />\n'
+            '\t\t\t<query />\n'
+            '\t\t</liteapp>\n'
+            '\t</appmsg>\n'
+            '\t<fromusername>wxid_tnv0hd5hj3rs11</fromusername>\n'
+            '\t<scene>0</scene>\n'
+            '\t<appinfo>\n'
+            '\t\t<version>1</version>\n'
+            '\t\t<appname></appname>\n'
+            '\t</appinfo>\n'
+            '\t<commenturl></commenturl>\n'
+            '</msg>\n'
+            '\x00',
+ 'CreateTime': '1730249105',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '0',
+ 'MsgSequence': '894413425',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '4086681705340979322',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sequence': '1730249105000',
+ 'Status': '11',
+ 'StatusEx': '0',
+ 'StrContent': '',
+ 'StrTalker': 'wxid_tnv0hd5hj3rs11',
+ 'SubType': '6',
+ 'TalkerId': '3',
+ 'Type': '49',
+ 'localId': '26'}
+
+# 位置信息
+ 'BytesTrans': '',
+ 'CompressContent': '',
+ 'CreateTime': '1730284675',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '0',
+ 'MsgSequence': '894413613',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '6471261588908873873',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sequence': '1730284675000',
+ 'Status': '2',
+ 'StatusEx': '0',
+ 'StrContent': '<?xml version="1.0"?>\n'
+               '<msg>\n'
+               '\t<location x="31.144365" y="121.519485" scale="15" '
+               'label="浦东新区三林路1300弄31号701号" maptype="0" '
+               'poiname="浦东新区三林万科金色雅筑(环林西路西)" '
+               'poiid="nearby_9148890365001116432" buildingId="" floorName="" '
+               'poiCategoryTips="" poiBusinessHour="" poiPhone="" '
+               'poiPriceTips="0.0" isFromPoiList="false" adcode="" cityname="" '
+               '/>\n'
+               '</msg>\n',
+ 'StrTalker': 'wxid_tnv0hd5hj3rs11',
+ 'SubType': '0',
+ 'TalkerId': '3',
+ 'Type': '48',
+ 'localId': '40'}
+
+
+# 转发公众号卡片消息
+'Content': '<?xml version="1.0"?>\n'
+            '<msg>\n'
+            '\t<appmsg appid="" sdkver="0">\n'
+            '\t\t<title>开源日报 | '
+            'Meta正在研发AI搜索引擎；国产AI的钱都花在投放上；Python是信息密度更高的语言；首个开源人工智能标准定义</title>\n'
+            '\t\t<des>对于token来说，Python是最有效的LLMs编程方式。</des>\n'
+            '\t\t<username />\n'
+            '\t\t<action>view</action>\n'
+            '\t\t<type>5</type>\n'
+            '\t\t<showtype>0</showtype>\n'
+            '\t\t<content />\n'
+            '\t\t'
+            '<url>http://mp.weixin.qq.com/s?__biz=MjM5NzM0MjcyMQ==&amp;mid=2650219791&amp;idx=1&amp;sn=a8d588e0190c267d571b18a1732bd187&amp;chksm=bfd9f3a2ddd41acca39ab6c4fbfdfed00e04a6fbe6944eb7b672d6ce7a12b919be94ff2a6e19&amp;mpshare=1&amp;scene=1&amp;srcid=1029CI8ymnFofoQa5ZepN6qj&amp;sharer_shareinfo=55f9d48bd97f828c0b4edb20b03c2b9f&amp;sharer_shareinfo_first=55f9d48bd97f828c0b4edb20b03c2b9f#rd</url>\n'
+            '\t\t<lowurl />\n'
+            '\t\t<forwardflag>0</forwardflag>\n'
+            '\t\t<dataurl />\n'
+            '\t\t<lowdataurl />\n'
+            '\t\t<contentattr>0</contentattr>\n'
+            '\t\t<streamvideo>\n'
+            '\t\t\t<streamvideourl />\n'
+            '\t\t\t<streamvideototaltime>0</streamvideototaltime>\n'
+            '\t\t\t<streamvideotitle />\n'
+            '\t\t\t<streamvideowording />\n'
+            '\t\t\t<streamvideoweburl />\n'
+            '\t\t\t<streamvideothumburl />\n'
+            '\t\t\t<streamvideoaduxinfo />\n'
+            '\t\t\t<streamvideopublishid />\n'
+            '\t\t</streamvideo>\n'
+            '\t\t<canvasPageItem>\n'
+            '\t\t\t<canvasPageXml><![CDATA[]]></canvasPageXml>\n'
+            '\t\t</canvasPageItem>\n'
+            '\t\t<appattach>\n'
+            '\t\t\t<attachid />\n'
+            '\t\t\t'
+            '<cdnthumburl>3057020100044b30490201000204260e743602032f7e3702049ce7b975020467218095042439386265623531302d353964362d343131312d613436302d3337313435346538313537380204051808030201000405004c4ec700</cdnthumburl>\n'
+            '\t\t\t'
+            '<cdnthumbmd5>d78c9d0ec415f1369d729d090ec2c441</cdnthumbmd5>\n'
+            '\t\t\t<cdnthumblength>18091</cdnthumblength>\n'
+            '\t\t\t<cdnthumbheight>120</cdnthumbheight>\n'
+            '\t\t\t<cdnthumbwidth>120</cdnthumbwidth>\n'
+            '\t\t\t'
+            '<cdnthumbaeskey>2b62477e796c3ddca0feaacf359a268f</cdnthumbaeskey>\n'
+            '\t\t\t<aeskey>2b62477e796c3ddca0feaacf359a268f</aeskey>\n'
+            '\t\t\t<encryver>1</encryver>\n'
+            '\t\t\t<fileext />\n'
+            '\t\t\t<islargefilemsg>0</islargefilemsg>\n'
+            '\t\t</appattach>\n'
+            '\t\t<extinfo />\n'
+            '\t\t<androidsource>3</androidsource>\n'
+            '\t\t<sourceusername>gh_430521f7587e</sourceusername>\n'
+            '\t\t<sourcedisplayname>OSC开源社区</sourcedisplayname>\n'
+            '\t\t<commenturl />\n'
+            '\t\t<thumburl />\n'
+            '\t\t<mediatagname />\n'
+            '\t\t<messageaction><![CDATA[]]></messageaction>\n'
+            '\t\t<messageext><![CDATA[]]></messageext>\n'
+            '\t\t<emoticongift>\n'
+            '\t\t\t<packageflag>0</packageflag>\n'
+            '\t\t\t<packageid />\n'
+            '\t\t</emoticongift>\n'
+            '\t\t<emoticonshared>\n'
+            '\t\t\t<packageflag>0</packageflag>\n'
+            '\t\t\t<packageid />\n'
+            '\t\t</emoticonshared>\n'
+            '\t\t<designershared>\n'
+            '\t\t\t<designeruin>0</designeruin>\n'
+            '\t\t\t<designername>null</designername>\n'
+            '\t\t\t'
+            '<designerrediretcturl><![CDATA[null]]></designerrediretcturl>\n'
+            '\t\t</designershared>\n'
+            '\t\t<emotionpageshared>\n'
+            '\t\t\t<tid>0</tid>\n'
+            '\t\t\t<title>null</title>\n'
+            '\t\t\t<desc>null</desc>\n'
+            '\t\t\t<iconUrl><![CDATA[null]]></iconUrl>\n'
+            '\t\t\t<secondUrl>null</secondUrl>\n'
+            '\t\t\t<pageType>0</pageType>\n'
+            '\t\t\t<setKey>null</setKey>\n'
+            '\t\t</emotionpageshared>\n'
+            '\t\t<webviewshared>\n'
+            '\t\t\t'
+            '<shareUrlOriginal>http://mp.weixin.qq.com/s?__biz=MjM5NzM0MjcyMQ==&amp;mid=2650219791&amp;idx=1&amp;sn=a8d588e0190c267d571b18a1732bd187&amp;chksm=bfa41dec9491d513a36d81ee2988d174dea4a630ba25c67195b89f95ba8dd999f071cacf75c1&amp;forbs=1&amp;scene=126&amp;subscene=91&amp;sessionid=1730209527&amp;flutter_pos=0&amp;clicktime=1730209534&amp;enterid=1730209534&amp;finder_biz_enter_id=5&amp;ascene=56&amp;fasttmpl_type=0&amp;fasttmpl_fullversion=7448351-zh_CN-zip&amp;fasttmpl_flag=0&amp;realreporttime=1730209534413#rd</shareUrlOriginal>\n'
+            '\t\t\t'
+            '<shareUrlOpen>https://mp.weixin.qq.com/s?__biz=MjM5NzM0MjcyMQ==&amp;mid=2650219791&amp;idx=1&amp;sn=a8d588e0190c267d571b18a1732bd187&amp;chksm=bfa41dec9491d513a36d81ee2988d174dea4a630ba25c67195b89f95ba8dd999f071cacf75c1&amp;forbs=1&amp;scene=126&amp;subscene=91&amp;sessionid=1730209527&amp;flutter_pos=0&amp;clicktime=1730209534&amp;enterid=1730209534&amp;finder_biz_enter_id=5&amp;ascene=56&amp;fasttmpl_type=0&amp;fasttmpl_fullversion=7448351-zh_CN-zip&amp;fasttmpl_flag=0&amp;realreporttime=1730209534413&amp;devicetype=android-34&amp;version=28003537&amp;nettype=WIFI&amp;abtest_cookie=AAACAA%3D%3D&amp;lang=zh_CN&amp;session_us=gh_430521f7587e&amp;countrycode=CN&amp;exportkey=n_ChQIAhIQJEYyFxBAofGn4LSqdv8D%2BxLkAQIE97dBBAEAAAAAAEGuB2%2B1wN4AAAAOpnltbLcz9gKNyK89dVj0vNDRe4TlxExMIymJuEI%2Bh8Kr%2BK0nLWZ%2BCosa%2BJd%2BCiam15HWqDbj6rFoy3r8gcYXZVns7LPeH1zGJRPkhOzr%2BMCITZFlG25xFeoZgB2QAi1kQuWkn%2BwEkiNNi3nKgVVHQq24ggTkuClHBYxZkatkTF4%2BJIQ7NNu%2FEnL1NyTIN1DyFvp0%2FdcsvNdkzd9DjK0BkEunhILCQFYLlAD40Ed7jLdehzCTXsfj1Yk%2F9t4hke5d4kY3elSqScWD0nd%2FAg%3D%3D&amp;pass_ticket=LqV5vVwmjvaox%2F6PKOUKkpo9RlTA%2FQpPPRxD%2FxR27g22ZpQd5qOARnQVhPN0NLlt&amp;wx_header=3</shareUrlOpen>\n'
+            '\t\t\t<jsAppId />\n'
+            '\t\t\t<publisherId>msg_0</publisherId>\n'
+            '\t\t\t<publisherReqId>1484265975</publisherReqId>\n'
+            '\t\t</webviewshared>\n'
+            '\t\t<template_id />\n'
+            '\t\t<md5>d78c9d0ec415f1369d729d090ec2c441</md5>\n'
+            '\t\t<websearch>\n'
+            '\t\t\t<rec_category>0</rec_category>\n'
+            '\t\t\t<channelId>0</channelId>\n'
+            '\t\t</websearch>\n'
+            '\t\t<weappinfo>\n'
+            '\t\t\t<username />\n'
+            '\t\t\t<appid />\n'
+            '\t\t\t<appservicetype>0</appservicetype>\n'
+            '\t\t\t<secflagforsinglepagemode>0</secflagforsinglepagemode>\n'
+            '\t\t\t<videopageinfo>\n'
+            '\t\t\t\t<thumbwidth>120</thumbwidth>\n'
+            '\t\t\t\t<thumbheight>120</thumbheight>\n'
+            '\t\t\t\t<fromopensdk>0</fromopensdk>\n'
+            '\t\t\t</videopageinfo>\n'
+            '\t\t</weappinfo>\n'
+            '\t\t<statextstr />\n'
+            '\t\t<mmreadershare>\n'
+            '\t\t\t<itemshowtype>0</itemshowtype>\n'
+            '\t\t\t<ispaysubscribe>0</ispaysubscribe>\n'
+            '\t\t</mmreadershare>\n'
+            '\t\t<musicShareItem>\n'
+            '\t\t\t<musicDuration>0</musicDuration>\n'
+            '\t\t</musicShareItem>\n'
+            '\t\t<finderLiveProductShare>\n'
+            '\t\t\t<finderLiveID><![CDATA[]]></finderLiveID>\n'
+            '\t\t\t<finderUsername><![CDATA[]]></finderUsername>\n'
+            '\t\t\t<finderObjectID><![CDATA[]]></finderObjectID>\n'
+            '\t\t\t<finderNonceID><![CDATA[]]></finderNonceID>\n'
+            '\t\t\t<liveStatus><![CDATA[]]></liveStatus>\n'
+            '\t\t\t<appId><![CDATA[]]></appId>\n'
+            '\t\t\t<pagePath><![CDATA[]]></pagePath>\n'
+            '\t\t\t<productId><![CDATA[]]></productId>\n'
+            '\t\t\t<coverUrl><![CDATA[]]></coverUrl>\n'
+            '\t\t\t<productTitle><![CDATA[]]></productTitle>\n'
+            '\t\t\t<marketPrice><![CDATA[0]]></marketPrice>\n'
+            '\t\t\t<sellingPrice><![CDATA[0]]></sellingPrice>\n'
+            '\t\t\t<platformHeadImg><![CDATA[]]></platformHeadImg>\n'
+            '\t\t\t<platformName><![CDATA[]]></platformName>\n'
+            '\t\t\t<shopWindowId><![CDATA[]]></shopWindowId>\n'
+            '\t\t\t<flashSalePrice><![CDATA[0]]></flashSalePrice>\n'
+            '\t\t\t<flashSaleEndTime><![CDATA[0]]></flashSaleEndTime>\n'
+            '\t\t\t<ecSource><![CDATA[]]></ecSource>\n'
+            '\t\t\t<sellingPriceWording><![CDATA[]]></sellingPriceWording>\n'
+            '\t\t\t<platformIconURL><![CDATA[]]></platformIconURL>\n'
+            '\t\t\t<firstProductTagURL><![CDATA[]]></firstProductTagURL>\n'
+            '\t\t\t'
+            '<firstProductTagAspectRatioString><![CDATA[0.0]]></firstProductTagAspectRatioString>\n'
+            '\t\t\t<secondProductTagURL><![CDATA[]]></secondProductTagURL>\n'
+            '\t\t\t'
+            '<secondProductTagAspectRatioString><![CDATA[0.0]]></secondProductTagAspectRatioString>\n'
+            '\t\t\t'
+            '<firstGuaranteeWording><![CDATA[]]></firstGuaranteeWording>\n'
+            '\t\t\t'
+            '<secondGuaranteeWording><![CDATA[]]></secondGuaranteeWording>\n'
+            '\t\t\t'
+            '<thirdGuaranteeWording><![CDATA[]]></thirdGuaranteeWording>\n'
+            '\t\t\t<isPriceBeginShow>false</isPriceBeginShow>\n'
+            '\t\t\t<lastGMsgID><![CDATA[]]></lastGMsgID>\n'
+            '\t\t\t<promoterKey><![CDATA[]]></promoterKey>\n'
+            '\t\t\t<discountWording><![CDATA[]]></discountWording>\n'
+            '\t\t\t'
+            '<priceSuffixDescription><![CDATA[]]></priceSuffixDescription>\n'
+            '\t\t\t<productCardKey><![CDATA[]]></productCardKey>\n'
+            '\t\t\t<isWxShop><![CDATA[]]></isWxShop>\n'
+            '\t\t\t<brandIconUrl><![CDATA[]]></brandIconUrl>\n'
+            '\t\t\t<showBoxItemStringList />\n'
+            '\t\t</finderLiveProductShare>\n'
+            '\t\t<finderOrder>\n'
+            '\t\t\t<appID><![CDATA[]]></appID>\n'
+            '\t\t\t<orderID><![CDATA[]]></orderID>\n'
+            '\t\t\t<path><![CDATA[]]></path>\n'
+            '\t\t\t<priceWording><![CDATA[]]></priceWording>\n'
+            '\t\t\t<stateWording><![CDATA[]]></stateWording>\n'
+            '\t\t\t<productImageURL><![CDATA[]]></productImageURL>\n'
+            '\t\t\t<products><![CDATA[]]></products>\n'
+            '\t\t\t<productsCount><![CDATA[0]]></productsCount>\n'
+            '\t\t</finderOrder>\n'
+            '\t\t<finderShopWindowShare>\n'
+            '\t\t\t<finderUsername><![CDATA[]]></finderUsername>\n'
+            '\t\t\t<avatar><![CDATA[]]></avatar>\n'
+            '\t\t\t<nickname><![CDATA[]]></nickname>\n'
+            '\t\t\t'
+            '<commodityInStockCount><![CDATA[]]></commodityInStockCount>\n'
+            '\t\t\t<appId><![CDATA[]]></appId>\n'
+            '\t\t\t<path><![CDATA[]]></path>\n'
+            '\t\t\t<appUsername><![CDATA[]]></appUsername>\n'
+            '\t\t\t<query><![CDATA[]]></query>\n'
+            '\t\t\t<liteAppId><![CDATA[]]></liteAppId>\n'
+            '\t\t\t<liteAppPath><![CDATA[]]></liteAppPath>\n'
+            '\t\t\t<liteAppQuery><![CDATA[]]></liteAppQuery>\n'
+            '\t\t\t<platformTagURL><![CDATA[]]></platformTagURL>\n'
+            '\t\t\t<saleWording><![CDATA[]]></saleWording>\n'
+            '\t\t\t<lastGMsgID><![CDATA[]]></lastGMsgID>\n'
+            '\t\t\t<profileTypeWording><![CDATA[]]></profileTypeWording>\n'
+            '\t\t\t<saleWordingExtra><![CDATA[]]></saleWordingExtra>\n'
+            '\t\t\t<isWxShop><![CDATA[]]></isWxShop>\n'
+            '\t\t\t<platformIconUrl><![CDATA[]]></platformIconUrl>\n'
+            '\t\t\t<brandIconUrl><![CDATA[]]></brandIconUrl>\n'
+            '\t\t\t<description><![CDATA[]]></description>\n'
+            '\t\t\t<backgroundUrl><![CDATA[]]></backgroundUrl>\n'
+            '\t\t\t'
+            '<darkModePlatformIconUrl><![CDATA[]]></darkModePlatformIconUrl>\n'
+            '\t\t\t<reputationInfo>\n'
+            '\t\t\t\t<hasReputationInfo>0</hasReputationInfo>\n'
+            '\t\t\t\t<reputationScore>0</reputationScore>\n'
+            '\t\t\t\t<reputationWording />\n'
+            '\t\t\t\t<reputationTextColor />\n'
+            '\t\t\t\t<reputationLevelWording />\n'
+            '\t\t\t\t<reputationBackgroundColor />\n'
+            '\t\t\t</reputationInfo>\n'
+            '\t\t\t<productImageURLList />\n'
+            '\t\t</finderShopWindowShare>\n'
+            '\t\t<findernamecard>\n'
+            '\t\t\t<username />\n'
+            '\t\t\t<avatar><![CDATA[]]></avatar>\n'
+            '\t\t\t<nickname />\n'
+            '\t\t\t<auth_job />\n'
+            '\t\t\t<auth_icon>0</auth_icon>\n'
+            '\t\t\t<auth_icon_url />\n'
+            '\t\t\t<ecSource><![CDATA[]]></ecSource>\n'
+            '\t\t\t<lastGMsgID><![CDATA[]]></lastGMsgID>\n'
+            '\t\t</findernamecard>\n'
+            '\t\t<finderGuarantee>\n'
+            '\t\t\t<scene><![CDATA[0]]></scene>\n'
+            '\t\t</finderGuarantee>\n'
+            '\t\t<directshare>0</directshare>\n'
+            '\t\t<gamecenter>\n'
+            '\t\t\t<namecard>\n'
+            '\t\t\t\t<iconUrl />\n'
+            '\t\t\t\t<name />\n'
+            '\t\t\t\t<desc />\n'
+            '\t\t\t\t<tail />\n'
+            '\t\t\t\t<jumpUrl />\n'
+            '\t\t\t</namecard>\n'
+            '\t\t</gamecenter>\n'
+            '\t\t<patMsg>\n'
+            '\t\t\t<chatUser />\n'
+            '\t\t\t<records>\n'
+            '\t\t\t\t<recordNum>0</recordNum>\n'
+            '\t\t\t</records>\n'
+            '\t\t</patMsg>\n'
+            '\t\t<secretmsg>\n'
+            '\t\t\t<issecretmsg>0</issecretmsg>\n'
+            '\t\t</secretmsg>\n'
+            '\t\t<referfromscene>0</referfromscene>\n'
+            '\t\t<gameshare>\n'
+            '\t\t\t<liteappext>\n'
+            '\t\t\t\t<liteappbizdata />\n'
+            '\t\t\t\t<priority>0</priority>\n'
+            '\t\t\t</liteappext>\n'
+            '\t\t\t<appbrandext>\n'
+            '\t\t\t\t<litegameinfo />\n'
+            '\t\t\t\t<priority>-1</priority>\n'
+            '\t\t\t</appbrandext>\n'
+            '\t\t\t<gameshareid />\n'
+            '\t\t\t<sharedata />\n'
+            '\t\t\t<isvideo>0</isvideo>\n'
+            '\t\t\t<duration>-1</duration>\n'
+            '\t\t\t<isexposed>0</isexposed>\n'
+            '\t\t\t<readtext />\n'
+            '\t\t</gameshare>\n'
+            '\t\t<mpsharetrace>\n'
+            '\t\t\t<hasfinderelement>0</hasfinderelement>\n'
+            '\t\t\t'
+            '<lastgmsgid>CgZmYjhweTESFDIwODY5MjE0MjE2QGNoYXRyb29tIhM3OTI5NDUxOTY0NTQ3NTk5NDc2</lastgmsgid>\n'
+            '\t\t</mpsharetrace>\n'
+            '\t\t<wxgamecard>\n'
+            '\t\t\t<framesetname />\n'
+            '\t\t\t<mbcarddata />\n'
+            '\t\t\t<minpkgversion />\n'
+            '\t\t\t<clientextinfo />\n'
+            '\t\t\t<mbcardheight>0</mbcardheight>\n'
+            '\t\t\t<isoldversion>0</isoldversion>\n'
+            '\t\t</wxgamecard>\n'
+            '\t\t<liteapp>\n'
+            '\t\t\t<id>null</id>\n'
+            '\t\t\t<path />\n'
+            '\t\t\t<query />\n'
+            '\t\t</liteapp>\n'
+            '\t</appmsg>\n'
+            '\t<fromusername>wxid_tnv0hd5hj3rs11</fromusername>\n'
+            '\t<scene>0</scene>\n'
+            '\t<appinfo>\n'
+            '\t\t<version>1</version>\n'
+            '\t\t<appname></appname>\n'
+            '\t</appinfo>\n'
+            '\t<commenturl></commenturl>\n'
+            '</msg>\n'
+            '\x00',
+ 'CreateTime': '1730248853',
+ 'DisplayContent': '',
+ 'FlagEx': '0',
+ 'IsSender': '0',
+ 'MsgSequence': '894413424',
+ 'MsgServerSeq': '1',
+ 'MsgSvrID': '461127915639714537',
+ 'Reserved0': '0',
+ 'Reserved1': '2',
+ 'Reserved2': '',
+ 'Reserved3': '',
+ 'Reserved4': '',
+ 'Reserved5': '',
+ 'Reserved6': '',
+ 'Sequence': '1730248853000',
+ 'Status': '2',
+ 'StatusEx': '0',
+ 'StrContent': '',
+ 'StrTalker': 'wxid_tnv0hd5hj3rs11',
+ 'SubType': '5',
+ 'TalkerId': '3',
+ 'Type': '49',
+ 'localId': '25'}
+
+# publigMsg
+{'data': [{'BytesExtra': 'CgQIEBAAGoQECAcS/wM8bXNnc291cmNlPgogICAgPGJpem1zZz4KICAgICAgICA8Yml6Y2xpZW50bXNnaWQ+CiAgICAgICAgICAgIDwhW0NEQVRBW21tYml6Y2x1c3Rlcl8xXzMwODI0MTY0MzBfMTAwMDAyMTQ3OV1dPgogICAgICAgIDwvYml6Y2xpZW50bXNnaWQ+CiAgICAgICAgPG1zZ19wcmVkaWN0PjIwMDwvbXNnX3ByZWRpY3Q+CiAgICA8L2Jpem1zZz4KICAgIDxiaXpmbGFnPjE2PC9iaXpmbGFnPgogICAgPG1zZ19jbHVzdGVyX3R5cGU+MzwvbXNnX2NsdXN0ZXJfdHlwZT4KICAgIDxzZXJ2aWNlX3R5cGU+MDwvc2VydmljZV90eXBlPgogICAgPHNpZ25hdHVyZT5WMV81VUNGMlQwMnx2MV85WnBkTEJ0Njwvc2lnbmF0dXJlPgogICAgPHRtcF9ub2RlPgogICAgICAgIDxwdWJsaXNoZXItaWQgLz4KICAgIDwvdG1wX25vZGU+CiAgICA8c2VjX21zZ19ub2RlPgogICAgICAgIDxhbG5vZGU+CiAgICAgICAgICAgIDxmcj4xPC9mcj4KICAgICAgICA8L2Fsbm9kZT4KICAgIDwvc2VjX21zZ19ub2RlPgo8L21zZ3NvdXJjZT4KGiQIAhIgYjA2YzI3YjE1YmM1YjQ5NWNhYjE1ODQwMDFlYmI5Y2I=',
+           'BytesTrans': '',
+           'Content': '<msg>\n'
+                      '    <appmsg appid="" sdkver="0">\n'
+                      '        <title><![CDATA[四位专家“会诊”海水倒灌]]></title>\n'
+                      '        <des><![CDATA[]]></des>\n'
+                      '        <action></action>\n'
+                      '        <type>5</type>\n'
+                      '        <showtype>1</showtype>\n'
+                      '        <content><![CDATA[]]></content>\n'
+                      '        <contentattr>0</contentattr>\n'
+                      '        '
+                      '<url><![CDATA[http://mp.weixin.qq.com/s?__biz=MzA4MjQxNjQzMA==&mid=2768936492&idx=1&sn=d559cbefc5f756f5be970648ed268232&chksm=becfb003e10aae101615561858384771db2e99a5a8147e2d0b8706da4de3b276eae8cee6e72b&scene=0&xtrack=1#rd]]></url>\n'
+                      '        <lowurl><![CDATA[]]></lowurl>\n'
+                      '        <appattach>\n'
+                      '            <totallen>0</totallen>\n'
+                      '            <attachid></attachid>\n'
+                      '            <fileext></fileext>\n'
+                      '        </appattach>\n'
+                      '        <extinfo></extinfo>\n'
+                      '        <mmreader>\n'
+                      '            <category type="20" count="1">\n'
+                      '                <name><![CDATA[新华网]]></name>\n'
+                      '                <topnew>\n'
+                      '                    '
+                      '<cover><![CDATA[https://mmbiz.qpic.cn/mmbiz_jpg/O9F3NTo58ypE4iaS2ibOrUy56b9Oc56sDTv2gdtkUyPNouUWEvYGVibvrTApbZPqFeibtPQFkGuIichqU0TpkrsicPicA/640?wxtype=jpeg&wxfrom=0]]></cover>\n'
+                      '                    <width>0</width>\n'
+                      '                    <height>0</height>\n'
+                      '                    <digest><![CDATA[]]></digest>\n'
+                      '                </topnew>\n'
+                      '                \n'
+                      '                <item>\n'
+                      '                    '
+                      '<has_redpacket_cover>0</has_redpacket_cover>\n'
+                      '                    '
+                      '<text_title><![CDATA[]]></text_title>\n'
+                      '                    <itemshowtype>0</itemshowtype>\n'
+                      '                    '
+                      '<title><![CDATA[四位专家“会诊”海水倒灌]]></title>\n'
+                      '                    '
+                      '<title_v2><![CDATA[四位专家“会诊”海水倒灌]]></title_v2>\n'
+                      '                    '
+                      '<url><![CDATA[http://mp.weixin.qq.com/s?__biz=MzA4MjQxNjQzMA==&mid=2768936492&idx=1&sn=d559cbefc5f756f5be970648ed268232&chksm=be718a24575a87b005842fd44f0458725ff82f8ccc7567dab54ac9369a93c3e385c9ade70dd8&scene=0&xtrack=1#rd]]></url>\n'
+                      '                    <shorturl><![CDATA[]]></shorturl>\n'
+                      '                    <longurl><![CDATA[]]></longurl>\n'
+                      '                    <pub_time>1729909572</pub_time>\n'
+                      '                    <summary><![CDATA[新华访谈 | '
+                      '四位专家“会诊”海水倒灌近日，我国北方海域近日突发异常高潮位，多地出现海水倒灌。什么原因引起海水倒灌？为什么会“无风起浪”？未来会频繁发生此类现象吗？新华访谈专访中国科学院大气物理研究所]]></summary>\n'
+                      '                    '
+                      '<cover><![CDATA[https://mmbiz.qpic.cn/mmbiz_jpg/O9F3NTo58ypE4iaS2ibOrUy56b9Oc56sDTv2gdtkUyPNouUWEvYGVibvrTApbZPqFeibtPQFkGuIichqU0TpkrsicPicA/640?wxtype=jpeg&wxfrom=0]]></cover>\n'
+                      '                    <tweetid></tweetid>\n'
+                      '                    <digest><![CDATA[]]></digest>\n'
+                      '                    <fileid>621308496</fileid>\n'
+                      '                    <sources>\n'
+                      '                        <source>\n'
+                      '                            '
+                      '<name><![CDATA[新华网]]></name>\n'
+                      '                        </source>\n'
+                      '                    </sources>\n'
+                      '                    <styles></styles>\n'
+                      '                    <native_url></native_url>\n'
+                      '                    <del_flag>0</del_flag>\n'
+                      '                    <contentattr>0</contentattr>\n'
+                      '                    <play_length>0</play_length>\n'
+                      '                    <play_url><![CDATA[]]></play_url>\n'
+                      '                    <voice_id><![CDATA[]]></voice_id>\n'
+                      '                    <tid><![CDATA[]]></tid>\n'
+                      '                    <nonce_id><![CDATA[]]></nonce_id>\n'
+                      '                    <voice_type>0</voice_type>\n'
+                      '<player><![CDATA[]]></player>\n'
+                      '                     \n'
+                      '                    \n'
+                      '                    <music_source>0</music_source>\n'
+                      '                    <pic_num>0</pic_num>\n'
+                      '                    <vid></vid>\n'
+                      '                    <author><![CDATA[]]></author>\n'
+                      '                    '
+                      '<recommendation><![CDATA[]]></recommendation>\n'
+                      '                    <pic_urls></pic_urls>\n'
+                      '                    '
+                      '<multi_picture_cover></multi_picture_cover>\n'
+                      '                    '
+                      '<comment_topic_id>3696310952783020039</comment_topic_id>\n'
+                      '                    '
+                      '<cover_235_1><![CDATA[https://mmbiz.qpic.cn/mmbiz_jpg/O9F3NTo58ypE4iaS2ibOrUy56b9Oc56sDTv2gdtkUyPNouUWEvYGVibvrTApbZPqFeibtPQFkGuIichqU0TpkrsicPicA/640?wxtype=jpeg&wxfrom=0]]></cover_235_1>\n'
+                      '                    '
+                      '<cover_1_1><![CDATA[https://mmbiz.qpic.cn/mmbiz_jpg/O9F3NTo58ypE4iaS2ibOrUy56b9Oc56sDTlM0tibeNaxl4PWPMyax6od4DfyLMjbiaUbk2PW4UheXpf4IzLRpPZS2g/300?wxtype=jpeg&wxfrom=0]]></cover_1_1>\n'
+                      '                    '
+                      '<cover_16_9><![CDATA[]]></cover_16_9>\n'
+                      '                    '
+                      '<appmsg_like_type>2</appmsg_like_type>\n'
+                      '                    <video_width>0</video_width>\n'
+                      '                    <video_height>0</video_height>\n'
+                      '                    '
+                      '<is_pay_subscribe>0</is_pay_subscribe>\n'
+                      '\t\t\t<finder_feed>\n'
+                      '\t\t\t    <object_id><![CDATA[]]></object_id>\n'
+                      '\t\t\t    '
+                      '<object_nonce_id><![CDATA[]]></object_nonce_id>\n'
+                      '\t\t\t    <feed_type>0</feed_type>\n'
+                      '\t\t\t    <nickname><![CDATA[]]></nickname>\n'
+                      '\t\t\t    <avatar><![CDATA[]]></avatar>\n'
+                      '\t\t\t    <desc><![CDATA[]]></desc>\n'
+                      '\t\t\t    <media_count>0</media_count>\n'
+                      '\t\t\t    <media_list>\n'
+                      '\t\t\t\t\n'
+                      '\t\t\t    </media_list>\n'
+                      '\t\t\t    <mega_video>\n'
+                      '\t\t\t\t<object_id><![CDATA[]]></object_id>\n'
+                      '\t\t\t\t'
+                      '<object_nonce_id><![CDATA[]]></object_nonce_id>\n'
+                      '\t\t\t    </mega_video>\n'
+                      '\t\t\t</finder_feed>\n'
+                      '                        <finder_live>\n'
+                      '                            '
+                      '<finder_username><![CDATA[]]></finder_username>\n'
+                      '                            '
+                      '<category><![CDATA[]]></category>\n'
+                      '                            '
+                      '<finder_nonce_id><![CDATA[]]></finder_nonce_id>\n'
+                      '                            '
+                      '<export_id><![CDATA[]]></export_id>\n'
+                      '                            '
+                      '<nickname><![CDATA[]]></nickname>\n'
+                      '                            '
+                      '<head_url><![CDATA[]]></head_url>\n'
+                      '                            <desc><![CDATA[]]></desc>\n'
+                      '                            '
+                      '<live_status></live_status>\n'
+                      '                            '
+                      '<live_source_type_str><![CDATA[]]></live_source_type_str>\n'
+                      '                            <ext_flag></ext_flag>\n'
+                      '                            '
+                      '<auth_icon_url><![CDATA[]]></auth_icon_url>\n'
+                      '                            '
+                      '<auth_icon_type_str><![CDATA[]]></auth_icon_type_str>\n'
+                      '                            <media>\n'
+                      '                                '
+                      '<cover_url><![CDATA[]]></cover_url>\n'
+                      '                                <height></height>\n'
+                      '                                <width></width>\n'
+                      '                            </media>\n'
+                      '                        </finder_live>\n'
+                      '                    <product_activity>\n'
+                      '                        '
+                      '<activity_type></activity_type>\n'
+                      '                        '
+                      '<activity_tag><![CDATA[]]></activity_tag>\n'
+                      '                        '
+                      '<activity_content><![CDATA[]]></activity_content>\n'
+                      '                    </product_activity>\n'
+                      '                </item>\n'
+                      '                \n'
+                      '            </category>\n'
+                      '            <publisher>\n'
+                      '                '
+                      '<username><![CDATA[gh_68b976f584b5]]></username>\n'
+                      '                <nickname><![CDATA[新华网]]></nickname>\n'
+                      '            </publisher>\n'
+                      '            <template_header></template_header>\n'
+                      '            <template_detail></template_detail>\n'
+                      '            <forbid_forward>0</forbid_forward>\n'
+                      '        </mmreader>\n'
+                      '        '
+                      '<thumburl><![CDATA[https://mmbiz.qpic.cn/mmbiz_jpg/O9F3NTo58ypE4iaS2ibOrUy56b9Oc56sDTv2gdtkUyPNouUWEvYGVibvrTApbZPqFeibtPQFkGuIichqU0TpkrsicPicA/640?wxtype=jpeg&wxfrom=0]]></thumburl>\n'
+                      '    </appmsg>\n'
+                      '    '
+                      '<fromusername><![CDATA[gh_68b976f584b5]]></fromusername>\n'
+                      '    <appinfo>\n'
+                      '        <version></version>\n'
+                      '        <appname><![CDATA[新华网]]></appname>\n'
+                      '        <isforceupdate>1</isforceupdate>\n'
+                      '    </appinfo>\n'
+                      '    \n'
+                      '    \n'
+                      '    \n'
+                      '    \n'
+                      '    \n'
+                      '    \n'
+                      '</msg>\x00',
+           'CreateTime': '1729909696',
+           'DisplayContent': '',
+           'FlagEx': '0',
+           'IsSender': '0',
+           'MsgSequence': '894412087',
+           'MsgServerSeq': '1',
+           'MsgSvrID': '1845757981825444882',
+           'Reserved0': '1',
+           'Reserved1': '2',
+           'Reserved2': '',
+           'Reserved3': '',
+           'Reserved4': '',
+           'Reserved5': '',
+           'Reserved6': '',
+           'Sequence': '1729909696000',
+           'Status': '2',
+           'StatusEx': '0',
+           'StrContent': '',
+           'StrTalker': 'gh_68b976f584b5',
+           'SubType': '5',
+           'TalkerId': '4',
+           'Type': '49',
+           'localId': '23908'}],
+ 'total': 1,
+ 'wxid': 'lonely2012'}
+
+#语音通话和视频通话都接不到，只有对方挂断后能收到挂断信息，type 为'50'
