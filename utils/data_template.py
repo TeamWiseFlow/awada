@@ -11,10 +11,10 @@ config_template = {
   "greeting": "",
   "wiseflow_working_kb": "",
   "wiseflow_focus": [],
-  "wiseflow_llm_base": "",
-  "wiseflow_llm_key": "",
   "wiseflow_model": "",
   "wiseflow_sites": [],
   "topnews_shout": "",
-  "top_news_items": {}
+  "top_news_items": {},
+  "topnews_max": 5,
+  "topnews_scriber": []
 }

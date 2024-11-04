@@ -292,7 +292,6 @@ async def refresh_any(room_id: str) -> list[dict]:
         await aio_save_config(config, config_file_map[bot_id])
     return [{"type": "text", "answer": f"已更新 {room_id} 中所有成员为 {bot_id} 的服务对象"}]
 
-
 async def send_msg(user_id: str, contents: list[dict], at_list: Optional[list] = None):
     """
     user_id 请使用 wxid，包括群聊的 id （@chatroom 结尾，要写全）
@@ -324,7 +323,7 @@ async def send_msg(user_id: str, contents: list[dict], at_list: Optional[list] =
             with open(path, 'rb') as file:
                 # 构建 POST 请求的文件部分
                 files = {'image': file}
-                async with httpx.AsyncClient() as client:
+                async with httpx.AsyncClient(timeout=httpx.Timeout(24.88)) as client:
                     response = await client.post(endpoint, data=data, files=files)
                     if response.status_code != 200:
                         logger.error(f"send file failed: {response.text}")
@@ -345,7 +344,7 @@ async def send_msg(user_id: str, contents: list[dict], at_list: Optional[list] =
                 'file': base64,
                 'filename': filename
             }
-            async with httpx.AsyncClient() as client:
+            async with httpx.AsyncClient(timeout=httpx.Timeout(24.88)) as client:
                 response = await client.post(endpoint, json=data)
                 if response.status_code != 200:
                     logger.error(f"send file failed: {response.text}")
@@ -391,13 +390,13 @@ async def director_codes_handler(*args) -> list[dict]:
     else:
         return [{"type": "text", "answer": f"未匹配正确的导演指令。{director_guide}"}]
 
-
+#如下 pattern 仅适用于public msg的解析，群内分享的公号文章不在此列
 # The XML parsing scheme is not used because there are abnormal characters in the XML code extracted from the weixin public_msg
 item_pattern = re.compile(r'<item>(.*?)</item>', re.DOTALL)
 url_pattern = re.compile(r'<url><!\[CDATA\[(.*?)]]></url>')
 summary_pattern = re.compile(r'<summary><!\[CDATA\[(.*?)]]></summary>', re.DOTALL)
 
-service_url = os.environ.get('AWADA_ENDPOINT', 'http://127.0.0.1:8077/')
+service_url = os.environ.get('MAIN_SERVICE_ENDPOINT', 'http://127.0.0.1:8077/')
 # 对应不同的数据结构，考虑后续维护升级可能，分成两个函数
 async def get_public_msg(websocket_uri):
     reconnect_attempts = 0
@@ -429,16 +428,15 @@ async def get_public_msg(websocket_uri):
                             cut_off_point = url.find('chksm=')
                             if cut_off_point != -1:
                                 url = url[:cut_off_point - 1]
-
-                            summary_match = summary_pattern.search(item)
-                            addition = summary_match.group(1) if summary_match else None
-                            post_body = {"user_id": user_id, "type": "url", "content": url, "addition": addition, "bot_id": bot_id}
+                            # summary_match = summary_pattern.search(item)
+                            # addition = summary_match.group(1) if summary_match else None
+                            post_body = {"user_id": user_id, "type": "url", "content": url, "bot_id": bot_id}
                             async with httpx.AsyncClient() as client:
                                 response = await client.post(f"{service_url}feed", json=post_body)
                             if response.status_code != 200:
                                 logger.warning(f"failed to post to service, 响应内容: {response.text}")
                                 for director in directors:
-                                    await send_msg(director, [{'type': 'text', 'answer': "[惊恐]后端服务feed 接口异常，请去排查"}])
+                                    await send_msg(director, [{'type': 'text', 'answer': "[惊恐]主服务feed接口异常，请去排查"}])
         except websockets.exceptions.ConnectionClosedError as e:
             logger.error(f"Connection closed with exception: {e}")
             reconnect_attempts += 1
@@ -455,7 +453,7 @@ async def get_public_msg(websocket_uri):
             error_message = str(e)
             if error_message:
                 for director in directors:
-                    await send_msg(director, [{'type': 'text', 'answer': f"[惊恐]公众号消息提交后台process错误\n{error_message}"}])
+                    await send_msg(director, [{'type': 'text', 'answer': f"[惊恐]公众号消息提交主服务处理过程中报错：{error_message}"}])
 
 
 async def get_general_msg(websocket_uri):
@@ -467,7 +465,6 @@ async def get_general_msg(websocket_uri):
                 while True:
                     response = await websocket.recv()
                     datas = json.loads(response)
-
                     for data in datas["data"]:
                         """
                         目前使用的wx-bot 方案来自：https://github.com/jwping/wxbot
@@ -546,13 +543,13 @@ async def get_general_msg(websocket_uri):
                                 response = await client.post(f"{service_url}dm", json=input_data)
                                 if response.status_code != 200:
                                     logger.warning(f"failed to post to service, 响应内容: {response.text}")
-                                    res = {'flag': 1, 'result': [{'type': 'text', 'answer': "[惊恐]后端服务异常，请管理员速去排查"}]}
+                                    res = {'flag': 1, 'result': [{'type': 'text', 'answer': "[惊恐]主服务异常，请管理员速去排查"}]}
                                 else:
                                     res = response.json()
 
                             if atlist:
                                 nickname, wxid = atlist
-                                res['result'][0]['answer'] = f"{res['result'][0]['answer']} @{nickname} "
+                                res['result'][0]['answer'] = f"@{nickname} {res['result'][0]['answer']}"
                                 await send_msg(user_id, res['result'], at_list=[wxid])
                             else:
                                 await send_msg(user_id, res['result'])
@@ -569,25 +566,24 @@ async def get_general_msg(websocket_uri):
                             content = data["Content"]
                             item = re.search(r'<url>(.*?)&amp;chksm=', content, re.DOTALL)
                             if not item:
-                                logger.debug("shareUrlOpen not find")
-                                item = re.search(r'<shareUrlOriginal>(.*?)&amp;chksm=', content, re.DOTALL)
+                                item = re.search(r'<url>(.*?)</url>', content, re.DOTALL)
+                                extract_url = item.group(1)
                                 if not item:
-                                    logger.debug("shareUrlOriginal not find")
-                                    item = re.search(r'<shareUrlOpen>(.*?)&amp;chksm=', content, re.DOTALL)
-                                    if not item:
-                                        logger.warning(f"cannot find url in \n{content}")
-                                        return
-                            extract_url = item.group(1).replace('amp;', '')
-                            summary_match = re.search(r'<des>(.*?)</des>', content, re.DOTALL)
-                            summary = summary_match.group(1) if summary_match else None
+                                    logger.warning(f"cannot find url in \n{content}")
+                                    continue
+                            else:
+                                extract_url = item.group(1).replace('amp;', '')
+
+                            # summary_match = re.search(r'<des>(.*?)</des>', content, re.DOTALL)
+                            # summary = summary_match.group(1) if summary_match else None
                             logger.debug(f"parsed source:{user_id}, url: {extract_url}")
-                            post_body = {"user_id": user_id, "type": "url", "content": extract_url, "addition": summary, "bot_id": learn_sources_map[user_id]}
+                            post_body = {"user_id": user_id, "type": "url", "content": extract_url, "bot_id": learn_sources_map[user_id]}
                             async with httpx.AsyncClient() as client:
                                 response = await client.post(f"{service_url}feed", json=post_body)
                             if response.status_code != 200:
                                 logger.warning(f"failed to post to service, 响应内容: {response.text}")
                                 for director in directors:
-                                    await send_msg(director, [{'type': 'text', 'answer': "后端服务feed 接口异常，快去看看吧[惊恐]"}])
+                                    await send_msg(director, [{'type': 'text', 'answer': "主服务feed接口异常，快去看看吧[惊恐]"}])
                         elif data['Type'] == '10000':
                             if not user_id.endswith("@chatroom"): continue
                             if user_id not in service_list_map: continue

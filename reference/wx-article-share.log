@@ -1,0 +1,264 @@
+# 微信公众号文章分享
+<?xml version="1.0"?>
+<msg>
+	<appmsg appid="" sdkver="0">
+		<title>高效评估多模态预训练对齐质量，中科大提出模态融合率MIR</title>
+		<des>是否还在苦恼如何评估自己预训练好的多模态 LLM 的性能？</des>
+		<action />
+		<type>5</type>
+		<showtype>0</showtype>
+		<soundtype>0</soundtype>
+		<mediatagname />
+		<messageext />
+		<messageaction />
+		<content />
+		<contentattr>0</contentattr>
+		<url>https://mp.weixin.qq.com/s/bhh0sFxQ6GKOYAL7mOY7Vw</url>
+		<lowurl />
+		<dataurl />
+		<lowdataurl />
+		<songalbumurl />
+		<songlyric />
+		<appattach>
+			<totallen>0</totallen>
+			<attachid />
+			<emoticonmd5 />
+			<fileext />
+			<aeskey />
+		</appattach>
+		<extinfo />
+		<sourceusername>gh_dbc0a5474692</sourceusername>
+		<sourcedisplayname>机器之心</sourcedisplayname>
+		<thumburl>https://mmbiz.qpic.cn/sz_mmbiz_jpg/KmXPKA19gWib2mzQQbXaVFzIHWu9G0I9U5SR1FoVSnvTm8bf30XO0k9bEUQOjrIkfSgOslnoib9mHibicqRckMricdw/0?wx_fmt=jpeg</thumburl>
+		<md5 />
+		<statextstr />
+		<mmreadershare>
+			<itemshowtype>0</itemshowtype>
+		</mmreadershare>
+	</appmsg>
+	<fromusername>wxid_ck0xzqhhiu3422</fromusername>
+	<scene>0</scene>
+	<appinfo>
+		<version>1</version>
+		<appname></appname>
+	</appinfo>
+	<commenturl></commenturl>
+</msg>
+
+<?xml version="1.0"?>
+<msg>
+	<appmsg appid="" sdkver="0">
+		<title>NeurIPS 2024 | 真实世界复杂任务，全新基准GTA助力大模型工具调用能力评测</title>
+		<des>本文构建了面向复杂真实场景的通用工具智能体评测基准。</des>
+		<action />
+		<type>5</type>
+		<showtype>0</showtype>
+		<soundtype>0</soundtype>
+		<mediatagname />
+		<messageext />
+		<messageaction />
+		<content />
+		<contentattr>0</contentattr>
+		<url>https://mp.weixin.qq.com/s/KD4LzEomMUz_jKzVVuPLwg</url>
+		<lowurl />
+		<dataurl />
+		<lowdataurl />
+		<songalbumurl />
+		<songlyric />
+		<appattach>
+			<totallen>0</totallen>
+			<attachid />
+			<emoticonmd5 />
+			<fileext />
+			<aeskey />
+		</appattach>
+		<extinfo />
+		<sourceusername>gh_dbc0a5474692</sourceusername>
+		<sourcedisplayname>机器之心</sourcedisplayname>
+		<thumburl>https://mmbiz.qpic.cn/sz_mmbiz_jpg/KmXPKA19gWickEK9uwIhRo2NH1icB3YI7LyF2WQvQStwH5Qkic7SVVInZnA4LINrSN0DI43a3RicWibFHJ5xzaSCmlg/0?wx_fmt=jpeg</thumburl>
+		<md5 />
+		<statextstr />
+		<mmreadershare>
+			<itemshowtype>0</itemshowtype>
+		</mmreadershare>
+	</appmsg>
+	<fromusername>wxid_ck0xzqhhiu3422</fromusername>
+	<scene>0</scene>
+	<appinfo>
+		<version>1</version>
+		<appname></appname>
+	</appinfo>
+	<commenturl></commenturl>
+</msg>
+
+<?xml version="1.0"?>
+<msg>
+	<appmsg appid="" sdkver="0">
+		<title>高级开源情报分析：搜索技巧与实战案例</title>
+		<des />
+		<action />
+		<type>5</type>
+		<showtype>0</showtype>
+		<soundtype>0</soundtype>
+		<mediatagname />
+		<messageext />
+		<messageaction />
+		<content />
+		<contentattr>0</contentattr>
+		<url>https://mp.weixin.qq.com/s/pd0fxYCbtN2cyovm0WgbWw</url>
+		<lowurl />
+		<dataurl />
+		<lowdataurl />
+		<songalbumurl />
+		<songlyric />
+		<appattach>
+			<totallen>0</totallen>
+			<attachid />
+			<emoticonmd5 />
+			<fileext />
+			<aeskey />
+		</appattach>
+		<extinfo />
+		<sourceusername>gh_e87ab103349e</sourceusername>
+		<sourcedisplayname>情报分析师</sourcedisplayname>
+		<thumburl>https://mmbiz.qpic.cn/sz_mmbiz_jpg/Mkvak7WiccmXlP9ibFiamCYXqDibgXX5cDYtQ78QaDhvdLwSBxYtX9JBgHas1BPP0T5YT529Cw1CmeUxJsgXgDibIoQ/0?wx_fmt=jpeg</thumburl>
+		<md5 />
+		<statextstr />
+		<mmreadershare>
+			<itemshowtype>0</itemshowtype>
+		</mmreadershare>
+	</appmsg>
+	<fromusername>wxid_ck0xzqhhiu3422</fromusername>
+	<scene>0</scene>
+	<appinfo>
+		<version>1</version>
+		<appname></appname>
+	</appinfo>
+	<commenturl></commenturl>
+</msg>
+
+# 今日头条
+<?xml version="1.0"?>
+<msg>
+
+
+	<appmsg appid="wx50d801314d9eb858" sdkver="0">
+
+
+		<title>只有10%的产品值得用AI再做一遍 - 今日头条</title>
+
+
+		<des>文 | AI鲸选社，作者 | 晓睿，编辑 | 杨晓鹤2023年的这时候，很多人都在讲，所有的产品都值得用AI再做一遍。前阿里的CEO张勇说：“面向AI时代，所有产品都值得用大模型重新升级。</des>
+
+
+		<type>5</type>
+
+
+		<url>https://m.toutiao.com/article/7425895887195226662/?app=news_article&amp;timestamp=1730696362&amp;use_new_style=1&amp;req_id=20241104125921F952185D01C5930AB910&amp;group_id=7425895887195226662&amp;share_token=E13EEC82-1A8E-4519-AFCE-2DE69C7A2D5B&amp;tt_from=weixin&amp;utm_source=weixin&amp;utm_medium=toutiao_ios&amp;utm_campaign=client_share&amp;wxshare_count=1</url>
+
+
+		<appattach>
+
+
+			<cdnthumburl>3057020100044b304902010002046b1eea7c02032df7fa020416ecd4760204672854df042432636434626639322d646533312d346438322d613132342d3739643835396239326333660204052408030201000405004c53da00</cdnthumburl>
+
+
+			<cdnthumbmd5>65388ccaf2b170bf4ae4884b98426892</cdnthumbmd5>
+
+
+			<cdnthumblength>22734</cdnthumblength>
+
+
+			<cdnthumbwidth>172</cdnthumbwidth>
+
+
+			<cdnthumbheight>120</cdnthumbheight>
+
+
+			<cdnthumbaeskey>2a2220d99a787de9e7fff836cce60119</cdnthumbaeskey>
+
+
+			<aeskey>2a2220d99a787de9e7fff836cce60119</aeskey>
+
+
+			<encryver>0</encryver>
+
+
+			<filekey>56124794696@chatroom_185_1730696810</filekey>
+
+
+		</appattach>
+
+
+		<md5>65388ccaf2b170bf4ae4884b98426892</md5>
+
+
+		<statextstr>GhQKEnd4NTBkODAxMzE0ZDllYjg1OA==</statextstr>
+
+
+		<platform_signature>PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxwbGF0Zm9ybV9zaWduYXR1cmU+Cgk8cGxhdGZvcm1fdW5pcXVlX2lkPjU8L3BsYXRmb3JtX3VuaXF1ZV9pZD4KCTx2ZXJzaW9uPjE8L3ZlcnNpb24+Cgk8c2lnbmF0dXJlPjwhW0NEQVRBW3YxX2RQdTZNYnNMU3NvbUFCTGhmWmdZa0d3Q3plcUxCcG9FQ01PeWxtUDg4ZE09XV0+PC9zaWduYXR1cmU+Cgk8ZXh0aW5mbz4KCQk8ZHluYW1pY19zaWduYXR1cmU+PCFbQ0RBVEFbdjFfcnlxdVpPRG1HU0dvOTVWMy8zWStUWWVOeEwwTy9JdDRidnNOYTZma1JQRT1dXT48L2R5bmFtaWNfc2lnbmF0dXJlPgoJPC9leHRpbmZvPgo8L3BsYXRmb3JtX3NpZ25hdHVyZT4K</platform_signature>
+
+
+		<thumbdatahash>470160fb03007d31c42f7553e9e5a128050ed3f45b5df5a3a89263e7296ce51a</thumbdatahash>
+
+
+	</appmsg>
+
+
+	<fromusername>piaolin1980</fromusername>
+
+
+	<scene>0</scene>
+
+
+	<appinfo>
+
+
+		<version>83</version>
+
+
+		<appname>今日头条</appname>
+
+
+	</appinfo>
+
+
+	<commenturl />
+
+
+</msg>
+
+# 央视新闻
+<?xml version="1.0"?>
+<msg>
+	<appmsg appid="" sdkver="0">
+		<title>第七届进博会将于11月5日-10日在上海举办 进博会新闻中心今天正式启用</title>
+		<des>点击查看更多</des>
+		<type>5</type>
+		<url>https://content-static.cctvnews.cctv.com/snow-book/video.html?item_id=13864596321440483321&amp;t=1730628803003&amp;toc_style_id=video_default&amp;share_to=wechat&amp;track_id=d2a65105-8e90-4a90-bf2f-81555e5983a9</url>
+		<appattach>
+			<cdnthumburl>3057020100044b304902010002040b8b243b02032f5726020438bcfd76020467285685042439323763306463662d393133642d346363362d613239302d6332343535363566396261640204052408030201000405004c4c0a00</cdnthumburl>
+			<cdnthumbmd5>a58f5bb99e884f847bf5aa5ea533a190</cdnthumbmd5>
+			<cdnthumblength>11973</cdnthumblength>
+			<cdnthumbwidth>160</cdnthumbwidth>
+			<cdnthumbheight>160</cdnthumbheight>
+			<cdnthumbaeskey>bcf13462a340ecccdba17408e6de8813</cdnthumbaeskey>
+			<aeskey>bcf13462a340ecccdba17408e6de8813</aeskey>
+			<encryver>0</encryver>
+			<filekey>56124794696@chatroom_149_1730696837</filekey>
+		</appattach>
+		<md5>a58f5bb99e884f847bf5aa5ea533a190</md5>
+		<webviewshared>
+			<jsAppId><![CDATA[wx2f21c31b7b1b97fd]]></jsAppId>
+			<publisherId><![CDATA[sns_14517687344114840135|mclacedoll]]></publisherId>
+			<publisherReqId><![CDATA[4119979504]]></publisherReqId>
+		</webviewshared>
+	</appmsg>
+	<fromusername>deepering</fromusername>
+	<scene>0</scene>
+	<appinfo>
+		<version>1</version>
+		<appname />
+	</appinfo>
+	<commenturl />
+</msg>

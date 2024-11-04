@@ -24,11 +24,10 @@ async def upload_files_to_kb(kb_id: str, files: list[str], user_id: str = "zzp",
             'mode': mode,
             'chunk_size': chunk_size
         }
-        files_data = []
-        for file in files:
-            files_data.append(('files', open(file, 'rb')))
+        files_data = [('files', open(file, 'rb')) for file in files]
 
         for attempt in range(2):
+            exception_occurred = False  # 标志变量，用于判断是否发生了异常
             try:
                 async with semaphore:
                     async with httpx.AsyncClient() as client:
@@ -41,8 +40,8 @@ async def upload_files_to_kb(kb_id: str, files: list[str], user_id: str = "zzp",
                 code = response_data.get('code', -3)
                 msg = response_data.get('msg', 'qanything out of service')
                 return code, msg
-
             except Exception as e:
+                exception_occurred = True  # 设置标志变量，表示发生了异常
                 if attempt < 1:
                     logger.info('qanything upload service busy, waiting for 1s to retry...')
                     await asyncio.sleep(1)  # 等待一段时间后重试
@@ -53,8 +52,9 @@ async def upload_files_to_kb(kb_id: str, files: list[str], user_id: str = "zzp",
                         print(e)
                     return -3, "qanything out of service"
             finally:
-                for file in files_data:
-                    file[1].close()
+                if attempt == 1 or (attempt < 1 and not exception_occurred):
+                    for file in files_data:
+                        file[1].close()
 
     tasks = []
     task = asyncio.create_task(send_request(kb_id=kb_id, files=files, user_id=user_id, logger=logger))

@@ -15,7 +15,7 @@ from llms.qanything import purge_kb, daily_status
 
 
 logger = get_logger(logger_name='schedule_tasks', logger_file_path='projects_data')
-service_url = os.environ.get('AWADA_ENDPOINT', 'http://127.0.0.1:8077/')
+service_url = os.environ.get('MAIN_SERVICE_ENDPOINT', 'http://127.0.0.1:8077/')
 WX_BOT_ENDPOINT = os.environ.get('WX_BOT_ENDPOINT', '127.0.0.1:8066')
 wx_url = f"http://{WX_BOT_ENDPOINT}/api/"
 
@@ -123,6 +123,7 @@ def topnews_task():
         if not top_news:
             logger.info(f'no top news today for {bot_id}')
             continue
+        """
         # 企微发送
         for room_id in sending_list[bot_id]:
             logger.debug(f"send top news to {room_id}")
@@ -134,7 +135,6 @@ def topnews_task():
             logger.debug(f"send top news to {room_id}")
             send_msg(room_id, top_news)
             logger.debug("done")
-        """
 
 def wiseflow_task():
     configs = scan_configs()
@@ -152,7 +152,7 @@ def wiseflow_task():
             if response.status_code != 200:
                 logger.warning(f"failed to post to service, 响应内容: {response.text}")
                 for director in directors:
-                    send_msg(director, "后端服务feed 接口异常，请去排查[擦汗]")
+                    send_msg(director, "主服务feed接口异常，请去排查[擦汗]")
 
 def qanything_daily_maintance():
     logger.info("start daily qanything maintenance")

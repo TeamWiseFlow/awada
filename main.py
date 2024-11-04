@@ -35,7 +35,6 @@ def load_configs() -> dict[str, DialogManager]:
 class Request(BaseModel):
     """
     Input model
-    遵循midplatform统一入参格式
     input = {“user_id”:”xxx”, “type”:”text”, 'content':str，'addition': Optional[str]}
     type限定为["text", "file", "image", "video", "location", "chathistory", "attachment", "url", "voice"]；
 
@@ -103,8 +102,8 @@ async def learn(background_tasks: BackgroundTasks, request: Request):
     if _type == "url":
         if not isURL(_input["content"]):
             return dm_maps[_input["bot_id"]].build_out(-5, "invalid url")
-        cache = {'source': _input["user_id"], 'abstract': _input["addition"]}
-        background_tasks.add_task(dm_maps[_input["bot_id"]].wiseflow, _input["content"], cache)
+        # cache = {'source': _input["user_id"], 'abstract': _input["addition"]}
+        background_tasks.add_task(dm_maps[_input["bot_id"]].wiseflow, _input["content"], {})
         return dm_maps[_input["bot_id"]].build_out(0, "well received but you should check qanything dashboard for final result!")
 
     # 目前不太推荐使用 feed 接口的提交text 类型，如果是 call 接口，text 会自动归类为 service

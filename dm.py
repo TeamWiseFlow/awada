@@ -2,7 +2,6 @@
 from llms.openai_wrapper import openai_llm as llm
 from llms.qanything import *
 from workflows.rewrite import modify_word_document
-from workflows.penholder import penholder_chain
 import time, pickle, json
 import uuid
 from utils.general_utils import *
@@ -41,7 +40,6 @@ speech_dict = {
     "others": "{bot_name}开小差了，请联系管理员处理哦～",
     "dissatisfied": "抱歉，我没有在资料库中找到相关信息，为避免误导，我不能回答您的这个问题。",
     "meaningless": "嗯，我在。",
-    "gfw": "请注意您的用词哦，后台都有记录的哦！",
     "wrong_input": "文件库资料仅支持word、pdf、图片和文本信息哦~请您提交正确的文件格式",
     "duple_file": "文件库已经有同名文件啦，请联系管理员操作",
     "no_answer": "未检索到相关信息，请换个问题或联系管理员查证",
@@ -63,12 +61,12 @@ class DialogManager:
             self.name = config['bot_name']
             org = config['bot_org']
             self.llm_model = config["chat_model"]
-            self.wf_model = config["wiseflow_model"]
             focus = config["wiseflow_focus"]
             project_dir = os.path.join("projects_data", config['bot_id'] if config['bot_id'] else "default")
         except Exception as e:
             raise Exception(f"{e}, cannot process initial, pls check {config_file}")
 
+        self.wf_model = config.get("wiseflow_model", "") if config.get("wiseflow_model", "") else self.llm_model
         # 1. base initialization
         self.config_file = config_file
         self.cache_url = os.path.join(project_dir, "cache")
@@ -148,8 +146,7 @@ class DialogManager:
         self.logger.info(f"updating config file - {updates}")
         config = await aio_config_load(self.config_file)
         config.update(updates)
-        async with self.lock:
-            await aio_save_config(config, self.config_file)
+        await aio_save_config(config, self.config_file)
         self.logger.info("config file updated")
 
     async def _run_rewrite(self, query: str, old_file: str, user_id: str) -> dict:
@@ -162,32 +159,6 @@ class DialogManager:
             replies = {"flag": flag, "result": [{"type": "file", "answer": docx_name},
                                                 {"type": "text", "answer": "已为您生成文件，有什么需要修改或者补充的，可以直接跟我说哦[愉快]"}]}
             self.loop[user_id]['temp'] = docx_name
-        return replies
-
-    async def _run_coacher(self, query: str, user_id: str) -> dict:
-        flag, replies = await self.coacher(query, user_id)
-        if flag < 0:
-            return self.build_out(flag, speech_dict['others'].replace("<{bot_name}>", self.name))
-        messages = []
-        for reply in replies:
-            messages.append({"type": "text", "answer": reply})
-        if flag == 11:
-            self.logger.debug(f"{user_id} finished coacher, loop delete")
-            del self.loop[user_id]
-        return {'flag': flag, "result": messages}
-
-    async def _run_penholder(self, query: str, user_id: str) -> dict:
-        docx_name = os.path.join(self.cache_url, f"{str(uuid.uuid4())[:8]}.docx")
-        flag, msg = await penholder_chain(prompt=query, file=docx_name, logger=self.logger, history=self.loop[user_id]["memory"])
-        if flag < 0:
-            replies = self.build_out(flag, speech_dict["others"].replace("<{bot_name}>", self.name))
-        elif flag == 0:
-            replies = self.build_out(flag, msg)
-            self.loop[user_id]["memory"] = msg
-        else:
-            replies = {"flag": flag, "result": [{"type": "file", "answer": docx_name},
-                                                {"type": "text", "answer": "已为您生成文件，有什么需要修改或者补充的，可以直接跟我说哦[愉快]"}]}
-            self.loop[user_id]["memory"] = msg
         return replies
 
     # 统一由主程序管理memory，
@@ -232,23 +203,6 @@ class DialogManager:
             if len(query) <= 1:
                 return self.build_out(0, self.greeting)
             status = "qa"
-        elif query.startswith("#") or query.startswith("＃"):
-            if user_id in self.loop:
-                del self.loop[user_id]
-            query = query[1:]
-            query = clean_query(query, self.name)
-            if len(query) <= 1:
-                return self.build_out(0, self.greeting)
-            # 这部分是临汾路特例，awada 产品并不包含 coacher
-            if query == '开始训练':
-                self.logger.debug(f"{user_id} will step into a whole new coacher loop, the memmory will record by coacher not dm！")
-                self.loop[user_id] = {"status": "coacher", "memory": '', "temp": None, "last_update": time.time()}
-                if user_id in self.coacher.memory:
-                    del self.coacher.memory[user_id]
-                if user_id in self.coacher.loop:
-                    del self.coacher.loop[user_id]
-                return await self._run_coacher(query=query, user_id=user_id)
-            status = "penholder"
         else:
             status = self.loop[user_id]["status"] if user_id in self.loop else "normal"
 
@@ -265,10 +219,6 @@ class DialogManager:
 
         self.logger.debug(f"user id:{user_id}, status:{status}")
 
-        # coacher状态比较特殊，相当于另一个对话流程，所以判断用户如果在coacher中，那么直接跳转
-        if status == "coacher":
-            return await self._run_coacher(query, user_id)
-
         # 热词替换
         for word, replace_word in self.replace_dict.items():
             if word in query and replace_word not in query:
@@ -277,12 +227,6 @@ class DialogManager:
                 break
 
         # 写作技能
-        if status == "penholder":
-            if user_id not in self.loop:
-                self.logger.debug(f"{user_id} will step into a whole new penholder loop")
-                self.loop[user_id] = {"status": "penholder", "memory": '', "temp": None, "last_update": time.time()}
-            return await self._run_penholder(query=query, user_id=user_id)
-
         if status == "rewrite":
             if not (user_id in self.loop and self.loop[user_id]["temp"]):
                 del self.loop[user_id]
@@ -554,6 +498,7 @@ class DialogManager:
                 return
 
         working_list = {url}
+        est_length = len(self.existing_urls)
         while working_list:
             url = working_list.pop()
             holding = True if url in self.existing_urls else False
@@ -594,7 +539,7 @@ class DialogManager:
             # use llm to filter out the useless information
             prompt = [{"role": "system", "content": self.wf_system},
                       {"role": "user", "content": f"<context>{content}</context>{wiseflow_prompt}"}]
-            conclusion = await llm(prompt, model=self.llm_model)
+            conclusion = await llm(prompt, model=self.wf_model)
             self.logger.debug(conclusion)
             if not conclusion:
                 self.logger.error("llm failed, pipeline abort")
@@ -644,7 +589,8 @@ class DialogManager:
                 await aio_save_config(result, os.path.join(self.wf_temp, f'{title}.json'))
 
         # 将existing_urls 写入文件
-        config_bytes = pickle.dumps(self.existing_urls)
-        async with self.lock:
-            async with aio_open(self.existing_urls_file, 'wb') as f:
-                await f.write(config_bytes)
+        if est_length != len(self.existing_urls):
+            config_bytes = pickle.dumps(self.existing_urls)
+            async with self.lock:
+                async with aio_open(self.existing_urls_file, 'wb') as f:
+                    await f.write(config_bytes)
