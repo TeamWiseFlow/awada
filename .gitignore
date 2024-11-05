@@ -5,3 +5,4 @@
 .idea/
 __pycache__
 /avatars/*.json
+*.log

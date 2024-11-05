@@ -226,7 +226,7 @@ def purge_kb(kb_ids: Optional[list] = None, user_id: str = "zzp", logger=None) -
         msg = '入库失败-切分失败文件 清理失败'
 
     data = {
-        "kb_ids": kb_ids,
+        "kb_ids": kb_ids if kb_ids else [],
         "user_id": user_id,
         "status": "yellow"
     }
