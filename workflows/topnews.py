@@ -15,7 +15,7 @@ async def general_top_news(kbs: list[str], wf_dir: str, model: str, welcome_mess
         with open(cache_file, 'rb') as f:
             reported_urls = pickle.load(f)
 
-    given_date = datetime.now() - timedelta(days=7)
+    # given_date = datetime.now() - timedelta(days=7)
     data = {}
     tag_news_count = {}
     news_count = 0
@@ -49,9 +49,9 @@ async def general_top_news(kbs: list[str], wf_dir: str, model: str, welcome_mess
                 # 判断是否太旧
                 modification_time = os.path.getmtime(doc['attachment'])
                 modification_datetime = datetime.fromtimestamp(modification_time)
-                if modification_datetime < given_date:
-                    logger.debug(f"最后修改时间早于 {given_date}，舍弃。")
-                    continue
+                # if modification_datetime < given_date:
+                #     logger.debug(f"最后修改时间早于 {given_date}，舍弃。")
+                #    continue
                 # 规避多家媒体同一天转发报道的情况
                 clean_title = title.split('// ')[-1]
                 if clean_title in clean_titles:

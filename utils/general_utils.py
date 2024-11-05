@@ -126,7 +126,7 @@ async def write_md_file(result: dict, file_path: str) -> list[str]:
     url = result.get('url', '')
     author = result.get('author', '')
     publish_time = result.get('publish_time', '')
-    if not title or not content or not imgs or not url:
+    if not title or not content or not url:
         return []
     if not os.path.exists(file_path):
         os.makedirs(file_path, exist_ok=True)
