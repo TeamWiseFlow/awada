@@ -2,6 +2,10 @@
 
 **Awada 0.x 版本已经停止维护，如您想继续使用基于 pocketbase 的新闻列表式界面（仅列表，无 RAG 相关功能），请下载 [V0.x 的 Release](https://github.com/TeamWiseFlow/awada/releases/tag/V0.x)** 
 
+宣传视频：
+
+[Youtube](https://youtu.be/H68tE4ZZNeU)  [Bilibili](https://www.bilibili.com/video/BV1fNDjY3Ewv/?share_source=copy_web&vd_source=5ad458dc9dae823257e82e48e0751e25)
+
 # Awada - 团队知识助理智能体
 
 Awada 是一个基于微信生态的团队知识助理智能体。它可以从群聊、公众号、网站等来源中进行在线自主学习（同时也接受自主文档上传），打造团队私域知识库，并为团队成员提供问答、资料查找以及写作（Word）服务。
