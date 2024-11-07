@@ -6,3 +6,6 @@
 __pycache__
 /avatars/*.json
 *.log
+
+/wechaty/node_modules
+/wecahty/.env

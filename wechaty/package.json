@@ -1,0 +1,47 @@
+{
+  "name": "wechaty-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "WECHATY_PUPPET_SERVICE_AUTHORITY=token-service-discovery-test.juzibot.com ts-node -r tsconfig-paths/register ./src/index.ts",
+    "local": "WECHATY_PUPPET_SERVICE_AUTHORITY=token-service-discovery-test.juzibot.com mode=local ts-node -r tsconfig-paths/register ./src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@juzi/wechaty": "^1.0.44",
+    "@juzi/wechaty-puppet": "^1.0.45",
+    "@juzi/wechaty-puppet-service": "^1.0.39",
+    "@types/mime": "^3.0.1",
+    "@types/node": "^18.14.6",
+    "body-parser": "^1.20.2",
+    "cross-fetch": "^4.0.0",
+    "dayjs": "^1.11.7",
+    "dotenv": "^16.0.3",
+    "file-box": "^1.5.5",
+    "form-data": "^4.0.0",
+    "hot-import": "^0.2.14",
+    "json5": "^2.2.3",
+    "koa": "^2.15.3",
+    "koa-bodyparser": "^4.4.1",
+    "koa-router": "^12.0.1",
+    "log-timestamp": "^0.3.0",
+    "mime": "^3.0.0",
+    "officegen": "^0.6.5",
+    "pm2": "^5.2.2",
+    "pocketbase": "^0.16.0",
+    "qrcode-terminal": "^0.12.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4",
+    "urlencode": "^1.1.0",
+    "wechaty": "^1.20.2",
+    "wechaty-puppet-service": "^1.18.2"
+  },
+  "devDependencies": {
+    "@types/qrcode-terminal": "^0.12.0",
+    "eslint": "^8.30.0",
+    "tsconfig-paths": "^4.1.2"
+  }
+}
