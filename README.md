@@ -4,7 +4,7 @@
 
 # Awada - 团队知识助理智能体
 
-Awada 是一个基于微信生态的团队知识助理智能体。它可以从群聊、公众号、网站等来源中进行在线自主学习（同时也接受自主文档上传），打造团队私域知识库，并为团队成员提供问答、资料查找以及写作（Word）服务。
+Awada 是一个基于微信场景的团队知识助理智能体。它可以从群聊、公众号、网站等来源中进行在线自主学习（同时也接受自主文档上传），打造团队私域知识库，并为团队成员提供问答、资料查找以及写作（Word）服务。
 
 宣传视频： [Youtube](https://youtu.be/H68tE4ZZNeU)  [Bilibili](https://www.bilibili.com/video/BV1fNDjY3Ewv/?share_source=copy_web&vd_source=5ad458dc9dae823257e82e48e0751e25)
 
