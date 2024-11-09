@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- #
 from llms.openai_wrapper import openai_llm as llm
 from llms.qanything import *
-from workflows.rewrite import modify_word_document
+from workflows.penholder import Penholder
 import time, pickle, json
 import uuid
 from utils.general_utils import *
@@ -140,6 +140,7 @@ class DialogManager:
         # 6. 其他模块加载以及流程建立
         self.loop = {}
         self.lock = asyncio.Lock()
+        self.penholder = Penholder(org, self.llm_model, self.wf_cache, self.logger)
         self.logger.info(f'DialogManager {self.name} init success.')
 
     async def update_config_file(self, updates: dict):
@@ -149,16 +150,29 @@ class DialogManager:
         await aio_save_config(config, self.config_file)
         self.logger.info("config file updated")
 
-    async def _run_rewrite(self, query: str, old_file: str, user_id: str) -> dict:
+    async def _run_penholder(self, query: str, user_id: str, file_path: str = None) -> dict:
         docx_name = os.path.join(self.cache_url, f"{str(uuid.uuid4())[:8]}.docx")
-        flag, msg = await modify_word_document(old_file, query, docx_name, self.logger)
-
-        if flag != 21:
-            replies = self.build_out(flag, msg)
+        if file_path:
+            self.logger.debug(f"{user_id} will step into a whole new penholder loop from a docx file, input file:{file_path}")
+            flag, result = await self.penholder.writing(opinion=query, out_file=docx_name, kbs=self.kbs, file_path=file_path)
         else:
+            if self.loop[user_id]["temp"]:
+                self.logger.debug(f"{user_id} has a temp writing and wants to modify it")
+                flag, result = await self.penholder.modify(opinion=query, out_file=docx_name, history=self.loop[user_id]["temp"])
+            else:
+                self.logger.debug(f"{user_id} will step into a whole new penholder loop and I will check which template to use")
+                flag, result = await self.penholder.writing(opinion=query, out_file=docx_name, kbs=self.kbs)
+
+        if flag == 21:
             replies = {"flag": flag, "result": [{"type": "file", "answer": docx_name},
                                                 {"type": "text", "answer": "已为您生成文件，有什么需要修改或者补充的，可以直接跟我说哦[愉快]"}]}
-            self.loop[user_id]['temp'] = docx_name
+            self.loop[user_id]["temp"] = result
+        elif flag == 0:
+            replies = self.build_out(flag, result)
+            self.loop[user_id]["temp"] = result
+        else:
+            replies = self.build_out(flag, result)
+
         return replies
 
     # 统一由主程序管理memory，
@@ -175,10 +189,8 @@ class DialogManager:
             if query.endswith(".docx"):
                 # 增加“记一下”功能后可以增加判断逻辑：如果是  user_id 在 sourcing 中，那么问询下
                 # 记一下应该是先接受文件（兼顾群聊 和管理员转发两种情况），之后77s 内收到“#记一下”则 add files
-                self.loop[input['user_id']] = {"status": "rewrite", "memory": (), "temp": query, "last_update": time.time()}
-                self.logger.debug(f"{input['user_id']} will step into a whole new rewrite loop, input file:{query}")
-                comments = clean_query(input['addition'], self.name)
-                return await self._run_rewrite(comments, query, input['user_id'])
+                self.loop[input['user_id']] = {"status": "penholder", "memory": [], "temp": None, "last_update": time.time()}
+                return await self._run_penholder(query=input['addition'], user_id=input['user_id'], file_path=query)
             else:
                 self.logger.debug("wrong_input")
                 return self.build_out(-1, "wrong_input")
@@ -203,6 +215,14 @@ class DialogManager:
             if len(query) <= 1:
                 return self.build_out(0, self.greeting)
             status = "qa"
+        elif query.startswith("#") or query.startswith("＃"):
+            if user_id in self.loop:
+                del self.loop[user_id]
+            query = query[1:]
+            query = clean_query(query, self.name)
+            if len(query) <= 1:
+                return self.build_out(0, self.greeting)
+            status = "penholder"
         else:
             status = self.loop[user_id]["status"] if user_id in self.loop else "normal"
 
@@ -227,12 +247,10 @@ class DialogManager:
                 break
 
         # 写作技能
-        if status == "rewrite":
-            if not (user_id in self.loop and self.loop[user_id]["temp"]):
-                del self.loop[user_id]
-                return self.build_out(0, "请提交待改写的docx文件。")
-            self.logger.debug(f"{user_id} is in a rewrite status, will let it resume")
-            return await self._run_rewrite(query=query, old_file=self.loop[user_id]["temp"], user_id=user_id)
+        if status == "penholder":
+            if user_id not in self.loop:
+                self.loop[user_id] = {"status": status, "memory": [], "temp": None, "last_update": time.time()}
+            return await self._run_penholder(query=query, user_id=user_id)
 
         # 检索流程
         if status == "qa":

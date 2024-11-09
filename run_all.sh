@@ -11,7 +11,7 @@ export VERBOSE=True # 是否输出详细日志（日志文件是否记录 debug 
 # export MAIN_SERVICE_ENDPOINT='http://127.0.0.1:7777/' # 主服务 Endpoint，默认本地8077端口则无需设置
 
 # 启动 uvicorn 服务，并监听代码变化
-uvicorn main:app --host 0.0.0.0 --port 8077 --reload &
+uvicorn main:app --host 0.0.0.0 --port 8077 --reload --reload-dir . &
 uvicorn_pid=$!
 
 # 另开进程静默运行 weixin.py
@@ -23,7 +23,7 @@ python schedule_tasks.py &
 schedule_tasks_pid=$!
 
 # 捕获 SIGINT 信号并终止所有后台进程
-trap "kill $uvicorn_pid $weixin_pid $schedule_tasks_pid" SIGINT
+trap 'kill $uvicorn_pid $weixin_pid $schedule_tasks_pid' SIGINT
 
 # 等待所有后台进程结束
 wait 
