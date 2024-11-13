@@ -438,7 +438,8 @@ class DialogManager:
         return {"flag": flag, "result": result}
 
     async def _create_new_kb(self, new_kb_name: str, for_wf: bool = False) -> bool:
-        flag, new_kb_id = await create_new_kb(new_kb_name, logger=self.logger)
+        async with self.lock:
+            flag, new_kb_id = await create_new_kb(new_kb_name, logger=self.logger)
         if flag == 200:
             self.logger.info(f"create new kb success: {new_kb_id}")
             async with self.lock:
