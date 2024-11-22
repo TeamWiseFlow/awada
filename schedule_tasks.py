@@ -70,10 +70,11 @@ def scan_configs() -> dict:
             config = json.load(f)
         if config.get("wiseflow_sites", []):
             result["wiseflow_sites"].append({"bot_id":config["bot_id"], "sites":config["wiseflow_sites"]})
-        if config.get("top_news_items", {}) and config.get("topnews_scriber", []):
+        if config.get("top_news_items", {}) and config.get("topnews_scriber", []) and config.get("wiseflow_working_kb", ""):
             try:
                 bot_id = config['bot_id'] if config['bot_id'] else "default"
-                kbs = config["kbs"]
+                # topnews 没必要查询所有库，只要查询当前 wiseflow 工作库即可
+                kbs = [config["wiseflow_working_kb"]]
                 model = config["chat_model"]
                 top_news_item = config["top_news_items"]
                 welcome_message = config.get("topnews_shout", "")
