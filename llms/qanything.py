@@ -293,7 +293,7 @@ async def search(query: str, kb_ids: list[str], model: str, wf_dir:str, top_k: i
         return flag, msg, []
     source_documents = res.get("source_documents", [])
 
-    threshold = 0.5 if exactly_search else 0.72 #exactly_search 下分值为 rerank 后分值，最高1分（单召回分值可能大于1）
+    threshold = 0.5 if exactly_search else 0.64 #exactly_search 下分值为 rerank 后分值，最高1分（单召回分值可能大于1）
     result = []
     for doc in source_documents:
         if logger:
