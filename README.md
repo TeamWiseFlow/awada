@@ -154,9 +154,12 @@ docker的安装这里不再赘述，请参考[官方文档](https://docs.docker.
 
 ```
 {
-  "registry-mirrors": ["https://registry.docker-cn.com","https://registry.dockermirror.com", "https://docker.nju.edu.cn", "http://hub-mirror.c.163.com", "https://mirror.baidubce.com", "https://ccr.ccs.tencentyun.com","https://dockerproxy.com", "http://mirrors.ustc.edu.cn/"]
+  "registry-mirrors": ["https://dockerpull.org"]
 }
 ```
+
+（最新可用 docker 镜像加速地址参考：[参考1]（https://github.com/dongyubin/DockerHub） [参考2]（https://www.coderjia.cn/archives/dba3f94c-a021-468a-8ac6-e840f85867ea） 三方镜像，风险自担。）
+
 
 之后在 ~ 下依次执行如下命令：
 
