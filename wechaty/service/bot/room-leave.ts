@@ -7,5 +7,8 @@ import { WechatyUi } from '@/utils'
 export const onRoomLeave = async (room: Room, leaverList: Contact[], remover?: Contact, date?: Date) => {
     console.log('🌰🌰🌰 onRoomleave👇 🌰🌰🌰')
     // 1、更新room_user
-    WechatyUi.updateRoomUsers(room, 'update')
+    WechatyUi.refreshRoom(room)
+
+    console.log('成员离开')
+    return ;
 }

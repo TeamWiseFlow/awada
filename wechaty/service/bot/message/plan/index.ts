@@ -1,22 +1,22 @@
 
-import { requestPlan } from '@/service/algorithm'
+import { requestDm, requestFeed } from '@/service/algorithm'
 import { MSGType } from '../msg'
 import { Message } from "@juzi/wechaty";
 import { MESSAGE_TYPE } from '@/utils/type'
-import { MessageUtils, FormatUtils, isUrl } from '@/utils'
+import { MessageUtils, WechatyUi } from '@/utils'
 import { QueryReturnType } from '@/service/algorithm/type'
-import { FilesPath, CachePath } from '@/config'
+import { FilesPath} from '@/config'
 import fs from 'fs'
 
-/**  */
+/** 回复消息 */
 export const replyMessage = async (res: QueryReturnType['contents'], msg: Message, question?: string) => {
-    const files = fs.readdirSync(FilesPath)
     const room = msg.room()
 
     const msgSay = async (work, type?: 'file' | 'text') => {
         if (type == 'file') {
             await MessageUtils.sendFile(work, room ? room : msg)
         } else {
+            console.log('question',{question,work})
             room ? await room.say(`${question ? question + '\n\n' : ''}${work}`, msg.talker()) : await msg.say(work)
         }
     }
@@ -37,25 +37,15 @@ export const replyMessage = async (res: QueryReturnType['contents'], msg: Messag
     }
 }
 
-export const xlsxAction = async (MSG: MSGType, msg: Message, fileName: string) => {
-    await msg.say('收到，请稍候')
-    let { success, contents, flag } = await requestPlan({ user_id: MSG.talker.id, type: 'file', content: `${CachePath}/${fileName}` })
-    await replyMessage(contents, msg)
-    // MessageUtils.sendFile(program.text, msg)
-}
-
-/** 方案策划 */
+/** 聊天消息处理 */
 export default async (MSG: MSGType, msg: Message) => {
     const isPlan = MSG.text.trim().startsWith('#') || MSG.text.trim().startsWith('＃')
-    const { staticConfig } = MSG
-    const { room_question } = staticConfig
+    const {learnSourcesMap } = await WechatyUi.loadBotsConfig()
+    console.log('learnSourcesMap', learnSourcesMap)
 
+    console.log('talkerId learn_sources', learnSourcesMap[MSG.talker.id])
+    const roomId = MSG.room?.id 
     /** 判断是否开启群问答 */
-    if (room_question === 'close' && MSG.room) return msg.say(staticConfig.room_speech.welcome)
-
-    /** 判断是否有权限 */
-    if (!MSG?.talker?.permision) return msg.say(staticConfig.person_speech.no_permission)
-
     if (MSG.type === MESSAGE_TYPE.文本 || MSG.type === MESSAGE_TYPE.语音) {
         if (isPlan) msg.say('收到，请稍候')
 
@@ -63,8 +53,9 @@ export default async (MSG: MSGType, msg: Message) => {
 
         console.log('plan text', text)
         // 请求机器人接口回复
-        let { flag, success, contents } = await requestPlan({ user_id: MSG.talker.id, type: 'text', content: text });
+        let { flag, success, contents } = await requestDm({ user_id: MSG.talker.id, type: 'text', content: text });
 
+        console.log('contents', contents)
         if (flag === 21 && Array.isArray(contents)) {
             const [title, program] = contents
             // contents = [title]
@@ -74,16 +65,22 @@ export default async (MSG: MSGType, msg: Message) => {
             await replyMessage(contents, msg, text)
         }
     }
-    // else if (MSG.type === MESSAGE_TYPE.语音) {
-    //     const file = await msg.toFileBox();
-    //     const fileName = await MessageUtils.saveAudio(file);
-    //     // 请求机器人接口回复
-    //     let { contents } = await requestPlan({ user_id: MSG.talker.id, type: 'voice', content: fileName });
-    //     await replyMessage(contents, msg)
-    // } 
-    else if (MSG.type === MESSAGE_TYPE.文件) {
+    else if (MSG.type === MESSAGE_TYPE.文件 && roomId) {
+        let fileName = "";
+        let file = null;
+        file = await msg.toFileBox();
+        fileName = file.name;
+        console.log("fileName", fileName);
+        await MessageUtils.saveImage(file, "files");
+      
+        console.log('收到一个文件', fileName)
+        requestFeed({ user_id: MSG.talker.id, type: 'file', content: `${FilesPath}/${fileName}`, bot_id: learnSourcesMap[roomId]  })
         return
-    } else {
+    } else if (MSG.type === MESSAGE_TYPE.链接 && roomId) {
+        const urlLink = await msg.toUrlLink()
+        const url = urlLink.url()
+        console.log('content', urlLink.url)
+        requestFeed({ user_id: MSG.talker.id, type: 'url', content: url, bot_id: learnSourcesMap[roomId] })
         return
     }
 

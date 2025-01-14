@@ -5,7 +5,6 @@ export const log = (msg: MSGType) => {
     console.log("from", msg?.talker);
     console.log('isDirectors', msg?.isDirectors);
     console.log('roomPermission', msg?.roomPermission);
-    // console.log('roomDirectors', msg?.roomDirectors)
     // console.log('mentionList', msg?.mention?.acountList?.map((a) => a.name()));
     // console.log("mentionSelf", msg?.mention?.self);
     console.log('text', msg?.text);

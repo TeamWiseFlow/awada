@@ -7,8 +7,8 @@ const sensitive_violence = '/' + path.join(__dirname, '../sensitive/涉枪涉爆
 
 const sensitives = [
     // sensitive_ad,
-    sensitive_salacity,
-    sensitive_violence,
+    // sensitive_salacity,
+    // sensitive_violence,
     // sensitive_politics
 ]
 
@@ -139,7 +139,7 @@ const find = (s: string) => {
     return sensitive_word
 }
 
-init()
+// init()
 
 export {
     filter,

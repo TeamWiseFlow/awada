@@ -1,37 +1,3 @@
-## Service 接口
-
-### 端口号： 8088
-
-#### 获取当前账号
-GET /api/userinfo 
-
-#### 发送文本消息
-POST /api/sendtxtmsg
-
-- wxid string ： 发送消息的微信id或群id
-- content string：发送消息内容（如果是群聊组消息并需要发送艾特时，此content字段中需要有对应数量的@[自定义被艾特人的昵称，不得少于2个字符] [每个艾特后都需要一个空格以进行分隔（包括最后一个艾特！）]，这一点很重要！ 如果您不理解，请继续看下面的Tips！）
-- atlist array<string>：如果是群聊组消息并需要发送艾特时，此字段是一个被艾特人的数组
- 
-###### Tips：如果是群聊艾特消息，那么content字段中的@艾特符号数量需要和atlist中的被艾特人数组长度一致，简单来说，就是atlist中有多少个被艾特人的wxid，那么content字段中就需要有多少个艾特组合，位置随意，例如： {"wxid": "xx@chatroom", "content": "这里@11 只是@22 想告诉你@33 每个被艾特人的位置并不重要", "atlist": ["wxid_a", "wxid_b", "wxid_c"]} 每个被艾特人在content中 固定为@[至少两个字符的被艾特人名] + 一个空格！ 如果是发送@所有人消息，那么请在atlist字段中仅传入一个notify@all字符串，content字段中仅包含一个@符号规范（最少两字符+一个空格）， 一般建议是@所有人见名知意
-
-
-#### 发送图片消息
-POST /api/sendimgmsg
-
-- wxid string： 发送消息的微信id或群id
-- path string： 发送图片的绝对路径
-- atlist array<string>：如果是群聊组消息并需要发送艾特时，此字段是一个被艾特人的数组
-
-#### 发送文件消息
-
-POST /api/sendfilemsg
-
-- wxid string： 发送消息的微信id或群id
-- path string： 发送文件的绝对路径
-- atlist array<string>：如果是群聊组消息并需要发送艾特时，此字段是一个被艾特人的数组
-
--------------------------------------------
-
 ### 1、环境搭建
 
 ##### 安装 node 环境
@@ -66,6 +32,8 @@ pm2 install pm2-logrotate
 
 ### 2、启动方式
 
+注意：package-lock.json 文件不要删除，否则安装下来的包版本会有 grpc 的问题
+
 ```sh
 npm install
 ```
@@ -81,6 +49,12 @@ pm2 start npm --name wechaty -- run local
 ##### TOKEN=****
 
 购买的句子互动的Puppet
+
+##### POCKETBASE_USERNAME=****
+pocketbase 用户名
+
+##### POCKETBASE_PASSWORD=****
+pocketbase 密码
 
 ##### WECHATY_PUPPET_SERVICE_AUTHORITY=token-service-discovery-test.juzibot.com：
 
@@ -127,16 +101,12 @@ pm2 start npm --name wechaty -- run serve
 │   └── index.ts                // 项目配置参数 【修改需要重启】 
 ├── database                 // 文件存放     
 │   ├── files                   // 用户上传文件暂存区
-│   └── wechatyui               // 用户相关信息暂存
-│       └── room_users.json         // 权限群用户暂存
 ├── sensitive                // 不当言论词库     
 ├── service                  // 中台服务
 │   ├── algorithm               // 中台接口
-│   │   ├── file-add.ts             // 添加文件接口
-│   │   ├── file-delete.ts          // 删除文件接口
-│   │   ├── file-list.ts            // 获取文件列表接口
 │   │   ├── index.ts    
-│   │   ├── question.ts             // QA接口
+│   │   ├── feed.ts           // 添加学习资源接口
+│   │   ├── dm.ts             // 问答接口
 │   │   └── response.ts             // 接口返回信息统一处理
 │   └── bot                  // Wechaty 服务
 │       ├── error.ts            // bot 报错处理
@@ -149,12 +119,6 @@ pm2 start npm --name wechaty -- run serve
 │       │   ├── index.ts            // 处理消息
 │       │   ├── log.ts              // 消息日志
 │       │   ├── msg.ts              // 将消息信息进行整理，封装成一个信息库，方便其他模块使用
-│       │   ├── person              // 处理私聊消息
-│       │   │   ├── command.ts          // 导演指令处理
-│       │   │   ├── const.ts            // 私聊相关常量值
-│       │   │   ├── conversation.ts     // 私聊对话轮次存取
-│       │   │   └── index.ts            // 处理私聊信息
-│       │   └── smartqa.ts          // smartqa 消息类型处理以及回复处理
 │       ├── room-join.ts        // 新用户加群处理
 │       ├── room-leave.ts       // 用户离群处理
 │       └── scan.ts             // bot 扫码登录

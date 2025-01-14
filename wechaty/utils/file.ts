@@ -72,34 +72,6 @@ export const getStaticConfig = async (): Promise<StaticConfigType> => {
   return result
 }
 
-/** 获取 room_users.json 内容 */
-export const getRoomUserJSON = (): RoomUsersType => {
-  const roomUsersPath = `${WechatyuiPath}/room_users.json`
-  const hasRoomFile = fs.existsSync(roomUsersPath);
-  let roomFileJSON = []
-  if (hasRoomFile) {
-    const roomfile = fs.readFileSync(roomUsersPath, "utf-8");
-    roomFileJSON = JSON5.parse(roomfile) || [];
-  } else {
-    // 如果文件夹不存在，则创建文件夹
-    if (!fs.existsSync(WechatyuiPath)) {
-      fs.mkdirSync(WechatyuiPath);
-      console.log('Directory created successfully');
-    }
-    // 将JSON数据转换为字符串
-    const jsonString = JSON.stringify(roomFileJSON);
-    // 将字符串写入文件
-    fs.writeFile(roomUsersPath, jsonString, (err) => {
-      if (err) {
-        console.error(err);
-        return;
-      }
-      console.log(`${roomUsersPath} file created successfully`);
-    });
-  }
-  return roomFileJSON;
-}
-
 
 /** 删除文件 */
 export const removeFile = (fileName: string, type: 'file' | 'config') => {

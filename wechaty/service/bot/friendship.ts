@@ -29,7 +29,7 @@ export const onFriendShip = async (friendship: Friendship) => {
   let logMsg;
   console.log('friendship.content', friendship.contact().name)
   try {
-    const permisesion = getPermissionUsers(friendship.contact().id).permission
+    const permisesion = (await getPermissionUsers(friendship.contact().id)).permission
 
     switch (friendship.type() || 5) {
       case types.Friendship.Receive:

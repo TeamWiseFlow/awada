@@ -5,7 +5,7 @@ import CONFIG, { staticConfig } from '@/config'
 
 const CONTENTMOCKS = [
     {
-        text: `【活动主题】 六一儿童节快乐！
+        answer: `【活动主题】 六一儿童节快乐！
 
         【一、服务背景】
         为了让孩子们度过一个愉快的节日，同时增强社区的凝聚力，我们计划在社区开展一系列的活动，其中包括庆祝六一儿童节。
@@ -31,14 +31,14 @@ const CONTENTMOCKS = [
     }
 ]
 /* 方案策划请求 */
-export const requestPlan = (info: ParamsType): Promise<QueryReturnType> => {
+export const requestDm = (info: ParamsType): Promise<QueryReturnType> => {
     if (process.env.mode === 'local') {
         return new Promise((resolve, reject) => {
             resolve({ success: true, flag: 999, contents: CONTENTMOCKS || [{ text: '等一下，主人没连服务器' }] })
         })
     }
     return new Promise((resolve, reject) => {
-        let url = CONFIG.Apis.callAgent
+        let url = CONFIG.Apis.dm
         request({ url, method: 'POST', body: JSON.stringify(info) }, async (...params: [any, any, any]) => {
             const res = await responseHandler(...params)
             resolve({

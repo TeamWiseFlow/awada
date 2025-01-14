@@ -1,3 +1,7 @@
 // puppet workpro token
 TOKEN=xxxx
 
+// pb config
+POCKETBASE_USERNAME=xxx
+POCKETBASE_PASSWORD=xxx
+

@@ -14,6 +14,8 @@ export type ParamsType = {
     content: string,
     /** 修改意见 */
     addition?: string
+
+    bot_id?: string
 }
 
-export type Type = 'text' | 'image' | 'voice' | 'file'
+export type Type = 'text' | 'image' | 'voice' | 'file' | 'url'

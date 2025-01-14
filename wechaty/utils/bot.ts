@@ -1,5 +1,5 @@
 import { bot } from "@/src/index";
-import { FileBox, FileBoxInterface } from "file-box";
+import { FileBox } from "file-box";
 
 type SendMessageProps = (
   text: string,
