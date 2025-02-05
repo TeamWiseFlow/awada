@@ -10,7 +10,7 @@ Awada 是一个基于微信场景的团队知识助理智能体。它可以从�
 
 ## 功能与特性
 
-- 🌐 同时支持个人微信（基于 [wxbot](https://github.com/jwping/wxbot)）和企业微信（基于[句子互动服务](https://juzibot.com/about-us))。
+- 🌐 同时支持个人微信（基于 [wxbot](https://github.com/jwping/wxbot)）和企业微信（基于[wechaty](https://github.com/wechaty/wechaty))。
 
 - 📚 支持来自群聊分享、公众号订阅、网站的在线自主学习（能力来自开源项目 [wiseflow](https://github.com/TeamWiseFlow/wiseflow)）。
 
@@ -222,13 +222,13 @@ awada 项目目前使用的 wxbot 方案来自大神jwping的 [wxbot](https://gi
 
 ## 4.1 企业微信配置（可选）
 
-Awada 项目除支持个人微信外，也支持企业微信，企业微信接入方案来自国内 RPA 领导者 [句子互动](https://juzibot.com/about-us) 提供的 workpro 搭配 [wechaty](https://github.com/wechaty/wechaty) 框架。
+Awada 项目除支持个人微信外，也支持企业微信，企业微信接入方案来自 [wechaty](https://github.com/wechaty/wechaty) 框架。
 
 具体请参考[wechaty/README.md](./wechaty/README.md)
 
 注意：个微和企微配置一个即可，但是你也可以选择两个同时配置，分别提供学习、问答、写作等服务。
 
-目前实际应用效果：句子互动提供的企业微信接入更加稳定，且自带语音转文字功能，但是因为企业微信的限制，无法关注公众号，得不到公众号消息（不影响从群聊中学习）。
+目前实际应用效果：企业微信接入更加稳定，且自带语音转文字功能，但是因为企业微信的限制，无法关注公众号，得不到公众号消息（不影响从群聊中学习）。
 
 ## 5、启动awada程序
 
@@ -364,7 +364,7 @@ awada 项目目前主要存在以下限制与不足：
 - 2. 不适合公开服务，比如客服等场景，200人以上的用户量也慎用；
 - 3. wxbot 发送文件能力较弱，实测对于2M 以上的文件可能会导致发送不成功且会阻塞后续消息发送，表现为 bot 无反馈。但因为程序整体为异步架构，所以此时不影响后面消息的接收和处理；
 - 4. wxbot目前没有收文件的能力，所以无法直接通过个微进行文档上传，也用不了写作功能，这两个功能要求使用企业微信，但企业微信不支持公众号关注；
-- 5. 无论是 wxbot 还是句子互动提供的workpro，都非完全开源软件，本质上是黑盒，数据安全方面请自行评估并承担所有可能的风险。
+- 5. 无论是 wxbot 还是wechaty提供的workpro，都非完全开源软件，本质上是黑盒，数据安全方面请自行评估并承担所有可能的风险。
 
 # 升级计划
 

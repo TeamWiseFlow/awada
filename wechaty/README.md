@@ -10,7 +10,7 @@ a、安装 nvm
 git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
 ```
 
-b、安转Node
+b、安装 Node
 
 ```sh
 nvm use 16.10.0
@@ -48,7 +48,7 @@ pm2 start npm --name wechaty -- run local
 
 ##### TOKEN=****
 
-购买的句子互动的Puppet
+购买的 [wechaty](https://github.com/wechaty/wechaty) 的 workpro puppet token
 
 ##### POCKETBASE_USERNAME=****
 pocketbase 用户名
@@ -58,7 +58,7 @@ pocketbase 密码
 
 ##### WECHATY_PUPPET_SERVICE_AUTHORITY=token-service-discovery-test.juzibot.com：
 
-wechaty官方的token解析不稳定，使用句子提供的服务器
+使用如上解析方案
 
 ##### mode=local
 
@@ -165,7 +165,7 @@ npm install wechaty-puppet-service
 
 #### Q3：throw new error（'no grpc manager')
 
-这个是workpro服务的一个重连的bug。token对应容器被重启后，链接没有自动恢复。【 具体问题找句子互动 】
+这个是workpro服务的一个重连的bug。token对应容器被重启后，链接没有自动恢复。【具体问题可以去 wechaty 社区提问】
 
 Q4：nvm 安装之后可能文件夹带锁，导致之后nvm 安装node版本的时候没有权限，添加 sudo 执行又找不到命令，这个时候可以把.nvm文件的锁去掉，执行
 
