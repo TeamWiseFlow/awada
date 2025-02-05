@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "module": "esnext",
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "outDir": "./dist/out-tsc",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./*"],
+      "*": ["./node_modules/*"]
+    },
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "types": ["node"],
+    "typeRoots": ["./node_modules/@types"],
+    "lib": ["es2016", "dom"]
+  },
+  "exclude": ["node_modules/", "dist/", "tests/fixtures/"],
+  "include": [
+    "config/**/*.ts",
+    "src/**/*.ts",
+    "service/**/*.ts",
+    "utils/**/*.ts"
+  ]
+}
